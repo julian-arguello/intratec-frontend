@@ -1,116 +1,28 @@
-//FONTS ICONS
+//Material Icons
 
-@font-face {
-    font-family: 'icomoon';
-    src:    url('../public/fonts/icomoon.eot?mxycc0');
-    src:    url('../public/fonts/icomoon.eot?mxycc0#iefix') format('embedded-opentype'),
-            url('../public/fonts/icomoon.ttf?mxycc0') format('truetype'),
-            url('../public/fonts/icomoon.woff?mxycc0') format('woff'),
-            url('../public/fonts/icomoon.svg?mxycc0#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+.material-icons-outlined.md-18 {
+  font-size: 18px;
+}
+.material-icons-outlined.md-24 {
+  font-size: 24px;
+}
+.material-icons-outlined.md-36 {
+  font-size: 36px;
+}
+.material-icons-outlined.md-48 {
+  font-size: 48px;
+}
+.material-icons-outlined.md-54 {
+  font-size: 54px;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+//Fuente
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
 }
-
-.icon-recepcionado:before {
-    content: "\e900";
-  }
-  .icon-atras:before {
-    content: "\e90c";
-  }
-  .icon-reparado:before {
-    content: "\e902";
-  }
-  .icon-confirmar:before {
-    content: "\e90d";
-  }
-  .icon-fecha:before {
-    content: "\e910";
-  }
-  .icon-equipo:before {
-    content: "\e90e";
-  }
-  .icon-ver:before {
-    content: "\e90f";
-  }
-  .icon-irreparable:before {
-    content: "\e903";
-  }
-  .icon-editar:before {
-    content: "\e912";
-  }
-  .icon-revisado:before {
-    content: "\e901";
-  }
-  .icon-usuario:before {
-    content: "\e904";
-  }
-  .icon-cuil:before {
-    content: "\e915";
-  }
-  .icon-logout:before {
-    content: "\e90a";
-  }
-  .icon-mail:before {
-    content: "\e914";
-  }
-  .icon-telefono:before {
-    content: "\e913";
-  }
-  .icon-agregar:before {
-    content: "\e90b";
-  }
-  .icon-estado:before {
-    content: "\e916";
-  }
-  .icon-servicios:before {
-    content: "\e906";
-  }
-  .icon-borrar:before {
-    content: "\e917";
-  }
-  .icon-tablero:before {
-    content: "\e905";
-  }
-  .icon-perfil:before {
-    content: "\e908";
-  }
-  .icon-usuarios:before {
-    content: "\e909";
-  }
-  .icon-clientes:before {
-    content: "\e907";
-  }
-  .icon-cancelar:before {
-    content: "\e911";
-  }
-
-  .f-20 {
-      font-size: 20px;
-  }
-
-  .f-30 {
-      font-size: 30px;
-  }
-
-  .f-60 {
-      font-size: 60px;
-  }
-  
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -121,31 +33,35 @@
 */
 
 .primario {
-    color: #006699;
+  color: #006699;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .fondo {
-    background: blue;
-    background: linear-gradient(87deg, rgba(255,255,255,1) 0%, rgba(0,102,153,1) 100%);
-    height: 100vh;
-    width: auto;
+  background: blue;
+  background: linear-gradient(
+    87deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 102, 153, 1) 100%
+  );
+  height: 100vh;
+  width: auto;
 }
 
 .loginBox {
-    background: white;
-    color: black;
-    border-radius: 15px;    
-    justify-content: center;
-    align-items: center;
-    min-width: 300px;
+  background: white;
+  color: black;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
 }
 
 .loginBox form,
@@ -153,461 +69,481 @@ a {
 .loginBox label,
 .loginBox input,
 .loginBox button {
-    background: white;
+  background: white;
 }
 
 .btn-add {
-    border: 1px solid #006699;
-    border-radius: 30px;
-    color: #006699;
-    padding: 10px 0;
-    font-weight: bold;
-    width: 193px;
-    position: absolute;
-    top: 60px;
-    right: 40px;
-    background: white;
+  border: 1px solid #006699;
+  border-radius: 30px;
+  color: #006699;
+  padding: 10px 0;
+  font-weight: bold;
+  width: 193px;
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  background: white;
 }
 
 .btn-edit {
-    width: max-content;
-    padding: 10px 20px;
+  width: max-content;
+  padding: 10px 20px;
 }
 
 .btn-back {
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 30px;
-    color: rgb(0, 0, 0);
-    padding: 10px 0;
-    font-weight: bold;
-    width: 120px;
-    background: white;
-    display: block;
-    position: absolute;
-    top: 60px;
-    right: 100px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+  font-weight: bold;
+  width: 120px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 100px;
 }
 
 .position-details-back {
-    right: 320px;
+  right: 320px;
 }
 
 .position-back-rol {
-    right: 180px;
+  right: 180px;
 }
 
 .position-edit-back {
-    right: 200px;
+  right: 200px;
 }
 
 .btn-back:hover {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .btn-delete {
-    border: 1px solid red;
-    border-radius: 30px;
-    color: red;
-    padding: 10px 20px;
-    font-weight: bold;
-    width: 120px;
-    position: absolute;
-    top: 60px;
-    right: 175px;
-    background-color: white;
+  border: 1px solid red;
+  border-radius: 30px;
+  color: red;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 120px;
+  position: absolute;
+  top: 60px;
+  right: 175px;
+  background-color: white;
 }
 
 .btn-confirm {
-    border: 1px solid #006837;
-    border-radius: 30px;
-    color: #006837;
-    padding: 10px 0px;
-    font-weight: bold;
-    width: 150px;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 40px;
+  border: 1px solid #006837;
+  border-radius: 30px;
+  color: #006837;
+  padding: 10px 0px;
+  font-weight: bold;
+  width: 150px;
+  background: white;
+  position: absolute;
+  top: 60px;
+  right: 40px;
 }
 
 .btn-cancel {
-    border: 1px solid red;
-    border-radius: 30px;
-    color: red;
-    padding: 10px 20px;
-    font-weight: bold;
-    width: 120px;
-    position: absolute;
-    top: 60px;
-    right: 200px;
-    background-color: white;
+  border: 1px solid red;
+  border-radius: 30px;
+  color: red;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 120px;
+  position: absolute;
+  top: 60px;
+  right: 200px;
+  background-color: white;
 }
 
 .notification {
-    width: 400px;
-    position: absolute!important;
-    left: 0;
-    right: 0;
-    top: 5px;
+  width: 400px;
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: 5px;
 }
 
 // NAVBAR :::::::::::::::::::::::::::::::::::::::::::::::::
 
 .logo {
-    display: inline-block;
-    width: min-content;
-    margin-bottom: 20px;
-}
-
-.logo-user {
-    width: 80px;
+  display: inline-block;
+  width: min-content;
+  margin-bottom: 20px;
 }
 
 h1 {
-    background-image: url('assets/desk.png');
-    background-repeat: no-repeat;
-    font-size: 0!important;
-    width: 195px;
-    height: 59px;
-    text-align: left;
+  background-image: url('assets/desk.png');
+  background-repeat: no-repeat;
+  font-size: 0 !important;
+  width: 192px;
+  height: 58px;
+  text-align: left;
 }
 
 .sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: black;
-    overflow: hidden;
-    padding: 55px 20px;
-    transition: 0.5s;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #004e92,
+    #000428
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #004e92,
+    #000428
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
+  padding: 55px 20px;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar #closebtn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 20px;
-    font-size: 36px;
-    color: white;
-    display: inline-block;
-    width: min-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20px;
+  font-size: 36px;
+  color: white;
+  display: inline-block;
+  width: min-content;
 }
 
 .sidebar > ul {
-    height: inherit;
+  height: inherit;
 }
 
-.sidebar a{
-    color: white!important;
-    font-weight: 500;
+.sidebar a {
+  color: white !important;
+  font-weight: 500;
 }
 
 .sidebar a span {
-    font-size: 30px;
-    color: white;
+  font-size: 30px;
+  color: white;
 }
 
-.sidebar a:hover, .sidebar a span:hover {
-    color: #006699!important; 
+.sidebar a:hover,
+.sidebar a span:hover {
+  color: #006699 !important;
 }
 
 .sidebar ul {
-    min-width: 210px;
+  min-width: 210px;
 }
 
 .closeSidebar {
-    width: 66px;
+  width: 66px;
 }
 
-.closeSidebar h3, .closeSidebar .user {
-    visibility: hidden;
+.user {
+  color: white;
+}
+
+.closeSidebar h3,
+.closeSidebar .user {
+  visibility: hidden;
 }
 
 .closeSidebar #closebtn {
-    margin-right: 0;
-    left: 0;
-    margin: auto;
+  margin-right: 0;
+  left: 0;
+  margin: auto;
 }
 
 .closeSidebar hr {
-    width: 30px;
+  width: 30px;
+}
+
+.role-text {
+  font-size: 12px;
+  font-weight: 300;
 }
 
 /*  Style page content - use this if you want to push the page content 
     to the right when you open the side navigation 
 */
 #main {
-    transition: margin-left .5s; /* If you want a transition effect */
-    padding: 40px;
-    position: relative;
+  transition: margin-left 0.5s; /* If you want a transition effect */
+  padding: 40px;
+  position: relative;
 }
 
 .main-margin-open {
-    margin-left: 250px;
+  margin-left: 250px;
 }
 
 .main-margin-close {
-    margin-left: 66px;
+  margin-left: 66px;
 }
 
 .hr {
-    color: #006699;
-    opacity: 1;
-    border-top: 3px solid;
+  color: #0373ab;
+  opacity: 1;
+  border-top: 3px solid;
 }
 
 // SERVICES :::::::::::::::::::::::::::::::::::::::::::::::::
 
 .icon-card {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 // MOBILE :::::::::::::::::::::::::::::::::::::::::::::::::
 
 @media only screen and (max-width: 575px) {
+  body {
+    font-size: 14px !important;
+  }
 
-    body {
-        font-size: 14px!important;
-    }
+  h1 {
+    background-image: url('assets/nav-mobile.png');
+    margin-bottom: 0;
+    width: 40px;
+  }
 
-    h1 {
-        background-image: url('assets/nav-mobile.png');
-        margin-bottom: 0;
-        width: 40px;
-    }
+  .logo {
+    position: absolute;
+    top: -49px;
+    right: 0;
+    z-index: 1000;
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
 
-    .logo {
-        position: absolute;
-        top: -49px;
-        right: 0;
-        z-index: 1000;
-        margin-bottom: 0;
-        margin-right: 30px;
-    }
+  .sidebar {
+    width: 100vw;
+    height: max-content;
+    padding: 20px 15px;
+    position: relative;
+  }
 
-    .sidebar {
-        width: 100vw;
-        height: max-content;
-        padding: 20px 15px;
-        position: relative;
-    }
+  .closeSidebar {
+    height: 55px;
+    width: 100vw !important;
+  }
 
-    .closeSidebar {
-        height: 55px;
-        width: 100vw!important;
-    }
+  .closeSidebar #closebtn {
+    margin: 0 !important;
+    margin-left: 30px !important;
+  }
 
-    .closeSidebar #closebtn {
-        margin: 0!important;
-        margin-left: 30px!important;
-    }
+  .main-margin-open {
+    margin-left: 0 !important;
+    padding: 15px !important;
+  }
 
-    .main-margin-open {
-        margin-left: 0!important;
-        padding: 15px!important;
-    }
+  .main-margin-close h1 {
+    display: none;
+  }
 
-    .main-margin-close h1 {
-        display: none;
-    }
+  .fondo {
+    background: white;
+  }
 
-    .fondo {
-        background: white;
-    }
+  .loginBox button {
+    background: #006699;
+    color: white;
+  }
 
-    .loginBox button {
-        background: #006699;
-        color: white;
-    }
+  .btn-add {
+    top: 50px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
 
-    .btn-add {
-        top: 50px;
-        right: 0;
-        left: 0;
-        margin: auto;
-    }
+  .btn-confirm {
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 
-    .btn-confirm {
-        position: relative;
-        right: 0;
-        left: 0;
-        top: 0;
-        width: 100%;
-    }
+  .position-edit-back,
+  .position-details-back {
+    right: 15px;
+    top: 40px;
+  }
 
-    .position-edit-back, .position-details-back {
-        right: 15px;
-        top: 40px;
-    }
+  .btn-delete {
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 
-    .btn-delete {
-        position: relative;
-        right: 0;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
+  .btn-edit {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
 
-    .btn-edit {
-        position: relative;
-        top: 0;
-        width: 100%;
-    }
+  .notification {
+    top: 0;
+    width: 100%;
+    border-radius: 0 !important;
+  }
 
-    .notification {
-        top: 0;
-        width: 100%;
-        border-radius: 0 !important;
-    }
-
-    .box-proceso .estado, .box-recepcionados .estado, .box-reparados .estado, .box-sinreparacion .estado {
-        padding: 5px 16px!important;
-    }
-} 
+  .box-proceso .estado,
+  .box-recepcionados .estado,
+  .box-reparados .estado,
+  .box-sinreparacion .estado {
+    padding: 5px 16px !important;
+  }
+}
 
 // HOME :::::::::::::::::::::::::::::::::::::::::::::::::
 
 .box-stadistics {
-    min-width: 250px;
-    min-height: 120px;
+  min-width: 250px;
+  min-height: 120px;
 }
 
 .stadistic {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .ver-button {
-    display: flex;
-    align-items: center;
-    max-width: 6rem;
-    border-radius: 20px;
-    color: white;
-    margin-left: auto;
+  display: flex;
+  align-items: center;
+  max-width: 6rem;
+  border-radius: 20px;
+  color: white;
+  margin-left: auto;
 }
 
 //colores cajas
 .box-recepcionados {
-    background-color: #ff6633;
+  background-color: #ff6633;
 }
 
 .box-recepcionados.card {
-    border: 6px solid #ff6633;
-    border-radius: 20px;
-    background: black;
+  border: 6px solid #ff6633;
+  border-radius: 20px;
+  background: black;
 }
 
 .box-recepcionados .estado {
-    background-color: #ff6633;
-    padding: 5px 32px;
-    width: 100%;
-    margin: auto;
-    font-size: 13px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background-color: #ff6633;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .box-proceso {
-    background: #006699;
+  background: #006699;
 }
 
 .box-proceso.card {
-    border: 6px solid #006699;
-    border-radius: 20px;
-    background: black;
+  border: 6px solid #006699;
+  border-radius: 20px;
+  background: black;
 }
 
 .box-proceso .estado {
-    background-color: #006699;
-    padding: 5px 32px;
-    width: 100%;
-    margin: auto;
-    font-size: 13px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background-color: #006699;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .box-reparados {
-    background: #006837 ;
+  background: #006837;
 }
 
 .box-reparados.card {
-    border: 6px solid #006837;
-    border-radius: 20px;
-    background: black;
+  border: 6px solid #006837;
+  border-radius: 20px;
+  background: black;
 }
 
 .box-reparados .estado {
-    background-color: #006837;
-    padding: 5px 32px;
-    width: 100%;
-    margin: auto;
-    font-size: 13px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background-color: #006837;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .box-sinreparacion {
-    background: #cc3333;
+  background: #cc3333;
 }
 
 .box-sinreparacion.card {
-    border: 6px solid #cc3333;
-    border-radius: 20px;
-    background: black;
+  border: 6px solid #cc3333;
+  border-radius: 20px;
+  background: black;
 }
 
 .box-sinreparacion .estado {
-    background-color: #cc3333;
-    padding: 5px 32px;
-    width: 100%;
-    margin: auto;
-    font-size: 13px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background-color: #cc3333;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 // validate Errors
-.validateErrors{
-    color: #cc3333;
-} 
-
-.loginText{
-    width: 16rem;
+.validateErrors {
+  color: #cc3333;
 }
 
-.spanTime{
-    max-width: 10rem;
+.loginText {
+  width: 16rem;
+}
+
+.spanTime {
+  max-width: 10rem;
 }
 
 // notification status
-.noti-error{
-    background-color: #cc3333;
-    color: white;
+.noti-error {
+  background-color: #cc3333;
+  color: white;
 }
-.noti-success{
-    background-color: #006837;
-    color: white;
+.noti-success {
+  background-color: #006837;
+  color: white;
 }
 
 // Edit user
 
 .closeEditForm {
-    display: none;
+  display: none;
 }
 
 // Users
