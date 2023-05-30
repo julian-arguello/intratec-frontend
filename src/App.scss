@@ -22,6 +22,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
@@ -72,22 +73,38 @@ a {
   background: white;
 }
 
+.btn-add,
+.btn-edit,
+.btn-back,
+.btn-delete,
+.btn-confirm,
+.btn-cancel {
+  font-size: 14px;
+}
+
 .btn-add {
-  border: 1px solid #006699;
   border-radius: 30px;
-  color: #006699;
-  padding: 10px 0;
-  font-weight: bold;
+  color: white;
+  background: #16222a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 15px 0;
   width: 193px;
   position: absolute;
   top: 60px;
   right: 40px;
-  background: white;
 }
 
-.btn-edit {
-  width: max-content;
-  padding: 10px 20px;
+.btn-add:hover {
+  color: gainsboro;
 }
 
 .btn-back {
@@ -104,6 +121,10 @@ a {
   right: 100px;
 }
 
+.btn-back:hover {
+  color: rgb(0, 0, 0);
+}
+
 .position-details-back {
   right: 320px;
 }
@@ -114,10 +135,6 @@ a {
 
 .position-edit-back {
   right: 200px;
-}
-
-.btn-back:hover {
-  color: rgb(0, 0, 0);
 }
 
 .btn-delete {
@@ -191,17 +208,21 @@ h1 {
   z-index: 1;
   top: 0;
   left: 0;
-  background: #000428; /* fallback for old browsers */
+
+  // background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+  background: #16222a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to bottom,
-    #004e92,
-    #000428
+    to right,
+    #3a6073,
+    #16222a
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to bottom,
-    #004e92,
-    #000428
+    to right,
+    #3a6073,
+    #16222a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   overflow: hidden;
   padding: 55px 20px;
   transition: 0.5s;
@@ -288,6 +309,10 @@ h1 {
   margin-left: 66px;
 }
 
+.sidebar .hr {
+  color: white;
+}
+
 .hr {
   color: #0373ab;
   opacity: 1;
@@ -299,6 +324,209 @@ h1 {
 .icon-card {
   font-size: 40px;
 }
+
+// HOME :::::::::::::::::::::::::::::::::::::::::::::::::
+
+.box-stadistics {
+  min-width: 250px;
+  min-height: 120px;
+}
+
+.stadistic {
+  margin-left: auto;
+}
+
+.text-box-card {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+.ver-button {
+  display: flex;
+  align-items: center;
+  max-width: 6rem;
+  border-radius: 20px;
+  color: white;
+  margin-left: auto;
+}
+
+.box-proceso.card,
+.box-recepcionados.card,
+.box-reparados.card,
+.box-sinreparacion.card {
+  background: #16222a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 290px;
+}
+
+//colores cajas
+.box-recepcionados {
+  background: #e43a15; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e65245,
+    #e43a15
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e65245,
+    #e43a15
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.box-recepcionados.card {
+  border: 6px solid #e43a15;
+  border-radius: 20px;
+}
+
+.box-recepcionados .estado {
+  background-color: #e43a15;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box-proceso {
+  background: #7474bf; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #348ac7,
+    #7474bf
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #348ac7,
+    #7474bf
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.box-proceso.card {
+  border: 6px solid #7474bf;
+  border-radius: 20px;
+}
+
+.box-proceso .estado {
+  background-color: #7474bf;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box-reparados {
+  background: #3ca55c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b5ac49,
+    #3ca55c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b5ac49,
+    #3ca55c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.box-reparados.card {
+  border: 6px solid #3ca55c;
+  border-radius: 20px;
+}
+
+.box-reparados .estado {
+  background-color: #3ca55c;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box-sinreparacion {
+  background: #d31027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ea384d,
+    #d31027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ea384d,
+    #d31027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.box-sinreparacion.card {
+  border: 6px solid #d31027;
+  border-radius: 20px;
+}
+
+.box-sinreparacion .estado {
+  background-color: #d31027;
+  padding: 5px 32px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// validate Errors
+.validateErrors {
+  color: #cc3333;
+}
+
+.loginText {
+  width: 16rem;
+}
+
+.spanTime {
+  max-width: 10rem;
+}
+
+// notification status
+.noti-error {
+  background-color: #cc3333;
+  color: white;
+}
+.noti-success {
+  background-color: #006837;
+  color: white;
+}
+
+// Edit user
+
+.closeEditForm {
+  display: none;
+}
+
+// Users
 
 // MOBILE :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -391,7 +619,6 @@ h1 {
   .btn-edit {
     position: relative;
     top: 0;
-    width: 100%;
   }
 
   .notification {
@@ -407,143 +634,3 @@ h1 {
     padding: 5px 16px !important;
   }
 }
-
-// HOME :::::::::::::::::::::::::::::::::::::::::::::::::
-
-.box-stadistics {
-  min-width: 250px;
-  min-height: 120px;
-}
-
-.stadistic {
-  margin-left: auto;
-}
-
-.ver-button {
-  display: flex;
-  align-items: center;
-  max-width: 6rem;
-  border-radius: 20px;
-  color: white;
-  margin-left: auto;
-}
-
-//colores cajas
-.box-recepcionados {
-  background-color: #ff6633;
-}
-
-.box-recepcionados.card {
-  border: 6px solid #ff6633;
-  border-radius: 20px;
-  background: black;
-}
-
-.box-recepcionados .estado {
-  background-color: #ff6633;
-  padding: 5px 32px;
-  width: 100%;
-  margin: auto;
-  font-size: 13px;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.box-proceso {
-  background: #006699;
-}
-
-.box-proceso.card {
-  border: 6px solid #006699;
-  border-radius: 20px;
-  background: black;
-}
-
-.box-proceso .estado {
-  background-color: #006699;
-  padding: 5px 32px;
-  width: 100%;
-  margin: auto;
-  font-size: 13px;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.box-reparados {
-  background: #006837;
-}
-
-.box-reparados.card {
-  border: 6px solid #006837;
-  border-radius: 20px;
-  background: black;
-}
-
-.box-reparados .estado {
-  background-color: #006837;
-  padding: 5px 32px;
-  width: 100%;
-  margin: auto;
-  font-size: 13px;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.box-sinreparacion {
-  background: #cc3333;
-}
-
-.box-sinreparacion.card {
-  border: 6px solid #cc3333;
-  border-radius: 20px;
-  background: black;
-}
-
-.box-sinreparacion .estado {
-  background-color: #cc3333;
-  padding: 5px 32px;
-  width: 100%;
-  margin: auto;
-  font-size: 13px;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-// validate Errors
-.validateErrors {
-  color: #cc3333;
-}
-
-.loginText {
-  width: 16rem;
-}
-
-.spanTime {
-  max-width: 10rem;
-}
-
-// notification status
-.noti-error {
-  background-color: #cc3333;
-  color: white;
-}
-.noti-success {
-  background-color: #006837;
-  color: white;
-}
-
-// Edit user
-
-.closeEditForm {
-  display: none;
-}
-
-// Users
