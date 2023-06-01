@@ -3,9 +3,9 @@ import { useService } from '../../context/Service.Context';
 export function HomeStatistics() {
   const { state } = useService();
   return (
-    <div className="container-fluid mb-3">
+    <div className="container-fluid mb-5">
       <div className="row gy-4 text-white">
-        <div className="col-12 col-md-6 col-xl-3 ps-xl-0">
+        <div className="col-xxs-12 col-6 col-xl-3 ps-xl-0">
           <div className="box-recepcionados p-4 rounded-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <p className="h3 mb-0">
@@ -18,7 +18,7 @@ export function HomeStatistics() {
             </p>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-xl-3">
+        <div className="col-xxs-12 col-6 col-xl-3">
           <div className="box-proceso p-4 rounded-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <p className="h3 mb-0">
@@ -31,7 +31,7 @@ export function HomeStatistics() {
             </p>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-xl-3">
+        <div className="col-xxs-12 col-6 col-xl-3">
           <div className="box-reparados p-4 rounded-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <p className="h3 mb-0">
@@ -44,7 +44,7 @@ export function HomeStatistics() {
             </p>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-xl-3 pe-xl-0">
+        <div className="col-xxs-12 col-6 col-xl-3 pe-xl-0">
           <div className="box-sinreparacion p-4 rounded-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <p className="h3 mb-0">

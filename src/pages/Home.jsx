@@ -23,20 +23,18 @@ function Home() {
 
   return (
     <main className="d-flex flex-column mt-3">
-      <div className="order-1 order-sm-3 mt-5 mt-sm-0 mb-5 mb-sm-0">
-        <h2 className="my-4 text-center text-md-start h4">
-          Servicios más recientes
-        </h2>
-        {loadingServiceRecent ? <Loading /> : <HomeListServiceRecent />}
-      </div>
-
-      <hr className="hr order-2 mb-5 mb-sm-0" />
-
-      <div className="order-3 order-sm-1">
+      <div>
         <RoleAdmin>
           <NewServiceButton />
         </RoleAdmin>
         {loadingStatistics ? <Loading /> : <HomeStatistics />}
+      </div>
+      <hr className="hr" />
+      <div className="mb-5 mb-sm-0">
+        <h2 className="my-5 text-center text-md-start h4">
+          Servicios más recientes
+        </h2>
+        {loadingServiceRecent ? <Loading /> : <HomeListServiceRecent />}
       </div>
     </main>
   );

@@ -20,9 +20,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  height: 100%;
+}
+
+html,
+body,
+#root,
+.App,
+#main {
+  height: 100%;
 }
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
@@ -317,6 +330,7 @@ h1 {
   color: #0373ab;
   opacity: 1;
   border-top: 3px solid;
+  margin: 0;
 }
 
 // SERVICES :::::::::::::::::::::::::::::::::::::::::::::::::
@@ -345,15 +359,6 @@ h1 {
   width: 200px;
 }
 
-.ver-button {
-  display: flex;
-  align-items: center;
-  max-width: 6rem;
-  border-radius: 20px;
-  color: white;
-  margin-left: auto;
-}
-
 .box-proceso.card,
 .box-recepcionados.card,
 .box-reparados.card,
@@ -369,7 +374,6 @@ h1 {
     #3a6073,
     #16222a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 290px;
 }
 
 //colores cajas
@@ -576,6 +580,10 @@ h1 {
     display: none;
   }
 
+  main > div:nth-child(1) {
+    padding-top: 115px;
+  }
+
   .fondo {
     background: white;
   }
@@ -632,5 +640,12 @@ h1 {
   .box-reparados .estado,
   .box-sinreparacion .estado {
     padding: 5px 16px !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .col-xxs-12 {
+    flex: 0 0 auto;
+    width: 100%;
   }
 }
