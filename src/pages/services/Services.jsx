@@ -18,60 +18,58 @@ function Services() {
 
   return (
     <main>
-      <div className="row justify-content-between align-items-center mt-5 mt-sm-0">
-        <div className="col-12 col-sm-auto my-5">
-          <h2 className="mt-5 mt-sm-0 text-center text-sm-start">Servicios</h2>
-
-          <Formik
-            /*--------------------*/
-            initialValues={{
-              search: '',
-            }}
-            /*--------------------*/
-            validationSchema={schemaSearch}
-            /*--------------------*/
-            onSubmit={(data) => {
-              console.log('data', data);
-              serviceSearch(data.search);
-            }}
-          >
-            {({ errors, touched }) => (
-              <Form className="w-100 m-auto text-center">
-                <div className="mb-3">
-                  <label className="form-label">
-                    Ingrese el nombrel del cliente o el numero de ingreso del
-                    servicio
-                    <Field type="text" className="form-control" name="search" />
-                    <ErrorMessage
-                      name="search"
-                      component={() => (
-                        <div className="validateErrors loginText">
-                          {errors.search}
-                        </div>
-                      )}
-                    />
-                    {!(errors.search && touched.search) && (
-                      <div className="form-text m-0 loginText">
-                        Ejemplo: "Quilmes" o "10".
-                      </div>
-                    )}
-                  </label>
-                  <button
-                    type="submit"
-                    className="btn btn-outline-primary w-100 "
-                  >
-                    Buscar
-                  </button>
+      <div className="row justify-content-between align-items-center mb-5 mt-3">
+        <h2 className="text-center text-lg-start h3 mb-0 order-1 order-lg-0 col-12 col-lg-6">
+          Servicios
+        </h2>
+        <Formik
+          /*--------------------*/
+          initialValues={{
+            search: '',
+          }}
+          /*--------------------*/
+          validationSchema={schemaSearch}
+          /*--------------------*/
+          onSubmit={(data) => {
+            console.log('data', data);
+            serviceSearch(data.search);
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end order-0 order-lg-1 mb-5 mb-lg-0">
+              <Field
+                type="search"
+                className="form-control search-input me-2"
+                name="search"
+                placeholder="Buscar por cliente o n° de servicio"
+              />
+              <ErrorMessage
+                name="search"
+                component={() => (
+                  <div className="validateErrors loginText">
+                    {errors.search}
+                  </div>
+                )}
+              />
+              {/* {!(errors.search && touched.search) && (
+                <div className="form-text m-0 loginText">
+                  Ejemplo: "Quilmes" o "10".
                 </div>
-              </Form>
-            )}
-          </Formik>
-        </div>
-        <div className="col-12 col-sm-auto">
-          <RoleAdmin>
-            <NewServiceButton />
-          </RoleAdmin>
-        </div>
+              )} */}
+              <button
+                type="submit"
+                className="btn btn-outline-primary d-flex align-items-center"
+              >
+                <span class="material-icons-outlined">search</span>
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+      <div className="col-12 col-sm-auto">
+        <RoleAdmin>
+          <NewServiceButton />
+        </RoleAdmin>
       </div>
       {loading ? <Loading /> : <ServiceList />}
     </main>

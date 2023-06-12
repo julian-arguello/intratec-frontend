@@ -33,8 +33,7 @@ body {
 html,
 body,
 #root,
-.App,
-#main {
+.App {
   height: 100%;
 }
 
@@ -209,6 +208,13 @@ a {
   left: 0;
   right: 0;
   top: 5px;
+}
+
+.search-input {
+  min-width: 231px;
+  max-width: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 // NAVBAR :::::::::::::::::::::::::::::::::::::::::::::::::
