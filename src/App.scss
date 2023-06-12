@@ -95,6 +95,21 @@ a {
   font-size: 14px;
 }
 
+.btn-add,
+.btn-back {
+  background: #16222a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .btn-add {
   border-radius: 30px;
   color: white;
@@ -116,26 +131,19 @@ a {
   right: 40px;
 }
 
-.btn-add:hover {
+.btn-add:hover,
+.btn-back:hover,
+.btn-confirm:hover {
   color: gainsboro;
+  transition: 0.5s linear;
 }
 
 .btn-back {
-  border: 1px solid rgb(0, 0, 0);
   border-radius: 30px;
-  color: rgb(0, 0, 0);
-  padding: 10px 0;
-  font-weight: bold;
+  color: white;
+  padding: 15px 0;
   width: 120px;
-  background: white;
-  display: block;
-  position: absolute;
-  top: 60px;
-  right: 100px;
-}
-
-.btn-back:hover {
-  color: rgb(0, 0, 0);
+  border: none;
 }
 
 .position-details-back {
@@ -164,16 +172,22 @@ a {
 }
 
 .btn-confirm {
-  border: 1px solid #006837;
+  border: none;
   border-radius: 30px;
-  color: #006837;
-  padding: 10px 0px;
-  font-weight: bold;
+  color: white;
+  padding: 15px 0px;
   width: 150px;
-  background: white;
-  position: absolute;
-  top: 60px;
-  right: 40px;
+  background: #35542c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #061700,
+    #35542c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #061700,
+    #35542c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .btn-cancel {
