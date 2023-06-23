@@ -132,9 +132,29 @@ a {
 
 .btn-add:hover,
 .btn-back:hover,
-.btn-confirm:hover {
+.btn-confirm:hover,
+.btn-edit:hover,
+.btn-delete:hover {
   color: gainsboro;
   transition: 0.5s linear;
+}
+
+.btn-edit {
+  border-radius: 30px;
+  color: white;
+  background: #16222a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 15px 0;
+  width: 130px;
 }
 
 .btn-back {
@@ -158,16 +178,22 @@ a {
 }
 
 .btn-delete {
-  border: 1px solid red;
+  border: none;
   border-radius: 30px;
-  color: red;
-  padding: 10px 20px;
-  font-weight: bold;
+  color: white;
+  background: #d31027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ea384d,
+    #d31027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ea384d,
+    #d31027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 15px 20px;
   width: 120px;
-  position: absolute;
-  top: 60px;
-  right: 175px;
-  background-color: white;
 }
 
 .btn-confirm {
@@ -530,9 +556,9 @@ h1 {
   width: 16rem;
 }
 
-.spanTime {
-  max-width: 10rem;
-}
+// .spanTime {
+//   max-width: 10rem;
+// }
 
 // notification status
 .noti-error {
@@ -632,21 +658,6 @@ h1 {
   .position-details-back {
     right: 15px;
     top: 40px;
-  }
-
-  .btn-delete {
-    position: relative;
-    right: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-  .btn-edit {
-    position: relative;
-    top: 0;
   }
 
   .notification {

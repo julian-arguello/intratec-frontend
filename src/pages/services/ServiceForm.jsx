@@ -7,7 +7,7 @@ export function ServiceAdd(props) {
     <div>
       {!props.edit ? (
         <div className="row align-items-center mb-5 mt-3">
-          <h2 className="col-6 col-md-4 text-end text-sm-start h4 order-1 order-md-0 mb-0">
+          <h2 className="col-6 col-md-4 text-end text-sm-start h3 order-1 order-md-0 mb-0">
             Nuevo servicio
           </h2>
           <div className="col-6 col-md-4 order-0 order-md-1">

@@ -6,7 +6,7 @@ export const NewServiceButton = () => {
       to="/servicios/nuevo"
       className="btn-add d-flex justify-content-center align-items-center"
     >
-      <span class="material-icons-outlined me-2">add_circle_outline</span>
+      <span className="material-icons-outlined me-2">add_circle_outline</span>
       Nuevo servicio
     </Link>
   );

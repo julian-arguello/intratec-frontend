@@ -11,7 +11,9 @@ export function HomeStatistics() {
               <p className="h3 mb-0">
                 <strong>{state.statistics.recepcionado}</strong>
               </p>
-              <span class="material-icons-outlined me-2">call_received</span>
+              <span className="material-icons-outlined me-2">
+                call_received
+              </span>
             </div>
             <p className="mb-0">
               <strong>Recepcionados</strong>
@@ -24,7 +26,7 @@ export function HomeStatistics() {
               <p className="h3 mb-0">
                 <strong>{state.statistics.revisado}</strong>
               </p>
-              <span class="material-icons-outlined">rule</span>
+              <span className="material-icons-outlined">rule</span>
             </div>
             <p className="m-0">
               <strong>Revisados</strong>
@@ -37,7 +39,7 @@ export function HomeStatistics() {
               <p className="h3 mb-0">
                 <strong>{state.statistics.reparado}</strong>
               </p>
-              <span class="material-icons-outlined">download_done</span>
+              <span className="material-icons-outlined">download_done</span>
             </div>
             <p className="m-0">
               <strong>Reparados</strong>
@@ -50,7 +52,7 @@ export function HomeStatistics() {
               <p className="h3 mb-0">
                 <strong>{state.statistics.sin_reparacion}</strong>
               </p>
-              <span class="material-icons-outlined">close</span>
+              <span className="material-icons-outlined">close</span>
             </div>
             <p className="m-0">
               <strong>Sin Reparación </strong>
