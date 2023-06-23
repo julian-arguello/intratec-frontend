@@ -6,7 +6,7 @@ export function ModalDeleteButton(props){
           data-bs-toggle="modal"
           data-bs-target={`#modal${props.id}`}
        >
-          <span class="material-icons-outlined me-2">delete</span>
+          <span className="material-icons-outlined me-2">delete</span>
           Borrar
        </button>
     );

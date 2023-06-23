@@ -30,7 +30,7 @@ export function ServiceDetail(props) {
                <div className="bg-light p-3 rounded">
                   <h3 className="h5 mb-3">Técnico</h3>
                   <div className="d-flex align-items-center">
-                     <span class="material-icons-outlined me-2">
+                     <span className="material-icons-outlined me-2">
                         assignment_ind
                      </span>
                      <strong>
@@ -45,7 +45,9 @@ export function ServiceDetail(props) {
                <div className="bg-light p-3 rounded">
                   <h3 className="h5 mb-3">Fecha ingreso</h3>
                   <div className="d-flex align-items-center">
-                     <span class="material-icons-outlined me-2">history</span>
+                     <span className="material-icons-outlined me-2">
+                        history
+                     </span>
                      <span className="spanTime d-block">
                         {formatRelative(
                            new Date(props.service.create_at),
@@ -133,7 +135,7 @@ export function ServiceDetail(props) {
                      to={`/servicios/editar/${props.service._id}`}
                      className="btn-edit d-flex justify-content-center align-items-center float-end"
                   >
-                     <span class="material-icons-outlined me-2">edit</span>
+                     <span className="material-icons-outlined me-2">edit</span>
                      Editar
                   </Link>
                </div>
