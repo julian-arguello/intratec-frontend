@@ -15,19 +15,17 @@ function Clients(props) {
   }, []);
 
   return (
-    <main>
-      <div className="d-flex justify-content-between align-items-center mt-5 mt-sm-0">
-        <div className="col-12 col-sm-auto my-5">
-          <h2 className="mt-5 mt-sm-0 text-center text-sm-start">Clientes</h2>
+     <>
+        <div className="row justify-content-between align-items-center mb-5 mt-3">
+           <h2 className="text-center text-lg-start h3 mb-0 order-1 order-lg-0">
+              Clientes
+           </h2>
         </div>
-        <div className="col-12 col-sm-auto mb-5">
-          <RoleAdmin>
-            <NewClientButton />
-          </RoleAdmin>
-        </div>
-      </div>
-      {loading ? <Loading /> : <ClientList />}
-    </main>
+        <RoleAdmin>
+           <NewClientButton />
+        </RoleAdmin>
+        {loading ? <Loading /> : <ClientList />}
+     </>
   );
 }
 export default Clients;

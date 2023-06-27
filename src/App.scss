@@ -95,7 +95,9 @@ a {
 }
 
 .btn-add,
-.btn-back {
+.btn-back,
+.card-body,
+.card-header {
   background: #16222a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -107,6 +109,21 @@ a {
     #3a6073,
     #16222a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-body {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.card-header:first-child {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.client-card {
+  height: 300px;
+  border-radius: 20px;
 }
 
 .btn-add {
