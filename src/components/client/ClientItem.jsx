@@ -15,13 +15,15 @@ export function ClientItems(props){
              <div className="card-body text-white p-4 d-flex flex-column justify-content-between">
                 <div className="mb-4">
                    <div className="d-flex align-items-center mb-3">
-                      <span class="material-icons-outlined me-2">email</span>
+                      <span className="material-icons-outlined me-2">
+                         email
+                      </span>
                       <h4 className="h6 card-title mb-0">
                          {props.client.email}
                       </h4>
                    </div>
                    <p className="card-text d-flex align-items-center">
-                      <span class="material-icons-outlined me-2">
+                      <span className="material-icons-outlined me-2">
                          phone_iphone
                       </span>
                       {props.client.phone}
@@ -34,14 +36,14 @@ export function ClientItems(props){
                       </button>
                    ) : (
                       <button className="d-flex align-items-center px-3 py-2 rounded-4 text-white border bg-transparent btn">
-                         <span class="material-icons-outlined me-2">
+                         <span className="material-icons-outlined me-2">
                             home_repair_service
                          </span>
                          Servicios
                       </button>
                    )}
                    <Link
-                      to={`/clientes/editar/${props.client._id}`}
+                      to={`/clientes/editar/${props.client._id}?clientName=${props.client.name_busines}`}
                       className="btn d-flex align-items-center text-white border px-3 py-2 rounded-4"
                    >
                       <span className="material-icons-outlined me-2">edit</span>
