@@ -15,7 +15,7 @@ function Clients(props) {
   }, []);
 
   return (
-     <>
+     <main>
         <div className="row justify-content-between align-items-center mb-5 mt-3">
            <h2 className="text-center text-lg-start h3 mb-0 order-1 order-lg-0">
               Clientes
@@ -25,7 +25,7 @@ function Clients(props) {
            <NewClientButton />
         </RoleAdmin>
         {loading ? <Loading /> : <ClientList />}
-     </>
+     </main>
   );
 }
 export default Clients;

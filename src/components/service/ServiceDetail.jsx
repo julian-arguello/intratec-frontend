@@ -20,11 +20,6 @@ export function ServiceDetail(props) {
                </div>
             </div>
          </div>
-         <div className="row">
-            <div className="col-12 col-md-8">
-               <hr className="hr my-5" />
-            </div>
-         </div>
          <div className="row mb-4">
             <div className="col-6 col-md-4">
                <div className="bg-light p-3 rounded">

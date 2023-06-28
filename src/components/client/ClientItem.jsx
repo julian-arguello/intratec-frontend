@@ -35,12 +35,15 @@ export function ClientItems(props){
                          No tiene servicios
                       </button>
                    ) : (
-                      <button className="d-flex align-items-center px-3 py-2 rounded-4 text-white border bg-transparent btn">
+                      <Link
+                         to={`/clientes/servicios/${props.client._id}`}
+                         className="d-flex align-items-center px-3 py-2 rounded-4 text-white border bg-transparent btn"
+                      >
                          <span className="material-icons-outlined me-2">
                             home_repair_service
                          </span>
                          Servicios
-                      </button>
+                      </Link>
                    )}
                    <Link
                       to={`/clientes/editar/${props.client._id}?clientName=${props.client.name_busines}`}
