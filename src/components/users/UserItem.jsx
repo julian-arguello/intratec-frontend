@@ -1,45 +1,50 @@
-import authRole from "../../services/auth.role";
-import UserEditForm from "./UserEditForm";
-import { useState } from 'react';
-export function UserItem(props){
+import { Link } from 'react-router-dom';
+import authRole from '../../services/auth.role';
 
-    const [edit, setEdit] = useState(false)
-
-    return(
-        <div className="col">
-            <div className="card text-white bg-black p-sm-5 rounded-4">
-
-                {!edit ? 
-                    (<ul className='p-0 mb-3'>
-                        <li className='d-flex align-items-center mb-2'>
-                            <span className="icon-perfil me-3 f-30"></span>
-                            {props.user.name} {props.user.lastname}
-                        </li>
-                        <li className='d-flex align-items-center mb-2'>
-                            <span className="icon-mail me-3 f-30"></span>
-                            {props.user.email}
-                        </li>
-                        <li className='d-flex align-items-center mb-2'>
-                            <span className="icon-usuario me-3 f-30"></span>
-                            {authRole(props.user.role.role_name)}
-                        </li>
-                        <li className='d-flex align-items-center'>
-                            <span className="icon-estado me-3 f-30"></span>
-                            {props.user.softDelete == "false" ? 'activo' : 'desactivado'}
-                        </li>
-                    </ul>) : <UserEditForm user={props.user}/>
-                }
-                    <button 
-                        className={"rounded-4 text-white d-flex align-items-center justify-content-center px-3 py-2 " + (!edit ? 'box-proceso align-self-end' : 'box-sinreparacion align-self-start position-absolute top-0 start-0') } onClick={()=>(!edit  ? setEdit(true) : setEdit(false))}>
-                        <span className={ 
-                            !edit ? 'icon-editar me-2 f-20' : 'icon-cancelar f-20'
-                        }>
-                        </span>
-                        {!edit ? 'Editar' : ''}
-                    </button>
-
+export function UserItem(props) {
+   return (
+      <div className="col">
+         <div className="card border-0 text-white">
+            <div className="card-header p-4">
+               <h3 className="h4 mb-0">
+                  {props.user.name} {props.user.lastname}
+               </h3>
             </div>
-        </div>
-    )
+            <div className="card-body p-4">
+               <ul className="p-0 m-0 mb-4">
+                  <li className="d-flex align-items-center mb-3">
+                     <span className="material-icons-outlined me-2">email</span>
+                     <h4 className="h6 card-title mb-0">{props.user.email}</h4>
+                  </li>
+                  <li className="d-flex align-items-center mb-3">
+                     <span className="material-icons-outlined me-2">
+                        manage_accounts
+                     </span>
+                     <h4 className="h6 card-title mb-0">
+                        {authRole(props.user.role.role_name)}
+                     </h4>
+                  </li>
+                  <li className="d-flex align-items-center">
+                     <span className="material-icons-outlined me-2">lock</span>
+                     <h4 className="h6 card-title mb-0">
+                        {props.user.softDelete === 'false'
+                           ? 'activo'
+                           : 'inactivo'}
+                     </h4>
+                  </li>
+               </ul>
+               <div className="d-flex justify-content-end align-items-center">
+                  <Link
+                     to={`/usuarios/editar/${props.user._id}`}
+                     className="btn d-flex align-items-center text-white border px-3 py-2 rounded-4"
+                  >
+                     <span className="material-icons-outlined me-2">edit</span>
+                     Editar
+                  </Link>
+               </div>
+            </div>
+         </div>
+      </div>
+   );
 }
-export default UserItem
+export default UserItem;

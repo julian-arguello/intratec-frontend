@@ -32,6 +32,7 @@ import Navbar from './components/Navbar';
 import { useAuth }  from './context/Auth.Context';
 import { ClientServices } from './components/client/ClientServices';
 import UserCreateForm from './components/users/UserCreateForm';
+import UserEditForm from './components/users/UserEditForm';
 
 function App() {
    //Autenticación--------------------------
@@ -201,6 +202,14 @@ function App() {
                element={
                   <AuthRoute>
                      <UserCreateForm />
+                  </AuthRoute>
+               }
+            />
+            <Route
+               path="/usuarios/editar/:id"
+               element={
+                  <AuthRoute>
+                     <UserEditForm />
                   </AuthRoute>
                }
             />
