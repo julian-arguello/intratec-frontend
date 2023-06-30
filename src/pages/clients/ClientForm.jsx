@@ -2,6 +2,7 @@ import ClientFormAdd from "../../components/client/ClientFormAdd";
 import ClientFormEdit from "../../components/client/ClientFormEdit";
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { BackButton } from '../../components/buttons/BackButton';
 
 export function ServiceAdd(props) {
    const location = useLocation();
@@ -13,18 +14,32 @@ export function ServiceAdd(props) {
    }, [location.search]);
 
    return (
-      <main>
+      <div>
          {!props.edit ? (
-            <h2 className="my-5 pt-5 pt-sm-0 text-center text-sm-start">
-               Agregar Cliente
-            </h2>
+            <div className="row align-items-center mb-5 mt-3">
+               <h2 className="col-6 col-md-4 text-end text-sm-start h3 order-1 order-md-0 mb-0">
+                  Agregar Cliente
+               </h2>
+               <div className="col-6 col-md-4 order-0 order-md-1">
+                  <div className="float-md-end">
+                     <BackButton />
+                  </div>
+               </div>
+            </div>
          ) : (
-            <h2 className="my-5 pt-5 pt-sm-0 text-center text-sm-start">
-               Editar datos de {clientName}
-            </h2>
+            <div className="row align-items-center mb-5 mt-3">
+               <h2 className="col-6 col-md-4 text-end text-sm-start h3 order-1 order-md-0 mb-0">
+                  Editar datos de {clientName}
+               </h2>
+               <div className="col-6 col-md-4 order-0 order-md-1">
+                  <div className="float-md-end">
+                     <BackButton />
+                  </div>
+               </div>
+            </div>
          )}
          {!props.edit ? <ClientFormAdd /> : <ClientFormEdit />}
-      </main>
+      </div>
    );
 }
 export default ServiceAdd

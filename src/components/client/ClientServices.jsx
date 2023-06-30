@@ -20,8 +20,6 @@ export const ClientServices = () => {
       return <Loading />;
    }
 
-   console.log(state.client.services.length);
-
    return (
       <>
          <div className="row align-items-center mb-5 mt-3">

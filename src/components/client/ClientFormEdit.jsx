@@ -5,6 +5,7 @@ import { schemaClientRegister } from '../../services/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import Loading from '../Loading';
+import { ConfirmButton } from '../buttons/ConfirmButton';
 
 export function ClientFormEdit() {
    const navigate = useNavigate();
@@ -72,7 +73,7 @@ export function ClientFormEdit() {
                         />
                         {!(errors.name_busines && touched.name_busines) && (
                            <div className="form-text m-0">
-                              Ingrese al menos tres caracteres.
+                              Ingrese el nombre (mínimo 3 caracteres)
                            </div>
                         )}
                      </label>
@@ -95,7 +96,7 @@ export function ClientFormEdit() {
                         />
                         {!(errors.cuit_cuil && touched.cuit_cuil) && (
                            <div className="form-text m-0">
-                              Ingrese los once caracteres numéricos.
+                              Ingrese el cuit/cuil (11 caracteres numéricos)
                            </div>
                         )}
                      </label>
@@ -121,7 +122,8 @@ export function ClientFormEdit() {
                         />
                         {!(errors.phone && touched.phone) && (
                            <div className="form-text m-0">
-                              Ingrese al menos ocho caracteres numéricos.
+                              Ingrese el teléfono (mínimo 8 caracteres
+                              numéricos)
                            </div>
                         )}
                      </label>
@@ -144,30 +146,13 @@ export function ClientFormEdit() {
                         />
                         {!(errors.email && touched.email) && (
                            <div className="form-text m-0">
-                              Ejemplo: "tu_correo@mail.com".
+                              Ingrese el email (ej: tu_correo@mail.com)
                            </div>
                         )}
                      </label>
                   </div>
                </div>
-
-               <div className="row">
-                  <div className="col-sm-8 d-flex flex-column align-items-sm-end">
-                     <Link
-                        to={`/clientes`}
-                        className="btn-back position-edit-back me-sm-3 order-2 order-sm-1 text-center"
-                     >
-                        <span className="icon-atras me-2 f-20"></span>Atrás
-                     </Link>
-                     <button
-                        type="submit"
-                        className="btn-confirm order-1 order-sm-2 mb-4 mb-sm-0"
-                     >
-                        <span className="icon-confirmar f-20 me-2"></span>{' '}
-                        Confirmar
-                     </button>
-                  </div>
-               </div>
+               <ConfirmButton />
             </Form>
          )}
       </Formik>
