@@ -31,6 +31,7 @@ import Navbar from './components/Navbar';
 //Context
 import { useAuth }  from './context/Auth.Context';
 import { ClientServices } from './components/client/ClientServices';
+import UserCreateForm from './components/users/UserCreateForm';
 
 function App() {
    //Autenticación--------------------------
@@ -192,6 +193,14 @@ function App() {
                element={
                   <AuthRoute>
                      <UserManage />
+                  </AuthRoute>
+               }
+            />
+            <Route
+               path="/usuarios/nuevo"
+               element={
+                  <AuthRoute>
+                     <UserCreateForm />
                   </AuthRoute>
                }
             />
