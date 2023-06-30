@@ -10,6 +10,7 @@ import { BackButton } from '../buttons/BackButton';
 import { ConfirmButton } from '../buttons/ConfirmButton';
 
 export function UserCreateForm() {
+   const navigate = useNavigate();
    const { notify } = useNotify();
    const { state, addUser, findRole } = useUser();
    const [loading, setloading] = useState(true);
@@ -56,10 +57,10 @@ export function UserCreateForm() {
             /*--------------------*/
             validationSchema={schemaUserRegister}
             /*--------------------*/
-            onSubmit={(data, { resetForm }) => {
+            onSubmit={(data) => {
                addUser(data).then((res) => {
                   notify(res);
-                  resetForm();
+                  navigate('/usuarios');
                });
             }}
             /*--------------------*/
