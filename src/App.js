@@ -20,6 +20,7 @@ import ServiceForm from './pages/services/ServiceForm';
 import NotAccess from './pages/NotAccess';
 
 import Profile from './pages/Profile';
+import ProfileEdit from './components/profile/ProfileEdit';
 import UserManage from './pages/users/Users';
 import PageNotFound from './pages/PageNotFound';
 
@@ -29,7 +30,7 @@ import AuthComponent from './components/AuthComponent';
 import Navbar from './components/Navbar';
 
 //Context
-import { useAuth }  from './context/Auth.Context';
+import { useAuth } from './context/Auth.Context';
 import { ClientServices } from './components/client/ClientServices';
 import UserCreateForm from './components/users/UserCreateForm';
 import UserEditForm from './components/users/UserEditForm';
@@ -186,6 +187,14 @@ function App() {
                element={
                   <AuthRoute>
                      <Profile />
+                  </AuthRoute>
+               }
+            />
+            <Route
+               path="/perfil/editar/:id"
+               element={
+                  <AuthRoute>
+                     <ProfileEdit />
                   </AuthRoute>
                }
             />

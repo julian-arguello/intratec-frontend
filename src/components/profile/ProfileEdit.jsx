@@ -3,73 +3,109 @@ import { useUser } from '../../context/User.Context';
 import { useNotify } from '../../context/Notify.Context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaUserUpdate } from '../../services/validate';
-import { useLocation } from "react-router-dom";
+import { BackButton } from '../buttons/BackButton';
+import { ConfirmButton } from '../buttons/ConfirmButton';
+import { useNavigate } from 'react-router-dom';
 
-function ProfileEdit(props){
+function ProfileEdit(props) {
+   const navigate = useNavigate();
+   const { notify } = useNotify();
+   const { state, updateUserAuth } = useAuth();
+   const { editUser } = useUser();
 
-    const { notify } = useNotify();
-    const { state , updateUserAuth} = useAuth();
-    const  user = useUser();  
-
-    return(        
-        <Formik 
-            /*--------------------*/
-            initialValues= {{
-                "name": state.user.name,
-                "lastname": state.user.lastname,
-            }}
-            /*--------------------*/
-            validationSchema={schemaUserUpdate}
-            /*--------------------*/
-            onSubmit={async (data) => {
-                data._id=state.user._id
-                updateUserAuth(data)
-                user.editUser(data, false)
-                .then((data)=>{
-                    notify(data)
-                })
-            }}
-            /*--------------------*/
-        >
-            {( { errors, touched } )=>(
-                <Form>        
-                    <div className="mt-5">
-                        <label className="form-label">Nombre
-                            <Field 
-                                type="text" 
-                                className="form-control" 
-                                name="name"
-                            />
-                            <ErrorMessage name="name" component={() => (<div className='validateErrors loginText'>{errors.name}</div>)}/>
-                            {!(errors.name && touched.name) && <div className="form-text m-0 loginText">
-                                Ingrese al menos tres caracteres.
-                            </div>}
+   return (
+      <Formik
+         /*--------------------*/
+         initialValues={{
+            name: state.user.name,
+            lastname: state.user.lastname,
+         }}
+         /*--------------------*/
+         validationSchema={schemaUserUpdate}
+         /*--------------------*/
+         onSubmit={async (data) => {
+            data._id = state.user._id;
+            editUser(data, false).then((res) => {
+               updateUserAuth(data);
+               notify(res);
+               navigate('/perfil');
+            });
+         }}
+         /*--------------------*/
+      >
+         {({ errors, touched }) => (
+            <>
+               <div className="row align-items-center mb-5 mt-3">
+                  <h2 className="col-6 col-md-4 text-end text-sm-start h3 order-1 order-md-0 mb-0">
+                     Editar perfil
+                  </h2>
+                  <div className="col-6 col-md-4 order-0 order-md-1">
+                     <div className="float-md-end">
+                        <BackButton refer={'/perfil'} />
+                     </div>
+                  </div>
+               </div>
+               <Form>
+                  <div className="row mb-4">
+                     <div className="col-sm-4">
+                        <label className="form-label w-100">
+                           Nombre
+                           <Field
+                              type="text"
+                              className="form-control"
+                              name="name"
+                           />
+                           <ErrorMessage
+                              name="name"
+                              component={() => (
+                                 <div className="validateErrors loginText">
+                                    {errors.name}
+                                 </div>
+                              )}
+                           />
+                           {!(errors.name && touched.name) && (
+                              <div className="form-text m-0 loginText">
+                                 Ingrese al menos tres caracteres.
+                              </div>
+                           )}
                         </label>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Apellido
-                            <Field 
-                                type="text" 
-                                className="form-control" 
-                                name="lastname"
-                            />
-                            <ErrorMessage name="lastname" component={() => (<div className='validateErrors loginText'>{errors.lastname}</div>)}/>
-                            {!(errors.lastname && touched.lastname) && <div className="form-text m-0 loginText">
-                                Ingrese al menos tres caracteres.
-                            </div>}
+                     </div>
+                     <div className="col-sm-4">
+                        <label className="form-label w-100">
+                           Apellido
+                           <Field
+                              type="text"
+                              className="form-control"
+                              name="lastname"
+                           />
+                           <ErrorMessage
+                              name="lastname"
+                              component={() => (
+                                 <div className="validateErrors loginText">
+                                    {errors.lastname}
+                                 </div>
+                              )}
+                           />
+                           {!(errors.lastname && touched.lastname) && (
+                              <div className="form-text m-0 loginText">
+                                 Ingrese al menos tres caracteres.
+                              </div>
+                           )}
                         </label>
-                    </div>
-                    <button type="submit" className="btn-confirm" onClick={props.function}>
-                        <span className="icon-confirmar me-2 f-20"></span>Confirmar
-                    </button>
-                    {state.error !== '' ? <p className="text-center text-danger pt-2">{state.error}</p> : ''}
-                    <span className='btn-cancel d-flex justify-content-center align-items-center' onClick={props.function} role="button">
-                        <span className="icon-cancelar f-20 me-2"></span>Cancelar
-                    </span> 
-                    
-                </Form>
-            )}                
-        </Formik>
-    )
+                     </div>
+                  </div>
+                  <ConfirmButton />
+                  {state.error !== '' ? (
+                     <p className="text-center text-danger pt-2">
+                        {state.error}
+                     </p>
+                  ) : (
+                     ''
+                  )}
+               </Form>
+            </>
+         )}
+      </Formik>
+   );
 } 
 export default ProfileEdit;
