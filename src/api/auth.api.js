@@ -22,7 +22,7 @@ export async function login(email, password){
 /*-----------------------------------------------------------------*/
 //Recovery.
 export async function recovery(email){
-    return fetch(`https://intractec-backend.vercel.app/api/auth/recovery`,{
+    return fetch(`${config.api.url}/auth/recovery`,{
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email})
