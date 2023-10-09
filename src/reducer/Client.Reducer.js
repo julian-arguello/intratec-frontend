@@ -3,15 +3,14 @@ export default function ClientReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/   
         case "GET":
-            console.log("ClientReducer->GET")
             return {
                 ...state,
-                clients:  action.payload   
+                clients:  action.payload,
+                clientsFilter:  action.payload,  
             }
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETID":
-            console.log("ClientReducer->GETID")
             return {
                 ...state,
                 client:  action.payload   
@@ -19,7 +18,6 @@ export default function ClientReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "ADD":
-            console.log("ClientReducer->ADD")
             return {
                 ...state,
                 clients: []
@@ -27,7 +25,6 @@ export default function ClientReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
-            console.log("ClientReducer->UPDATE")
             return {
                 ...state,
                 clients: []
@@ -35,13 +32,25 @@ export default function ClientReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "REMOVE":
-            console.log("ClientReducer->REMOVE")
             return{
                 ...state,
                 clients: []
             }
         /*-----------------------------------------------------------------*/    
-        /*-----------------------------------------------------------------*/                
+        /*-----------------------------------------------------------------*/ 
+        case "FILTER":
+            return {
+                ...state,
+                clientsFilter:  action.payload !== '' ? state.clients.filter(clients => {
+                    if(isNaN(parseInt(action.payload))){
+                        return clients.name_busines.toLowerCase().trim().includes(action.payload.toLowerCase().trim()) 
+                    }else{
+                        return clients.cuit_cuil.includes(action.payload)
+                    }
+                }) : state.clients
+            }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/                  
         default:
             return state;
         /*-----------------------------------------------------------------*/    

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useService } from '../../context/Service.Context';
 import ServiceList from '../../components/service/ServiceList';
-import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
 import RoleAdmin from '../../components/authRole/RoleAdmin';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -31,7 +30,6 @@ function Services() {
               validationSchema={schemaSearch}
               /*--------------------*/
               onSubmit={(data) => {
-                 console.log('data', data);
                  serviceSearch(data.search);
               }}
            >
@@ -51,11 +49,6 @@ function Services() {
                           </div>
                        )}
                     />
-                    {/* {!(errors.search && touched.search) && (
-                <div className="form-text m-0 loginText">
-                  Ejemplo: "Quilmes" o "10".
-                </div>
-              )} */}
                     <button
                        type="submit"
                        className="btn btn-outline-primary d-flex align-items-center"

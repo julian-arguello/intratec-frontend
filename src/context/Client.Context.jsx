@@ -1,6 +1,13 @@
 import { createContext, useContext, useReducer } from "react";
 import ClientReducer from "../reducer/Client.Reducer";
-import { ActionAdd, ActionRemove, ActionGet, ActionGetId, ActionUpdate } from "../action/Client.Actions"
+import { 
+    ActionAdd, 
+    ActionRemove, 
+    ActionGet, 
+    ActionGetId, 
+    ActionUpdate,
+    ActionFilterClient 
+} from "../action/Client.Actions"
 import * as API from '../api/client.api';
 
 const ClientContext = createContext();
@@ -10,7 +17,11 @@ export function ClientProvider({ children }){
     
     //useReduce
     //useReducer recibe dos parametros (funcion reduce, {states por defectos})
-    const [state, dispatch] = useReducer(ClientReducer, { clients:[], client: {} })
+    const [state, dispatch] = useReducer(ClientReducer, { 
+        clients:[], 
+        clientsFilter: [],
+        client: {} ,
+    });
     /*-----------------------------------------------------------------*/    
 
     //traemos todos los Clientes.
@@ -23,6 +34,10 @@ export function ClientProvider({ children }){
             return {status: "error", msg: err.message} 
         }
     }
+    /*-----------------------------------------------------------------*/
+    const clientSearch = (filter) => {
+        dispatch(ActionFilterClient(filter));
+    };
     /*-----------------------------------------------------------------*/
 
     //Traemos un Cliente por id.
@@ -78,7 +93,17 @@ export function ClientProvider({ children }){
 
     //return
     return(
-        <ClientContext.Provider value={{ state, dispatch, findClient, findClientId, addClient, editClient, delClient }}>
+        <ClientContext.Provider 
+        value={{ 
+            state, 
+            dispatch, 
+            findClient, 
+            findClientId, 
+            addClient,
+            editClient, 
+            delClient,
+            clientSearch
+            }}>
             {children}
         </ClientContext.Provider>
     );

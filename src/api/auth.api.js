@@ -30,7 +30,7 @@ export async function recovery(email){
     .then(async (res) => {
         const data = await res.json()
         console.log(data)
-        if(res.status == 200) {
+        if(res.status === 200) {
             return data;
         }
         else{
@@ -50,7 +50,7 @@ export async function newPass(password, token){
     .then(async (res) => {
         const data = await res.json()
         console.log(data)
-        if(res.status == 200) {
+        if(res.status === 200) {
             return data;
         }
         else{

@@ -42,7 +42,6 @@ export function ServiceProvider({ children }) {
   const serviceSearch = (filter) => {
     dispatch(ActionFilterService(filter));
   };
-
   /*-----------------------------------------------------------------*/
 
   //traemos todos los servicios
