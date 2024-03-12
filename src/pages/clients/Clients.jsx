@@ -20,8 +20,8 @@ function Clients(props) {
 
   return (
      <main>
-        <div className="row justify-content-between align-items-center mb-5 mt-3">
-           <h2 className="text-center text-lg-start h3 mb-0 order-1 order-lg-0 col-12 col-lg-6">
+        <div className="search-container">
+           <h2 className="text-center text-lg-start h3 mb-0 search-container-title">
               Clientes
            </h2>
            <Formik
@@ -37,7 +37,7 @@ function Clients(props) {
               }}
            >
               {({ errors, touched }) => (
-                 <Form className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end order-0 order-lg-1 mb-5 mb-lg-0">
+                 <Form className="d-flex">
                     <Field
                        type="search"
                        className="form-control search-input me-2"

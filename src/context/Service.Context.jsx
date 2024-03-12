@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer, useState } from 'react';
 import ServiceReducer from '../reducer/Service.Reducer';
 import {
   ActionAdd,
@@ -27,6 +27,8 @@ export function ServiceProvider({ children }) {
     service: {},
     stateService: [],
   });
+
+  const [filterState, serFilterState] = useState("");
   /*-----------------------------------------------------------------*/
 
   //Estado de los servicios
@@ -140,6 +142,8 @@ export function ServiceProvider({ children }) {
         findServiceRecent,
         findStatistics,
         serviceSearch,
+        filterState, 
+        serFilterState
       }}
     >
       {children}

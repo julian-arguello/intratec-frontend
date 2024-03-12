@@ -8,7 +8,7 @@ import { schemaSearch } from '../../services/validate';
 import { NewServiceButton } from '../../components/buttons/NewServiceButton';
 
 function Services() {
-  const { findService, serviceSearch } = useService();
+  const { findService, serviceSearch, filterState, serFilterState } = useService();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,10 +17,21 @@ function Services() {
 
   return (
      <main>
-        <div className="row justify-content-between align-items-center mb-5 mt-3">
-           <h2 className="text-center text-lg-start h3 mb-0 order-1 order-lg-0 col-12 col-lg-6">
+      
+        <div className="search-container">
+
+            <h2 className="text-center text-lg-start h3 mb-0 search-container-title">
               Servicios
            </h2>
+
+           <ul className='service-status-filter d-flex h6'>
+               <li className='m-1 btn btn-warning' onClick={() => serFilterState("")}>Todos</li>
+               <li className='m-1 btn box-recepcionados' onClick={() => serFilterState("Recepcionado")}>Recepcionado</li>
+               <li className='m-1 btn box-proceso' onClick={() => serFilterState("Revisado")}>Revisado</li>
+               <li className='m-1 btn box-reparados' onClick={() => serFilterState("Reparado")}>Reparado</li>
+               <li className='m-1 btn box-sinreparacion' onClick={() => serFilterState("Sin reparación")}>Sin reparación</li>
+            </ul>
+
            <Formik
               /*--------------------*/
               initialValues={{
@@ -34,7 +45,7 @@ function Services() {
               }}
            >
               {({ errors, touched }) => (
-                 <Form className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end order-0 order-lg-1 mb-5 mb-lg-0">
+                 <Form className="d-flex">
                     <Field
                        type="search"
                        className="form-control search-input me-2"
@@ -59,6 +70,7 @@ function Services() {
               )}
            </Formik>
         </div>
+
         <div className="col-12 col-sm-auto">
            <RoleAdmin>
               <NewServiceButton />

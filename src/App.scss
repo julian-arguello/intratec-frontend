@@ -38,11 +38,12 @@ body,
 }
 
 // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
-
 /*
+
 * {
     outline: 1px solid red;    // para quitar stylos por className usar ' list-unstyled '
 }
+
 */
 
 .primario {
@@ -610,7 +611,47 @@ h1 {
   font-size: 80px;
 }
 
+.service-status-filter {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.service-status-filter li {
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1390px) {
+
+  .search-container-title{
+    width: 100%;
+  }
+
+  .search-container * {
+    margin: 0.5rem 0;
+  }
+
+}
+
 // MOBILE :::::::::::::::::::::::::::::::::::::::::::::::::
+
+@media only screen and (max-width: 768px) {
+
+  .search-container {
+    justify-content: center;
+  }
+
+}
 
 @media only screen and (max-width: 575px) {
   body {
@@ -710,6 +751,7 @@ h1 {
     min-width: 280px;
     max-width: 320px;
   }
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -717,4 +759,5 @@ h1 {
     flex: 0 0 auto;
     width: 100%;
   }
+
 }
