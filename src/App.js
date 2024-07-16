@@ -1,12 +1,20 @@
-import './App.scss';
+import './scss/App.scss';
+
 import { useEffect, useState } from 'react';
 //Routes
 import { Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
 
 //Pages
-import Login from './pages/Login';
-import Recovery from './pages/recovery/RecoveryPage';
-import NewPassword from './pages/recovery/NewPasswordPage';
+//import Login from '@pages/Login';
+import Login from './pages/Login/Login';
+
+//import Recovery from './pages/recovery/RecoveryPage';
+import { RecoverPassword } from './pages/Login/Recover/RecoverPassword';
+
+//import NewPassword from './pages/recovery/NewPasswordPage';
+import { NewPassword } from './pages/Login/Recover/NewPassword';
+
+
 import Home from './pages/Home';
 
 import Clients from './pages/clients/Clients';
@@ -28,6 +36,8 @@ import PageNotFound from './pages/PageNotFound';
 import AuthRoute from './components/AuthRoute';
 import AuthComponent from './components/AuthComponent';
 import Navbar from './components/Navbar';
+
+// import { SideBar } from './components/Layout/SideBar/SideBar';
 
 //Context
 import { useAuth } from './context/Auth.Context';
@@ -76,13 +86,22 @@ function App() {
    return (
       <div className="App">
          <AuthComponent>
-            <Navbar />
+            <Navbar/>
+            {/* <SideBar /> */}
+
          </AuthComponent>
 
          <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/recuperar-usuario" element={<Recovery />} />
+
+            {/* <Route path="/recuperar-usuario" element={<Recovery />} /> */}
+            <Route path="/recuperar-usuario" element={<RecoverPassword />} />
+
+
+            {/* <Route path="/recuperar-usuario/:token" element={<NewPassword />} /> */}
             <Route path="/recuperar-usuario/:token" element={<NewPassword />} />
+
+
             <Route
                path="/inicio"
                element={

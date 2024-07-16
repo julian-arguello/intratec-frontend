@@ -1,0 +1,54 @@
+@import '/src/scss/variables';
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: $bg-gradient-white-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form {
+    width: 40rem;
+    min-height: 26rem;
+    background: white;
+    color: black;
+    border-radius: .9rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+}
+
+
+.boxImages {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.boxform{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: start;
+    margin: 0 1rem ;
+}
+
+@media (max-width: $md) {
+    .form {
+        min-width: auto;
+
+        grid-template-columns: 1fr;
+        
+    }
+  }
+@media (max-width: $sm) {
+    .form {
+        width: 100%;
+        margin: 1rem;
+        padding: 1rem .5rem;
+    }
+  }

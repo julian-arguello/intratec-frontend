@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import * as bootstrap from 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 
 //import 'semantic-ui-css/semantic.min.css';
@@ -19,7 +17,6 @@ import { ClientProvider } from './context/Client.Context';
 //user
 import { UserProvider } from './context/User.Context';
 
-console.log("index")
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

@@ -14,18 +14,35 @@ export function AuthProvider({ children }){
     /*-----------------------------------------------------------------*/
 
     //function login
-    const login = async (email, password) =>{
-        const res = API.login(email, password)
+    
+    const login = (email, password) => {
+        return API.login(email, password)
         .then((data)=>{
             localStorage.setItem('auth-token', data.token)
             localStorage.setItem('user', JSON.stringify (data.user))
             dispatch(ActionLogin(data.user))
-            return res
+            return data
         })
         .catch(function(err){
             dispatch(ActionError(err.message))
         })
     }
+
+    /*
+    const login = async (email, password) => {
+        try {
+            const data = await API.login(email, password); // Esperar la respuesta de API.login
+            localStorage.setItem('auth-token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
+            dispatch(ActionLogin(data.user));
+            return data; // Devolver los datos recibidos
+        } catch (err) {
+            dispatch(ActionError(err.message));
+            throw err; // Re-lanzar el error para manejarlo donde se llama
+        }
+    }
+
+    */
     /*-----------------------------------------------------------------*/
 
     const updateUserAuth = (user) =>{

@@ -1,0 +1,17 @@
+@import "./_variables";
+
+$input-focus-border-color: $blue-brand; 
+$input-focus-box-shadow: 0 1px 1px $dark-blue-brand-rgba inset, 0 0 8px $blue-brand-rgba;
+$input-bg: #f7f7f7;
+
+$blue:    $blue-brand;     // Primary
+$indigo:  #6610f2;       // Indigo
+$purple:  #6f42c1;       // Purple
+$pink:    #d63384;       // Pink
+$red:     #dc3545;       // Red
+$orange:  #fd7e14;       // Orange
+$yellow:  #ffc107;       // Yellow
+$green:   #198754;       // Green
+$teal:    #20c997;       // Teal
+$cyan:    #0dcaf0;       // Cyan
+
