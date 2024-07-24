@@ -1,17 +1,43 @@
 //Fuente
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
-@import './custom';
+@import "./custom";
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
+.App {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
 
+.LoaderBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > svg {
+    font-size: 2rem;
+  }
+}
 
+.btn-details {
+  color: white;
+  border-color: white;
+}
 
+// #main {
+//   max-height: 100vh;
+//   background-color: #fff;
+//   // esto se lo tengo que aplicar a cada seccion
+//   overflow-x: hidden;
+//   overflow-y: auto; /* o auto */
+// }
 
+// *{
+//   outline: 1px solid red;
+// }
 
-  
-// //Material Icons
+//Material Icons
 
 // .material-icons-outlined.md-18 {
 //   font-size: 18px;
@@ -29,7 +55,6 @@
 //   font-size: 54px;
 // }
 
-
 // html {
 //   height: 100%;
 // }
@@ -43,22 +68,6 @@
 // html,
 // body,
 // #root,
-// .App {
-//   height: 100%;
-// }
-
-// // CSS del login :::::::::::::::::::::::::::::::::::::::::::::::::
-// /*
-
-// * {
-//     outline: 1px solid red;    // para quitar stylos por className usar ' list-unstyled '
-// }
-
-// */
-
-// .primario {
-//   color: #006699;
-// }
 
 // li {
 //   list-style: none;
@@ -70,34 +79,6 @@
 
 // .cursor-pointer {
 //   cursor: pointer;
-// }
-
-// .fondo {
-//   background: blue;
-//   background: linear-gradient(
-//     87deg,
-//     rgba(255, 255, 255, 1) 0%,
-//     rgba(0, 102, 153, 1) 100%
-//   );
-//   height: 100vh;
-//   width: auto;
-// }
-
-// .loginBox {
-//   background: white;
-//   color: black;
-//   border-radius: 15px;
-//   justify-content: center;
-//   align-items: center;
-//   min-width: 300px;
-// }
-
-// .loginBox form,
-// .loginBox div,
-// .loginBox label,
-// .loginBox input,
-// .loginBox button {
-//   background: white;
 // }
 
 // .btn-add,
@@ -126,6 +107,8 @@
 //   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 // }
 
+// cards de clientes
+
 // .card-body {
 //   border-bottom-right-radius: 20px;
 //   border-bottom-left-radius: 20px;
@@ -140,6 +123,8 @@
 //   height: 300px;
 //   border-radius: 20px;
 // }
+
+// // btn nuevo servicio
 
 // .btn-add {
 //   border-radius: 30px;
@@ -160,15 +145,6 @@
 //   position: absolute;
 //   top: 60px;
 //   right: 40px;
-// }
-
-// .btn-add:hover,
-// .btn-back:hover,
-// .btn-confirm:hover,
-// .btn-edit:hover,
-// .btn-delete:hover {
-//   color: gainsboro;
-//   transition: 0.5s linear;
 // }
 
 // .btn-edit {
@@ -260,13 +236,13 @@
 //   background-color: white;
 // }
 
-.notification {
-  width: 400px;
-  position: absolute !important;
-  left: 0;
-  right: 0;
-  top: 5px;
-}
+// .notification {
+//   width: 400px;
+//   position: absolute !important;
+//   left: 0;
+//   right: 0;
+//   top: 5px;
+// }
 
 // .search-input {
 //   min-width: 231px;
@@ -281,124 +257,14 @@
 
 // // NAVBAR :::::::::::::::::::::::::::::::::::::::::::::::::
 
-// .logo {
-//   display: inline-block;
-//   width: min-content;
-//   margin-bottom: 20px;
-// }
-
-// h1 {
-//   background-image: url('../assets/desk.png');
-//   background-repeat: no-repeat;
-//   font-size: 0 !important;
-//   width: 192px;
-//   height: 58px;
-//   text-align: left;
-// }
-
-// .sidebar {
-//   height: 100%;
-//   width: 250px;
-//   position: fixed;
-//   z-index: 1;
-//   top: 0;
-//   left: 0;
-
-//   // background-image: linear-gradient(to right, #434343 0%, black 100%);
-
-//   background: #16222a; /* fallback for old browsers */
-//   background: -webkit-linear-gradient(
-//     to right,
-//     #3a6073,
-//     #16222a
-//   ); /* Chrome 10-25, Safari 5.1-6 */
-//   background: linear-gradient(
-//     to right,
-//     #3a6073,
-//     #16222a
-//   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-//   overflow: hidden;
-//   padding: 55px 20px;
-//   transition: 0.5s;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .sidebar #closebtn {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   margin-right: 20px;
-//   font-size: 36px;
-//   color: white;
-//   display: inline-block;
-//   width: min-content;
-// }
-
-// .sidebar > ul {
-//   height: inherit;
-// }
-
-// .sidebar a {
-//   color: white !important;
-//   font-weight: 500;
-// }
-
-// .sidebar a span {
-//   font-size: 30px;
-//   color: white;
-// }
-
-// .sidebar a:hover,
-// .sidebar a span:hover {
-//   color: #006699 !important;
-// }
-
-// .sidebar ul {
-//   min-width: 210px;
-// }
-
-// .closeSidebar {
-//   width: 66px;
-// }
-
-// .user {
-//   color: white;
-// }
-
-// .closeSidebar h3,
-// .closeSidebar .user {
-//   visibility: hidden;
-// }
-
-// .closeSidebar #closebtn {
-//   margin-right: 0;
-//   left: 0;
-//   margin: auto;
-// }
-
-// .closeSidebar hr {
-//   width: 30px;
-// }
-
 // .role-text {
 //   font-size: 12px;
 //   font-weight: 300;
 // }
 
-// /*  Style page content - use this if you want to push the page content 
-//     to the right when you open the side navigation 
-// */
-// #main {
-//   transition: margin-left 0.5s; /* If you want a transition effect */
-//   padding: 40px;
-//   position: relative;
-// }
-
-// .main-margin-open {
-//   margin-left: 250px;
-// }
+/*  Style page content - use this if you want to push the page content 
+    to the right when you open the side navigation 
+*/
 
 // .main-margin-close {
 //   margin-left: 66px;
@@ -408,12 +274,12 @@
 //   color: white;
 // }
 
-// .hr {
-//   color: #0373ab;
-//   opacity: 1;
-//   border-top: 3px solid;
-//   margin: 0;
-// }
+.hr {
+  color: #0373ab;
+  opacity: 1;
+  border-top: 3px solid;
+  margin: 0;
+}
 
 // // SERVICES :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -473,7 +339,7 @@
 //   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 // }
 
-// .box-recepcionados.card {
+// .box-recepcionados .card {
 //   border: 6px solid #e43a15;
 //   border-radius: 20px;
 // }
@@ -592,19 +458,19 @@
 //   width: 16rem;
 // }
 
-// // .spanTime {
-// //   max-width: 10rem;
-// // }
+// .spanTime {
+//   max-width: 10rem;
+// }
 
-// notification status
-.noti-error {
-  background-color: #cc3333;
-  color: white;
-}
-.noti-success {
-  background-color: #006837;
-  color: white;
-}
+// // notification status
+// .noti-error {
+//   background-color: #cc3333;
+//   color: white;
+// }
+// .noti-success {
+//   background-color: #006837;
+//   color: white;
+// }
 
 // // Edit user
 
@@ -651,11 +517,11 @@
 //     margin: 0.5rem 0;
 //   }
 
- //}
+//  }
 
 // // MOBILE :::::::::::::::::::::::::::::::::::::::::::::::::
 
- //@media only screen and (max-width: 768px) {
+//  @media only screen and (max-width: 768px) {
 
 //   .search-container {
 //     justify-content: center;
@@ -663,7 +529,7 @@
 
 // }
 
- @media only screen and (max-width: 575px) {
+//  @media only screen and (max-width: 575px) {
 //   body {
 //     font-size: 14px !important;
 //   }
@@ -743,11 +609,11 @@
 //     top: 40px;
 //   }
 
-  .notification {
-    top: 0;
-    width: 100%;
-    border-radius: 0 !important;
-  }
+//   .notification {
+//     top: 0;
+//     width: 100%;
+//     border-radius: 0 !important;
+//   }
 
 //   .box-proceso .estado,
 //   .box-recepcionados .estado,
@@ -762,7 +628,7 @@
 //     max-width: 320px;
 //   }
 
- }
+//  }
 
 // @media only screen and (max-width: 400px) {
 //   .col-xxs-12 {

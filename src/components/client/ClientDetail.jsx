@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
-import ServiceItem from '../service/ServiceItem';
-import RoleAdmin from '../authRole/RoleAdmin';
+import ServiceItem from '../service/ServiceItem/ServiceItem';
+import { RoleAdmin } from '../authRole/RoleAdmin';
 import RoleSuperAdmin from '../authRole/RoleSuperAdmin';
 import { useAuth } from '../../context/Auth.Context';
 

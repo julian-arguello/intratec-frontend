@@ -3,7 +3,7 @@ import UserList from '../../components/users/UsersList';
 import { useState, useEffect } from 'react';
 import { useUser } from '../../context/User.Context';
 import { NewUserButton } from '../../components/buttons/NewUserButton';
-import RoleAdmin from '../../components/authRole/RoleAdmin';
+import { RoleAdmin } from '../../components/authRole/RoleAdmin';
 
 export function Users() {
    return (

@@ -79,7 +79,7 @@ const NewPassword = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn btn-primary w-100 mb-3"
+                  className="btn btn-primary w-100 mb-3 d-flex justify-content-center align-items-center"
                 >
                   {loading ? <Loader /> : "Cambiar contraseña"}
                 </button>

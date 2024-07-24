@@ -1,14 +1,13 @@
+import { Sidebar } from "./Sidebar/Sidebar";
+import { RoutesConfig } from "../../Routes/Routes";
+
 const Layout = () => {
-    return (
-
-        //sidebar con el contenido dentro
-        <h1>Hola</h1>
-        //header
-        //sidebar
-        //main
-        //fotter
-
-    )
+  return (
+    <div className="App">
+      <Sidebar />
+      <RoutesConfig />
+    </div>
+  );
 };
 
 export { Layout };

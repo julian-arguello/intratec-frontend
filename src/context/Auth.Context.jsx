@@ -15,20 +15,20 @@ export function AuthProvider({ children }){
 
     //function login
     
-    const login = (email, password) => {
-        return API.login(email, password)
-        .then((data)=>{
-            localStorage.setItem('auth-token', data.token)
-            localStorage.setItem('user', JSON.stringify (data.user))
-            dispatch(ActionLogin(data.user))
-            return data
-        })
-        .catch(function(err){
-            dispatch(ActionError(err.message))
-        })
-    }
+    // const login = (email, password) => {
+    //     return API.login(email, password)
+    //     .then((data)=>{
+    //         localStorage.setItem('auth-token', data.token)
+    //         localStorage.setItem('user', JSON.stringify (data.user))
+    //         dispatch(ActionLogin(data.user))
+    //         return data
+    //     })
+    //     .catch(function(err){
+    //         dispatch(ActionError(err.message))
+    //     })
+    // }
 
-    /*
+    
     const login = async (email, password) => {
         try {
             const data = await API.login(email, password); // Esperar la respuesta de API.login
@@ -42,7 +42,7 @@ export function AuthProvider({ children }){
         }
     }
 
-    */
+    
     /*-----------------------------------------------------------------*/
 
     const updateUserAuth = (user) =>{

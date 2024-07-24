@@ -1,0 +1,64 @@
+@import "../../../scss/variables";
+
+
+.sidebar {
+  border: none;
+  background-color: $bg-navigate;
+
+  .logoBox {
+    display: flex;
+    justify-content: center;
+    border-bottom: none !important;
+  }
+
+  .navIcon {
+    fill: none;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+
+
+  & > a {
+    & > svg {
+      color: black;
+    }
+    }
+
+  .active {
+    background-color: $blue-brand;
+    & > a {
+      color: white;
+      & > svg {
+        color: white;
+      }
+    }
+  }
+
+  .sidebarNav {
+    li {
+      a:hover {
+        background-color: $blue-brand;
+        color: white;
+        & > svg {
+          color: white !important;
+        }
+      }
+    }
+  }
+
+.togglerBtn{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        background-color: $blue-brand;
+        color: white;
+        & > svg {
+          color: white !important;
+        }
+    }
+}
+}

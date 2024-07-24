@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useService } from '../../context/Service.Context';
 import ServiceList from '../../components/service/ServiceList';
 import Loading from '../../components/Loading';
-import RoleAdmin from '../../components/authRole/RoleAdmin';
+import { RoleAdmin } from '../../components/authRole/RoleAdmin';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaSearch } from '../../services/validate';
 import { NewServiceButton } from '../../components/buttons/NewServiceButton';

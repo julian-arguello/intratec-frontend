@@ -2,7 +2,7 @@ import { stateClass } from '../../services/service.state';
 import { Link } from 'react-router-dom';
 import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
-import RoleAdmin from '../authRole/RoleAdmin';
+import { RoleAdmin } from '../authRole/RoleAdmin';
 import { formatRelative, subDays } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { BackButton } from '../../components/buttons/BackButton';

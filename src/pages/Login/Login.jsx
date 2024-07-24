@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
 import { Loader } from "../../components/UI/Loader/Loader";
 
-import { Notification } from "../../components/Notification";
 
 function Login() {
   const { state, login } = useAuth();
@@ -17,7 +16,6 @@ function Login() {
 
   return (
     <section className={styles.background}>
-      <Notification />
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={schemaLogin}
@@ -45,7 +43,7 @@ function Login() {
             </div>
 
             <div className={styles.boxform}>
-              <h2 className="mb-4">Bienvenido</h2>
+              <h2 className="mb-4">Ingresar</h2>
 
               <CustomField
                 id="emailLogin"
@@ -71,9 +69,9 @@ function Login() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn btn-primary w-100 mb-3"
+                  className={`btn btn-primary w-100 mb-3 d-flex justify-content-center align-items-center ${styles.buttonSubmit}`}
                 >
-                  {loading ? <Loader /> : "Iniciar sesión"}
+                  {loading ? <Loader/> : "Iniciar sesión"}
                 </button>
 
                 {state.error && (
@@ -84,7 +82,7 @@ function Login() {
 
                 <Link
                   to="/recuperar-usuario"
-                  className="btn btn-outline-secondary w-100"
+                  className="d-block text-center link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover w-100"
                 >
                   ¿Olvidaste tu contraseña?
                 </Link>

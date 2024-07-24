@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { RoleAdmin } from "../../components/authRole/RoleAdmin";
+import { TbCopyPlus } from "react-icons/tb";
 
 export const NewServiceButton = () => {
   return (
-    <Link
-      to="/servicios/nuevo"
-      className="btn-add d-flex justify-content-center align-items-center"
-    >
-      <span className="material-icons-outlined me-2">add_circle_outline</span>
-      Nuevo servicio
-    </Link>
+    <RoleAdmin>
+      <Link to="/servicios/nuevo" className="btn btn-primary d-flex align-items-center align-items-center">
+       <TbCopyPlus/> <span className="m-0 ms-2">Nuevo Servicio</span>
+      </Link>
+    </RoleAdmin>
   );
 };

@@ -1,16 +1,16 @@
 export function stateClass(state){
     switch(state){
         case "Recepcionado":
-            return "box-recepcionados";
+            return "recepcionado";
 
         case "Revisado":
-            return "box-proceso";
+            return "revisado";
         
         case "Reparado":
-            return "box-reparados";
+            return "reparado";
         
         case "Sin reparación":
-            return "box-sinreparacion";
+            return "sinReparacion";
 
         default:
             return "";

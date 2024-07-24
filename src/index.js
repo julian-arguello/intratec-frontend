@@ -1,23 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "@coreui/coreui/dist/css/coreui.min.css";
+import App from "./App";
 
 //import 'semantic-ui-css/semantic.min.css';
 
 //Router
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 //Auth
-import { AuthProvider } from './context/Auth.Context';
+import { AuthProvider } from "./context/Auth.Context";
 //Nofity
-import { NotifyProvider } from './context/Notify.Context';
+import { NotifyProvider } from "./context/Notify.Context";
 //Service
-import { ServiceProvider } from './context/Service.Context';
+import { ServiceProvider } from "./context/Service.Context";
 //Client
-import { ClientProvider } from './context/Client.Context';
+import { ClientProvider } from "./context/Client.Context";
 //user
-import { UserProvider } from './context/User.Context';
+import { UserProvider } from "./context/User.Context";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { NavProvider } from "./context/Navigate.Context";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
@@ -26,7 +29,9 @@ root.render(
         <NotifyProvider>
           <ClientProvider>
             <ServiceProvider>
-              <App />
+              <NavProvider>
+                <App />
+              </NavProvider>
             </ServiceProvider>
           </ClientProvider>
         </NotifyProvider>

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useClient } from '../../context/Client.Context';
 import ClientList from '../../components/client/ClientList';
 import Loading from '../../components/Loading';
-import RoleAdmin from '../../components/authRole/RoleAdmin';
+import { RoleAdmin } from '../../components/authRole/RoleAdmin';
 import { NewClientButton } from '../../components/buttons/NewClientButton';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaSearch } from '../../services/validate';
