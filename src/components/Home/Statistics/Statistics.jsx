@@ -16,6 +16,12 @@ const Statistics = ({className}) => {
 
      !loadingStatistics ? 
       <div className={`${styles.statisticsBox} ${className}`}>
+
+      <div className={styles.titleBox}>
+        <h2 className="h4">Estadísticas generales</h2>
+      </div>
+
+
         <CardStatistic
           title="Recepcionados"
           count={state.statistics.recepcionado}
@@ -41,7 +47,7 @@ const Statistics = ({className}) => {
         />
       </div>
       :
-      <div className={`LoaderBox ${styles.LoaderBox}`}>
+      <div className={`loaderBox ${styles.loaderBox}`}>
         <Loader /> 
       </div>
     

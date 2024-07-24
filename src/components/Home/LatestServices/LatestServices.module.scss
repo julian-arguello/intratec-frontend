@@ -1,6 +1,8 @@
+@import "../../../scss/variables";
+
 .latestServicesBox {
   padding: 2rem;
-  padding-top: 1rem;
+ 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -10,9 +12,16 @@
   grid-column: span 3;
 
   & > h2 {
+    display: inline-block;
     padding: 0;
     margin: 0;
+    border-bottom: $border-size solid $blue-brand;
+    padding-bottom: .3rem;
   }
+}
+
+.loaderBox {
+  min-height: 20rem;
 }
 
 @media (max-width: 1350px) {
@@ -24,12 +33,13 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .latestServicesBox {
     justify-content: center;
     grid-template-columns: auto;
   }
   .titleBox {
+    text-align: center;
     grid-column: span 1;
   }
 }

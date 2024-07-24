@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useService } from "../../../context/Service.Context";
-import ServiceItem from "../../service/ServiceItem/ServiceItem";
+import ServiceItem from "../../service/ServiceList/ServiceItem/ServiceItem";
 import { Loader } from "../../UI/Loader/Loader";
 import styles from "./LatestServices.module.scss";
 
@@ -23,7 +23,7 @@ const LatestServices = () => {
       ))}
     </div>
   ) : (
-    <div className={`LoaderBox `}>
+    <div className={`loaderBox ${styles.loaderBox}`}>
       <Loader />
     </div>
   );

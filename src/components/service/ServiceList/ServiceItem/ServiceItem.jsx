@@ -1,7 +1,7 @@
-import { stateClass } from "../../../services/service.state";
+import { stateClass } from "../../../../services/service.state";
 import { formatDistance } from "date-fns";
 import { es } from "date-fns/locale";
-import { ViewItemButton } from "../../buttons/ViewItemButton";
+import { ViewItemButton } from "../../../buttons/ViewItemButton";
 
 import styles from "./ServiceItem.module.scss";
 

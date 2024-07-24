@@ -11,7 +11,7 @@
   display: flex;
 }
 
-.LoaderBox {
+.loaderBox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +23,13 @@
 .btn-details {
   color: white;
   border-color: white;
+}
+
+.hr {
+  color: #0373ab;
+  opacity: 1;
+  border-top: $border-size solid;
+  margin: 0;
 }
 
 // #main {
@@ -274,12 +281,7 @@
 //   color: white;
 // }
 
-.hr {
-  color: #0373ab;
-  opacity: 1;
-  border-top: 3px solid;
-  margin: 0;
-}
+
 
 // // SERVICES :::::::::::::::::::::::::::::::::::::::::::::::::
 

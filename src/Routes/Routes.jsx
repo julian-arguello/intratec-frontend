@@ -7,7 +7,7 @@ import Home from "../pages/Home/Home";
 import Clients from "../pages/clients/Clients";
 import ClientDetail from "../pages/clients/ClientDetailPage";
 import ClientForm from "../pages/clients/ClientForm";
-import Services from "../pages/services/Services";
+import Services from "../pages/services/Services/Services";
 import ServiceDetail from "../pages/services/ServiceDetailPage";
 import ServiceForm from "../pages/services/ServiceForm";
 import NotAccess from "../pages/NotAccess";
@@ -104,7 +104,7 @@ const RoutesConfig = () => {
         }
       />
       <Route
-        path="/servicios/:id"
+        path="/servicios/detalle/:id"
         element={
           <AuthRoute>
             <ServiceDetail />

@@ -1,0 +1,31 @@
+.serviceBox{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.loaderBox{
+    min-height: 20rem;
+}
+
+@media (max-width: 1350px) {
+    .serviceBox {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .titleBox {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .serviceBox {
+      justify-content: center;
+      grid-template-columns: auto;
+    }
+    .titleBox {
+      text-align: center;
+      grid-column: span 1;
+    }
+  }
+  

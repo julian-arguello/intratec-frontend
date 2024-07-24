@@ -26,9 +26,6 @@ const Sidebar = () => {
   const location = useLocation();
   const {visible, setVisible, narrow} = useNav();
 
-  const handleVisibleChange = (newVisible) => {
-    setVisible(newVisible);
-  };
 
   return (
     <AuthComponent>
@@ -36,8 +33,9 @@ const Sidebar = () => {
         className={`border-end ${styles.sidebar}`}
         // colorScheme="dark"
         visible={visible}
-        //onVisibleChange={ handleVisibleChange}
         narrow={narrow}
+        position="sticky"
+        // onHide={() => {setVisible(false)}}
       >
         <CSidebarHeader className={`border-bottom ${styles.logoBox}`}>
           {narrow ? (

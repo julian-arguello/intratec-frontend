@@ -1,3 +1,4 @@
+@import "../../../scss/variables";
 
 .statisticsBox {
   padding: 2rem;
@@ -6,16 +7,46 @@
   gap: 2rem;
   color: white;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-    @media (max-width: 576px) {
-        grid-template-columns: 1fr;
-      }
 }
 
-.LoaderBox {
+.loaderBox {
   min-height: 12.5rem;
 
 }
+
+.titleBox {
+  grid-column: span 4;
+  color: black;
+
+  & > h2 {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    border-bottom: $border-size solid $blue-brand;
+    padding-bottom: .3rem;
+  }
+
+
+}
+
+
+@media (max-width: 1200px) {
+  .statisticsBox {
+  grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titleBox {
+    grid-column: span 2;
+  }
+}
+
+  @media (max-width: 576px) {
+    .statisticsBox {
+      gap: 1rem;
+    }
+    .titleBox {
+      text-align: center;
+      
+    }
+    }
