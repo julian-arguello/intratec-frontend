@@ -49,7 +49,7 @@ const CardStatistic = ({ type, title, count, className = "" }) => {
           {icon}
         </div>
         <p className="mb-0">
-          <strong>{title}</strong>
+          <strong className={styles.title}>{title}</strong>
         </p>
       </div>
     </div>

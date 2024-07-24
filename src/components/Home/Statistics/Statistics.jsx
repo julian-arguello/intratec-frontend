@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CardStatistic } from "./components/CardStatistic/CardStatistic";
+import { CardStatistic } from "./CardStatistic/CardStatistic";
 import { useService } from "../../../context/Service.Context";
 import { Loader } from "../../UI/Loader/Loader"
 import styles from "./Statistics.module.scss"
