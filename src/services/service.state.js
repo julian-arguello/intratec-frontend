@@ -17,6 +17,25 @@ export function stateClass(state){
     }
 }
 
+export function stateRoute(state){
+    switch(state){
+        case "recepcionado":
+            return "Recepcionado";
+
+        case "revisado":
+            return "Revisado";
+        
+        case "reparado":
+            return "Reparado";
+        
+        case "sin-reparacion":
+            return "Sin reparación";
+
+        default:
+            return "";
+    }
+}
+
 export function stateIcon(state) {
     switch(state) {
         case "Recepcionado":

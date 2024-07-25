@@ -14,8 +14,6 @@ export function ServiceItem({ service, clientDetail }) {
   console.log();
 
   return (
-    // <div  + " card  p-sm-3"}>
-
     <div
       className={`rounded-2  ${styles.card} ${
         styles[stateClass(service.state)]

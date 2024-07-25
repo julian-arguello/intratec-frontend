@@ -11,7 +11,7 @@ const Navbar = ({children}) => {
 
   return (
     <CNavbar className={`sticky-top ${styles.navbar}`}>
-      <CContainer fluid>
+      <CContainer fluid className={styles.container}>
         <button
           className={`btn btn-outline-primary  d-lg-none rounded-2 ${styles.togglerBtn}`}
           onClick={() => setVisible(!visible)}

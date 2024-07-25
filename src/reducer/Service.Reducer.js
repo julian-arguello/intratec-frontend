@@ -66,7 +66,7 @@ export default function ServiceReducer(state, action){
                     if(isNaN(parseInt(action.payload))){
                         return services.client.name_busines.toLowerCase().trim().includes(action.payload.toLowerCase().trim()) 
                     }else{
-                        return services.service_id === action.payload
+                        return parseInt(services.service_id) === parseInt(action.payload)
                     }
                 }) : state.services
             }

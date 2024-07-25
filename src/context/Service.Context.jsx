@@ -28,7 +28,7 @@ export function ServiceProvider({ children }) {
     stateService: [],
   });
 
-  const [filterState, serFilterState] = useState("");
+  const [filterState, setFilterState] = useState("");
   /*-----------------------------------------------------------------*/
 
   //Estado de los servicios
@@ -143,7 +143,7 @@ export function ServiceProvider({ children }) {
         findStatistics,
         serviceSearch,
         filterState, 
-        serFilterState
+        setFilterState
       }}
     >
       {children}

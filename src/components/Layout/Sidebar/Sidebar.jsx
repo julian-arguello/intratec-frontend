@@ -63,9 +63,9 @@ const Sidebar = () => {
           </CNavItem>
 
           <CNavItem
-            className={`rounded-2 mb-2 ${
-              location.pathname == "/servicios" ? styles.active : ""
-            } `}
+              className={`rounded-2 mb-2 ${
+                location.pathname.startsWith("/servicios") ? styles.active : ""
+              } `}
           >
             <Link to="/servicios" className="nav-link">
               <BsCardList className="nav-icon" />

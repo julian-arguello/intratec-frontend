@@ -3,3 +3,28 @@
     overflow: auto;
 }
 
+
+.filterBox{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: .5rem;
+}
+
+.select{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+
+    @media (max-width: 576px){
+        margin-top: .5rem;
+    }
+
+    @media (max-width: 531px){
+        margin: auto
+        
+    }
+
+}

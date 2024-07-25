@@ -1,114 +1,91 @@
-import { useEffect, useState } from 'react';
-
-import { useService } from '../../../context/Service.Context';
-import ServiceList from '../../../components/service/ServiceList/ServiceList';
-import Loading from '../../../components/Loading';
-import { RoleAdmin } from '../../../components/authRole/RoleAdmin';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { schemaSearch } from '../../../services/validate';
-import { NewServiceButton } from '../../../components/buttons/NewServiceButton';
-
-/* NEW SERVICE */
-import { Navbar } from "../../../components/Layout/Navbar/Navbar"
-
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; // Importa useParams
+import { useService } from "../../../context/Service.Context";
+import ServiceList from "../../../components/service/ServiceList/ServiceList";
+import { schemaSearch } from "../../../services/validate";
+import { NewServiceButton } from "../../../components/buttons/NewServiceButton";
+import { Navbar } from "../../../components/Layout/Navbar/Navbar";
+import { Search } from "../../../components/UI/Search/Search";
 import styles from "./Services.module.scss";
 
-function Services() {
-  const { findService, serviceSearch, filterState, serFilterState } = useService();
-//   const [loading, setLoading] = useState(true);
+import { stateRoute } from "../../../services/service.state";
+import {  useLocation } from "react-router-dom";
 
-//   useEffect(() => {
-//     findService().then(() => setLoading(false));
-//   }, []);
+function Services() {
+  const {  serviceSearch, setFilterState } = useService();
+  const { status } = useParams(); 
+  const location = useLocation();
+  const [selectedValue, setSelectedValue] = useState(status || "");
+
+  useEffect(() => {
+    setSelectedValue(status || ""); 
+    setFilterState(stateRoute(status) || ""); 
+  }, [status, setFilterState]);
+
+
+  useEffect(() => {
+    let url = location.pathname.replace("/servicios/", "");
+    console.log(url)
+    setSelectedValue(url);
+    setFilterState(stateRoute(url));
+  }, []);
+
+  const handleChange = (event) => { 
+    const value = event.target.value;
+    console.log('value',value)
+    setSelectedValue(value);
+    setFilterState(stateRoute(value));
+
+    window.history.pushState(null, '', `/servicios/${value}`);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
   return (
-
-
-      //   <main>
-         
-      //      <div className="search-container">
-
-      //          <h2 className="text-center text-lg-start h3 mb-0 search-container-title">
-      //            Servicios
-      //         </h2>
-
-      //         <ul className='service-status-filter d-flex h6'>
-      //             <li className='m-1 btn btn-warning' onClick={() => serFilterState("")}>Todos</li>
-      //             <li className='m-1 btn box-recepcionados' onClick={() => serFilterState("Recepcionado")}>Recepcionado</li>
-      //             <li className='m-1 btn box-proceso' onClick={() => serFilterState("Revisado")}>Revisado</li>
-      //             <li className='m-1 btn box-reparados' onClick={() => serFilterState("Reparado")}>Reparado</li>
-      //             <li className='m-1 btn box-sinreparacion' onClick={() => serFilterState("Sin reparación")}>Sin reparación</li>
-      //          </ul>
-
-      //         <Formik
-      //            initialValues={{
-      //               search: '',
-      //            }}
-      //            validationSchema={schemaSearch}
-      //            onSubmit={(data) => {
-      //               serviceSearch(data.search);
-      //            }}
-      //         >
-      //            {({ errors, touched }) => (
-      //               <Form className="d-flex">
-      //                  <Field
-      //                     type="search"
-      //                     className="form-control search-input me-2"
-      //                     name="search"
-      //                     placeholder="Buscar por cliente o n° de servicio"
-      //                  />
-      //                  <ErrorMessage
-      //                     name="search"
-      //                     component={() => (
-      //                        <div className="validateErrors loginText">
-      //                           {errors.search}
-      //                        </div>
-      //                     )}
-      //                  />
-      //                  <button
-      //                     type="submit"
-      //                     className="btn btn-outline-primary d-flex align-items-center"
-      //                  >
-      //                     <span className="material-icons-outlined">search</span>
-      //                  </button>
-      //               </Form>
-      //            )}
-      //         </Formik>
-      //      </div>
-
-      //      <div className="col-12 col-sm-auto">
-      //         <RoleAdmin>
-      //            <NewServiceButton />
-      //         </RoleAdmin>
-      //      </div>
-      //      
-      //   </main>
-
-  
-
-      <section className="d-flex flex-column w-100">
+    <section className="d-flex flex-column w-100">
       <Navbar>
-        {/* <p className="m-0">Tablero Pincipal</p> */}
-        <NewServiceButton />
+
+      {/* <NewServiceButton className="d-md-none"/> */}
+      <NewServiceButton className=" d-sm-block d-md-none"/>
+
+
+        <div className={styles.filterBox}>
+          <form onSubmit={handleSubmit} className={styles.select}>
+            <label htmlFor="statusFilter" className="me-2">Estado</label>
+            <select
+              id="statusFilter"
+              value={selectedValue}
+              onChange={handleChange}
+              className="form-select"
+            >
+              <option value="">Todos</option>
+              <option value="recepcionado">Recepcionado</option>
+              <option value="revisado">Revisado</option>
+              <option value="reparado">Reparado</option>
+              <option value="sin-reparacion">Sin reparación</option>
+            </select>
+          </form>
+
+          <Search
+            initialValues={{ search: "" }}
+            validationSchema={schemaSearch}
+            onSubmit={(data) => {
+              serviceSearch(data.search);
+            }}
+            placeholder="N° de servicio o cliente"
+            className="m-auto"
+          />
+        </div>
+
+        <NewServiceButton className=" d-none d-md-block"/>
       </Navbar>
-
-
       <main className={styles.main}>
-
-      <ServiceList />
+        <ServiceList />
       </main>
-
-      
-      {/* <div class="sticky-bottom">
-      <p className=''>hola</p>
-      </div> */}
-
     </section>
-
-
-
-
-
   );
 }
+
 export default Services;

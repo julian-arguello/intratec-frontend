@@ -15,8 +15,6 @@
     display: inline-block;
     padding: 0;
     margin: 0;
-    border-bottom: $border-size solid $blue-brand;
-    padding-bottom: .3rem;
   }
 }
 
@@ -35,8 +33,10 @@
 
 @media (max-width: 768px) {
   .latestServicesBox {
+    padding: 1rem;
     justify-content: center;
     grid-template-columns: auto;
+    gap: 1rem;
   }
   .titleBox {
     text-align: center;

@@ -85,7 +85,6 @@ export const schemaSearch = yup
   .shape({
     search: yup
       .string()
-      .min(1, "Este campo debe contener al menos 1 carácter."),
   })
   .noUnknown();
 

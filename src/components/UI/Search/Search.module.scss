@@ -1,0 +1,9 @@
+.search{
+    display: flex;
+    margin: auto;
+
+    @media (max-width: 576px){
+        margin-top: .5rem;
+    }
+    
+}

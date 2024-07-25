@@ -96,13 +96,24 @@ const RoutesConfig = () => {
         }
       />
       <Route
-        path="/servicios"
+        path="/servicios/"
         element={
           <AuthRoute>
             <Services />
           </AuthRoute>
         }
       />
+      <Route
+        path="/servicios/:status"
+        element={
+          <AuthRoute>
+            <Services />
+          </AuthRoute>
+        }
+      />
+
+
+      
       <Route
         path="/servicios/detalle/:id"
         element={
