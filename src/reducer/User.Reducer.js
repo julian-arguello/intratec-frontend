@@ -3,10 +3,11 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/   
         case "GET":
-            console.log("UserReducer->GET")
+            console.log("UserReducer->GET");
             return {
                 ...state,
-                users:  action.payload   
+                users: action.payload,
+                UserFilter: action.payload 
             }
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
@@ -48,6 +49,20 @@ export default function UserReducer(state, action){
                 ...state,
                 users: []
             }
+        /*-----------------------------------------------------------------*/    
+        /*-----------------------------------------------------------------*/                
+        case "FILTER":
+            console.log("UserReducer->FILTER");
+            return {
+                ...state,
+                UserFilter: action.payload === '' ? state.users : state.users.filter(user => {
+                    const searchTerm = action.payload.toLowerCase().trim();
+                    const userName = `${user.name.toLowerCase()} ${user.lastname.toLowerCase()}`.trim();
+                    
+                    return userName.includes(searchTerm) || user.email.toLowerCase().includes(searchTerm);
+                })
+            };
+        
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/                
         default:

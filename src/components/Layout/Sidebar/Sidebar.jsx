@@ -19,18 +19,22 @@ import { RxExit } from "react-icons/rx";
 import images from "../../../assets/images";
 import { AuthComponent } from "../../AuthComponent";
 import { useNav } from "../../../context/Navigate.Context";
-
 import { PiCardsBold } from "react-icons/pi";
-
-
-
-
+import { CustomModal } from "../../UI/CustomModal/CustomModal";
 
 const Sidebar = () => {
   const { state, logout } = useAuth();
   const location = useLocation();
-  const {visible, setVisible, narrow} = useNav();
+  const { visible, setVisible, narrow } = useNav();
+  const [showModal, setShowModal] = useState(false);
 
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
+  const handleConfirm = () => {
+    logout();
+    handleClose();
+  };
 
   return (
     <AuthComponent>
@@ -53,7 +57,7 @@ const Sidebar = () => {
         <CSidebarNav className={styles.sidebarNav}>
           <CNavTitle className="m-0">
             <p className="">Bienvenido</p>
-            {state.isAuth && (state.user.name + " " + state.user.lastname + " ")}
+            {state.isAuth && state.user.name + " " + state.user.lastname + " "}
           </CNavTitle>
 
           <CNavItem
@@ -68,9 +72,9 @@ const Sidebar = () => {
           </CNavItem>
 
           <CNavItem
-              className={`rounded-2 mb-2 ${
-                location.pathname.startsWith("/servicios") ? styles.active : ""
-              } `}
+            className={`rounded-2 mb-2 ${
+              location.pathname.startsWith("/servicios") ? styles.active : ""
+            } `}
           >
             <Link to="/servicios" className="nav-link">
               <PiCardsBold className="nav-icon" />
@@ -116,15 +120,29 @@ const Sidebar = () => {
 
           <div className={styles.footer}>
             <CNavItem>
-              <Link to="/" onClick={() => logout()} className="nav-link">
-                <RxExit className={`nav-icon  ${styles.navIcon}`} />
+              <Link
+                to="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleShow();
+                }}
+                className="nav-link"
+              >
+                <RxExit className={`nav-icon ${styles.navIcon}`} />
                 Cerrar sesión
               </Link>
             </CNavItem>
+            <CustomModal
+              show={showModal}
+              handleClose={handleClose}
+              title="Confirmación"
+              body="¿Estás seguro de que deseas cerrar sesión?"
+              onConfirm={handleConfirm}
+              confirmText="Cerrar sesión"
+              cancelText="Cancelar"
+            />
           </div>
         </CSidebarNav>
-
-
       </CSidebar>
     </AuthComponent>
   );

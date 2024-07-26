@@ -1,0 +1,53 @@
+.userBox {
+    padding: 2rem;
+    display: grid;
+    justify-content: start;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    position: relative;
+    height: 100%;
+    padding-bottom: 4rem;
+    align-content: start;
+  }
+  
+  .loaderBox {
+    min-height: 20rem;
+  }
+  
+  .pagination {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  @media (max-width: 1350px) {
+    .userBox {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .titleBox {
+      grid-column: span 2;
+    }
+    .pagination {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .userBox {
+      justify-content: center;
+      grid-template-columns: auto;
+    }
+    .titleBox {
+      text-align: center;
+      grid-column: span 1;
+    }
+    .pagination {
+      grid-column: span 1;
+    }
+  }
+  

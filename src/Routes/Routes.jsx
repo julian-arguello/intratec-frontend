@@ -17,8 +17,8 @@ import UserManage from "../pages/Users/Users";
 import PageNotFound from "../pages/PageNotFound";
 import AuthRoute from "../components/AuthRoute";
 import { ClientServices } from "../components/client/ClientServices";
-import UserCreateForm from "../components/users/UserCreateForm";
-import UserEditForm from "../components/users/UserEditForm";
+import UserCreateForm from "../components/Users/UserCreateForm";
+import UserEditForm from "../components/Users/UserEditForm";
 import { useAuth } from "../context/Auth.Context";
 
 const RoutesConfig = () => {

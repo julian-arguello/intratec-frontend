@@ -31,6 +31,9 @@
 
 .btn-danger{
   color: white;
+  &:hover{
+    color: white;
+  }
 }
 
 .hr {
@@ -40,9 +43,7 @@
   margin: 0;
 }
 
-.notification {
-  background-color: red;
-}
+
 
 // #main {
 //   max-height: 100vh;
