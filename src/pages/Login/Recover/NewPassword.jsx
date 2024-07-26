@@ -10,7 +10,6 @@ import { PasswordField } from "../../../components/UI/Form/PasswordField/Passwor
 import { Loader } from "../../../components/UI/Loader/Loader";
 import styles from "../Login.module.scss";
 
-import { Notification } from "../../../components/Notification";
 import { useNavigate } from "react-router-dom";
 
 const NewPassword = () => {
@@ -22,8 +21,7 @@ const NewPassword = () => {
 
   return (
     <section className={styles.background}>
-      <Notification />
-
+     
       <Formik
         initialValues={{
           password: "",
@@ -36,8 +34,7 @@ const NewPassword = () => {
             await newPass(data.password, data.token);
 
             setLoading(false);
-
-            notify(data);
+            notify(data.msg);
 
             if (data.status != "error") {
               navigate("/");

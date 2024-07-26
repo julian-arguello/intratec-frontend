@@ -1,27 +1,30 @@
-import { createContext, useContext, useReducer } from "react";
-import { ActionNotify } from "../action/Notify.Actions";
-import NotifyReducer from "../reducer/Notify.Reducer";
+import React, { createContext, useContext, useState } from 'react';
+import ReactDOM from 'react-dom';
+import { Notification } from "../components/UI/Notification/Notification";
 
 const NotifyContext = createContext();
-//------------------------------------------------------------------------------------------------------------------------------------------
 
-export function NotifyProvider({ children }){
-    //useReduce
-    //useReducer recibe dos parametros (funcion reduce, {states por defectos})
-    const [state, dispatch] = useReducer(NotifyReducer, { notification: {} })
+export function NotifyProvider({ children }) {
+    const [notification, setNotification] = useState(null);
 
-    const notify = (notification) =>{
-        dispatch(ActionNotify(notification))
-    }
+    const notify = (message) => {
+        setNotification(message);
+    };
 
-    //return
-    return(
-        <NotifyContext.Provider value={{ state, dispatch, notify}}>
+    return (
+        <NotifyContext.Provider value={{ notify }}>
             {children}
+            {ReactDOM.createPortal(
+                <Notification 
+                    message={notification} 
+                    onClose={() => setNotification(null)} 
+                />,
+                document.getElementById('notification')
+            )}
         </NotifyContext.Provider>
     );
 }
-//retornamos el useContext de useNotify.
-export function useNotify(){
+
+export function useNotify() {
     return useContext(NotifyContext);
 }

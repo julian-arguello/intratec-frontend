@@ -10,7 +10,6 @@ import { CustomField } from "../../../components/UI/Form/CustomField/CustomField
 import { Loader } from "../../../components/UI/Loader/Loader";
 import styles from "../Login.module.scss";
 
-import { Notification } from "../../../components/Notification";
 import { useNavigate } from "react-router-dom";
 
 const RecoverPassword = () => {
@@ -21,7 +20,6 @@ const RecoverPassword = () => {
 
   return (
     <section className={styles.background}>
-      <Notification />
 
       <Formik
         initialValues={{ email: "" }}
@@ -34,14 +32,15 @@ const RecoverPassword = () => {
 
             setLoading(false);
 
-            notify(data);
+            
 
             if (data.status != "error") {
               navigate("/");
+              notify("El correo de recuperación de contraseña se envió correctamente.");
             }
           } catch (error) {
             setLoading(false);
-            notify(error);
+            notify("Hubo un error al enviar el correo de recuperación de contraseña. Por favor, intenta nuevamente.");
           }
         }}
       >

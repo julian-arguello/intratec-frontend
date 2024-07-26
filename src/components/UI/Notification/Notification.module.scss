@@ -1,0 +1,22 @@
+// src/components/UI/Notification.scss
+.toast {
+    background-color: #ecedee; 
+    color: #fff; 
+
+}
+
+.toastHeader {
+    background-color: rgb(43, 43, 43);
+    color: #fff; 
+    & > button{
+        filter: invert(1);
+    }
+  border: none;
+
+}
+
+.toastBody {
+    color: black;
+    font-weight: 500;
+    
+}

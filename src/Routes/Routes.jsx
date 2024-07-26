@@ -13,7 +13,7 @@ import ServiceForm from "../pages/services/ServiceForm";
 import NotAccess from "../pages/NotAccess";
 import Profile from "../pages/Profile";
 import ProfileEdit from "../components/profile/ProfileEdit";
-import UserManage from "../pages/users/Users";
+import UserManage from "../pages/Users/Users";
 import PageNotFound from "../pages/PageNotFound";
 import AuthRoute from "../components/AuthRoute";
 import { ClientServices } from "../components/client/ClientServices";

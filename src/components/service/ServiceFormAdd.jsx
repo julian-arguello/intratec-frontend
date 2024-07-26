@@ -38,7 +38,7 @@ export function ServiceFormAdd() {
         service.user_id = auth.state.user._id;
         service.softDelete = false;
         addService(service).then((res) => {
-          notify(res);
+          notify(res.msg);
           navigate('/servicios');
         });
       }}

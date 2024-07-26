@@ -27,7 +27,7 @@ export function ClientFormAdd() {
             client.create_at = new Date();
             client.softDelete = false;
             addClient(client).then((res) => {
-               notify(res);
+               notify(res.msg);
                navigate('/clientes');
             });
          }}
