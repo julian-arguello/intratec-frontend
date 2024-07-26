@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import authRole from '../../services/auth.role';
+import authRole from '../../utils/auth.role';
 
 export function UserItem(props) {
    return (

@@ -1,11 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import { useUser } from '../../context/User.Context';
-import { schemaUserUpdateSA } from '../../services/validate';
+import { schemaUserUpdateSA } from '../../utils/validate.js';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../Loading';
-import authRole from '../../services/auth.role.js';
+import authRole from '../../utils/auth.role.js';
 import { ConfirmButton } from '../buttons/ConfirmButton';
 import { BackButton } from '../buttons/BackButton';
 

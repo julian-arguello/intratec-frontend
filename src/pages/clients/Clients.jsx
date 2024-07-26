@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useClient } from '../../context/Client.Context';
-import ClientList from '../../components/client/ClientList';
+import ClientList from '../../components/client/ClientList/ClientList';
 import Loading from '../../components/Loading';
 import { RoleAdmin } from '../../components/authRole/RoleAdmin';
-import { NewClientButton } from '../../components/buttons/NewClientButton';
+import { ClientNewButton } from '../../components/buttons/ClientNewButton';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { schemaSearch } from '../../services/validate';
+import { schemaSearch } from '../../utils/validate';
 
 
 function Clients(props) {
@@ -63,7 +63,7 @@ function Clients(props) {
            </Formik>
         </div>
         <RoleAdmin>
-           <NewClientButton />
+           <ClientNewButton />
         </RoleAdmin>
         {loading ? <Loading /> : <ClientList />}
      </main>

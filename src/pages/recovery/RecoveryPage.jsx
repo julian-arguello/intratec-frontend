@@ -1,7 +1,7 @@
 import { useAuth } from '../../context/Auth.Context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
-import { schemaRecovery } from '../../services/validate';
+import { schemaRecovery } from '../../utils/validate';
 import imagenes from '../../assets/images';
 import { Notification } from '../../components/Notification';
 import { useNavigate } from 'react-router-dom';

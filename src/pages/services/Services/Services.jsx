@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // Importa useParams
 import { useService } from "../../../context/Service.Context";
 import ServiceList from "../../../components/service/ServiceList/ServiceList";
-import { schemaSearch } from "../../../services/validate";
-import { NewServiceButton } from "../../../components/buttons/NewServiceButton";
+import { schemaSearch } from "../../../utils/validate";
+import { ServiceNewButton } from "../../../components/buttons/ServiceNewButton";
 import { Navbar } from "../../../components/Layout/Navbar/Navbar";
 import { Search } from "../../../components/UI/Search/Search";
 import styles from "./Services.module.scss";
 
-import { stateRoute } from "../../../services/service.state";
+import { stateRoute } from "../../../utils/service.state";
 import {  useLocation } from "react-router-dom";
 
 function Services() {
@@ -47,9 +47,7 @@ function Services() {
     <section className="d-flex flex-column w-100">
       <Navbar>
 
-      {/* <NewServiceButton className="d-md-none"/> */}
-      <NewServiceButton className=" d-sm-block d-md-none"/>
-
+      <ServiceNewButton className="d-sm-block d-md-none"/>
 
         <div className={styles.filterBox}>
           <form onSubmit={handleSubmit} className={styles.select}>
@@ -79,7 +77,7 @@ function Services() {
           />
         </div>
 
-        <NewServiceButton className=" d-none d-md-block"/>
+        <ServiceNewButton className="d-none d-md-block"/>
       </Navbar>
       <main className={styles.main}>
         <ServiceList />

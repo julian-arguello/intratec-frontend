@@ -4,7 +4,7 @@ import Login from "../pages/Login/Login";
 import { RecoverPassword } from "../pages/Login/Recover/RecoverPassword";
 import { NewPassword } from "../pages/Login/Recover/NewPassword";
 import Home from "../pages/Home/Home";
-import Clients from "../pages/clients/Clients";
+import { Clients } from "../pages/clients/Clients/Clients";
 import ClientDetail from "../pages/clients/ClientDetailPage";
 import ClientForm from "../pages/clients/ClientForm";
 import Services from "../pages/services/Services/Services";

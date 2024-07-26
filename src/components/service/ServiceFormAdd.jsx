@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useClient } from '../../context/Client.Context';
 import { useService } from '../../context/Service.Context';
 import { useAuth } from '../../context/Auth.Context';
-import { schemaServicesCreate } from '../../services/validate';
+import { schemaServicesCreate } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import { ConfirmButton } from '../buttons/ConfirmButton';

@@ -3,7 +3,7 @@ import { useAuth } from "../../context/Auth.Context";
 import { Formik, Form } from "formik";
 import { CustomField } from "../../components/UI/Form/CustomField/CustomField";
 import { PasswordField } from "../../components/UI/Form/PasswordField/PasswordField";
-import { schemaLogin } from "../../services/validate";
+import { schemaLogin } from "../../utils/validate";
 import imagenes from "../../assets/images";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";

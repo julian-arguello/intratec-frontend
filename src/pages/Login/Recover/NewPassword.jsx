@@ -4,7 +4,7 @@ import { useNotify } from "../../../context/Notify.Context";
 
 import { Link, useParams } from "react-router-dom";
 import { Formik, Form } from "formik";
-import { schemaNewPassword } from "../../../services/validate";
+import { schemaNewPassword } from "../../../utils/validate";
 import imagenes from "../../../assets/images";
 import { PasswordField } from "../../../components/UI/Form/PasswordField/PasswordField";
 import { Loader } from "../../../components/UI/Loader/Loader";

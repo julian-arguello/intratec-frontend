@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import ClientReducer from "../reducer/Client.Reducer";
 import { 
     ActionAdd, 
@@ -22,6 +22,7 @@ export function ClientProvider({ children }){
         clientsFilter: [],
         client: {} ,
     });
+    const [reload, setReload] = useState(false); 
     /*-----------------------------------------------------------------*/    
 
     //traemos todos los Clientes.
@@ -102,7 +103,9 @@ export function ClientProvider({ children }){
             addClient,
             editClient, 
             delClient,
-            clientSearch
+            clientSearch,
+            reload, 
+            setReload
             }}>
             {children}
         </ClientContext.Provider>

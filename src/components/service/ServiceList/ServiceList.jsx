@@ -3,7 +3,7 @@ import ServiceItem from "./ServiceItem/ServiceItem";
 import { useService } from "../../../context/Service.Context";
 import { Loader } from "../../UI/Loader/Loader";
 import styles from "./ServiceList.module.scss";
-
+import { WithoutResults } from "../../UI/withoutResults/withoutResults";
 import { Pagination } from "../../UI/Pagination/Pagination";
 
 export function ServiceList() {
@@ -33,7 +33,7 @@ export function ServiceList() {
     !loading ? 
     <div className={styles.serviceBox}>
       {currentServices.length === 0 ? (
-        <p>No se encontraron servicios para mostrar</p>
+        <WithoutResults message="No se encontraron servicios para mostrar"/>
       ) : (
         currentServices.map((service) => (
           <ServiceItem key={service._id} service={service} />

@@ -2,7 +2,7 @@ import { useAuth } from '../../context/Auth.Context';
 import { useUser } from '../../context/User.Context';
 import { useNotify } from '../../context/Notify.Context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { schemaUserUpdate } from '../../services/validate';
+import { schemaUserUpdate } from '../../utils/validate';
 import { BackButton } from '../buttons/BackButton';
 import { ConfirmButton } from '../buttons/ConfirmButton';
 import { useNavigate } from 'react-router-dom';

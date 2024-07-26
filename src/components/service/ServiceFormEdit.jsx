@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import {useParams} from 'react-router-dom'
 import { useService } from '../../context/Service.Context';
 import { useNavigate  } from 'react-router-dom';
-import { schemaServicesUpdate } from '../../services/validate';
+import { schemaServicesUpdate } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import { ConfirmButton } from '../buttons/ConfirmButton';

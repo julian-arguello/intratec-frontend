@@ -10,9 +10,8 @@ import {
 import styles from "./Sidebar.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../../context/Auth.Context";
-import RoleSuperAdmin from "../../../components/authRole/RoleSuperAdmin";
+import { RoleSuperAdmin } from "../../../components/authRole/RoleSuperAdmin";
 import { FaRegChartBar } from "react-icons/fa";
-import { BsCardList } from "react-icons/bs";
 import { TbUser } from "react-icons/tb";
 import { TbUsers } from "react-icons/tb";
 import { TbUsersGroup } from "react-icons/tb";
@@ -20,6 +19,12 @@ import { RxExit } from "react-icons/rx";
 import images from "../../../assets/images";
 import { AuthComponent } from "../../AuthComponent";
 import { useNav } from "../../../context/Navigate.Context";
+
+import { PiCardsBold } from "react-icons/pi";
+
+
+
+
 
 const Sidebar = () => {
   const { state, logout } = useAuth();
@@ -68,7 +73,7 @@ const Sidebar = () => {
               } `}
           >
             <Link to="/servicios" className="nav-link">
-              <BsCardList className="nav-icon" />
+              <PiCardsBold className="nav-icon" />
               Servicios
             </Link>
           </CNavItem>

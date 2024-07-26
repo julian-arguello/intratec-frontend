@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import { useClient } from '../../context/Client.Context';
-import { schemaClientRegister } from '../../services/validate';
+import { schemaClientRegister } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import { ConfirmButton } from '../buttons/ConfirmButton';

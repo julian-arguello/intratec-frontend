@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GrStatusInfo } from "react-icons/gr";
 
-export const ViewItemButton = (props) => {
+export const ServiceDetailsButton = (props) => {
   return (
     <Link
       to={`/servicios/detalle/${props.id}`}

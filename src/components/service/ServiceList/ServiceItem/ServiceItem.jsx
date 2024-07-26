@@ -1,7 +1,7 @@
-import { stateClass } from "../../../../services/service.state";
+import { stateClass } from "../../../../utils/service.state";
 import { formatDistance } from "date-fns";
 import { es } from "date-fns/locale";
-import { ViewItemButton } from "../../../buttons/ViewItemButton";
+import { ServiceDetailsButton } from "../../../buttons/ServiceDetailsButton";
 
 import styles from "./ServiceItem.module.scss";
 
@@ -60,7 +60,7 @@ export function ServiceItem({ service, clientDetail }) {
             </small>
           </div>
 
-          <ViewItemButton id={service._id} />
+          <ServiceDetailsButton id={service._id} />
 
         </div>
       </div>

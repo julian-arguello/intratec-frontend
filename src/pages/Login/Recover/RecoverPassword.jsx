@@ -4,7 +4,7 @@ import { useNotify } from "../../../context/Notify.Context";
 
 import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
-import { schemaRecovery } from "../../../services/validate";
+import { schemaRecovery } from "../../../utils/validate";
 import imagenes from "../../../assets/images";
 import { CustomField } from "../../../components/UI/Form/CustomField/CustomField";
 import { Loader } from "../../../components/UI/Loader/Loader";

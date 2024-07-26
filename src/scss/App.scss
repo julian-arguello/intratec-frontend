@@ -25,6 +25,14 @@
   border-color: white;
 }
 
+.btn-outline-danger:hover {
+  color: white;
+}
+
+.btn-danger{
+  color: white;
+}
+
 .hr {
   color: #0373ab;
   opacity: 1;
@@ -44,7 +52,7 @@
 //   outline: 1px solid red;
 // }
 
-//Material Icons
+// Material Icons
 
 // .material-icons-outlined.md-18 {
 //   font-size: 18px;
@@ -269,9 +277,7 @@
 //   font-weight: 300;
 // }
 
-/*  Style page content - use this if you want to push the page content 
-    to the right when you open the side navigation 
-*/
+
 
 // .main-margin-close {
 //   margin-left: 66px;

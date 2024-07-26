@@ -1,4 +1,4 @@
-import { stateClass } from '../../services/service.state';
+import { stateClass } from '../../utils/service.state';
 import { Link } from 'react-router-dom';
 import { ModalDeleteButton } from './ModalDeleate/ModalDeleateButton';
 import { ModalDelete } from './ModalDeleate/ModalDelete';
