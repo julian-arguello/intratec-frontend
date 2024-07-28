@@ -61,7 +61,8 @@
   display: flex;
   flex-wrap: wrap;
   grid-template-columns: repeat(2, auto);
-  justify-content: start;
+  justify-content: baseline;
+  align-items: baseline;
   gap: 2rem;
 
   .historyStatusTitleBox{
@@ -77,6 +78,10 @@
 
 }
 
+
+.loaderBox {
+  min-height: 12.5rem;
+}
 
 
 

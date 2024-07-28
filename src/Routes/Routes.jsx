@@ -11,7 +11,7 @@ import Services from "../pages/services/Services/Services";
 import { ServiceDetail } from "../pages/services/Services/ServiceDetail/ServiceDetail";
 import ServiceForm from "../pages/services/ServiceForm";
 import NotAccess from "../pages/NotAccess";
-import Profile from "../pages/Profile";
+import Profile from "../pages/Users/Profile/Profile";
 import ProfileEdit from "../components/profile/ProfileEdit";
 import { Users } from "../pages/Users/Users";
 import PageNotFound from "../pages/PageNotFound";

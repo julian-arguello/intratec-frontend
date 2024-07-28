@@ -32,88 +32,87 @@ const ServiceDetail = () => {
   }, []);
 
   return loading ? (
-    <Loader />
+    <div className={`loaderBox w-100 ${styles.loaderBox}`}>
+      <Loader />
+    </div>
   ) : (
     <section className="d-flex flex-column w-100">
       <Navbar>
         <div className="d-flex flex-wrap gap-2">
-
-        <BackButton to={"/servicios"} />
-        <ServiceDeleteButton service={state.service} />
-        <ServiceEditButton serviceId={state.service._id} />
+          <BackButton to={"/servicios"} />
+          <ServiceDeleteButton service={state.service} />
+          <ServiceEditButton serviceId={state.service._id} />
         </div>
-
       </Navbar>
       <main className={styles.main}>
-          
-          <div className={styles.detailGeneralBox}>
-            <h2>Detalle del servicio N° {state.service.service_id}</h2>
-            <ul className={styles.detailGeneral}>
-              <li>
-                <span className="h6 mb-1">Técnico a cargo</span>
-                <p>
-                  <TbUserCog className={styles.icon} />
-                  {state.service.user.name + " " + state.service.user.lastname}
-                </p>
-              </li>
-              <li>
-                <span className="h6 mb-1">Fecha de ingreso</span>
-                <p>
-                  <RxCounterClockwiseClock className={styles.icon} />
-                  {format(
-                    new Date(state.service.create_at),
-                    "dd/MM/yyyy, hh:mm a",
-                    { locale: es }
-                  )}
-                </p>
-              </li>
-              <li>
-                <span className="h6 mb-1">Cliente</span>{" "}
-                <p>
-                  <TbUsersGroup className={styles.icon} />{" "}
-                  {state.service.client.name_busines}
-                </p>
-              </li>
-              <li>
-                <span className="h6 mb-1">Marca</span>{" "}
-                <p>
-                  <CgWorkAlt className={styles.icon} />
-                  {state.service.brand}
-                </p>
-              </li>
-              <li>
-                <span className="h6 mb-1">Modelo</span>{" "}
-                <p>
-                  <MdOutlineInventory2 className={styles.icon} />
-                  {state.service.model}
-                </p>
-              </li>
-              <li>
-                <span className="h6 mb-1">N° de serie</span>{" "}
-                <p>
-                  <CiBarcode className={styles.icon} />
-                  {state.service.serial_number}
-                </p>
-              </li>
+        <div className={styles.detailGeneralBox}>
+          <h2>Detalle del servicio N° {state.service.service_id}</h2>
+          <ul className={styles.detailGeneral}>
+            <li>
+              <span className="h6 mb-1">Técnico a cargo</span>
+              <p>
+                <TbUserCog className={styles.icon} />
+                {state.service.user.name + " " + state.service.user.lastname}
+              </p>
+            </li>
+            <li>
+              <span className="h6 mb-1">Fecha de ingreso</span>
+              <p>
+                <RxCounterClockwiseClock className={styles.icon} />
+                {format(
+                  new Date(state.service.create_at),
+                  "dd/MM/yyyy, hh:mm a",
+                  { locale: es }
+                )}
+              </p>
+            </li>
+            <li>
+              <span className="h6 mb-1">Cliente</span>{" "}
+              <p>
+                <TbUsersGroup className={styles.icon} />{" "}
+                {state.service.client.name_busines}
+              </p>
+            </li>
+            <li>
+              <span className="h6 mb-1">Marca</span>{" "}
+              <p>
+                <CgWorkAlt className={styles.icon} />
+                {state.service.brand}
+              </p>
+            </li>
+            <li>
+              <span className="h6 mb-1">Modelo</span>{" "}
+              <p>
+                <MdOutlineInventory2 className={styles.icon} />
+                {state.service.model}
+              </p>
+            </li>
+            <li>
+              <span className="h6 mb-1">N° de serie</span>{" "}
+              <p>
+                <CiBarcode className={styles.icon} />
+                {state.service.serial_number}
+              </p>
+            </li>
+          </ul>
+        </div>
 
-            </ul>
+        <hr className="hr" />
+
+        <div className={styles.historyStatusBox}>
+          <div className={styles.historyStatusTitleBox}>
+            <h3 className="h2">Historial</h3>
+            <StateNewButton service={state.service} />
           </div>
 
-          <hr className="hr"/>
-
-          <div className={styles.historyStatusBox}>
-
-            <div className={styles.historyStatusTitleBox}>
-            <h3 className="h2">Historial</h3>
-            <StateNewButton service={state.service}/>
-            </div>
-
-            {Object.entries(state.service.states).reverse().map(([key, stateInfo]) => {
+          {Object.entries(state.service.states)
+            .reverse()
+            .map(([key, stateInfo]) => {
               const date = new Date(stateInfo.date.$date || stateInfo.date);
               const formattedDate = format(date, "dd/MM/yyyy, hh:mm a", {
                 locale: es,
               });
-              let active = key === state.service.state
+              let active = key === state.service.state;
 
               return (
                 <StateCard
@@ -121,15 +120,12 @@ const ServiceDetail = () => {
                   state={key}
                   description={stateInfo.description}
                   date={formattedDate}
-                  active = {active}
-                  serviceId = {state.service._id}
+                  active={active}
+                  serviceId={state.service._id}
                 />
               );
             })}
-           </div>
-
-
-
+        </div>
       </main>
     </section>
   );

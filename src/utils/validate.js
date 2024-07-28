@@ -228,8 +228,11 @@ export const schemaServicesUpdate = yup
 */
 
 export const validationSchemaAdd = yup.object().shape({
-  state: yup.string().required("Seleccione un estado"),
-  description: yup.string().required("Ingrese una descripción"),
+  state: yup.string().required('Seleccione un estado'),
+  description: yup.string()
+    .required('Ingrese una descripción')
+    .min(10, 'La descripción debe tener al menos 10 caracteres')
+    .max(140, 'La descripción no puede exceder los 140 caracteres'),
 });
 
 /*
