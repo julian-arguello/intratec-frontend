@@ -59,7 +59,7 @@ export function UserCreateForm() {
             /*--------------------*/
             onSubmit={(data) => {
                addUser(data).then((res) => {
-                  notify(res);
+                  notify(res.msg);
                   navigate('/usuarios');
                });
             }}

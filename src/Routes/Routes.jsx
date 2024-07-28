@@ -8,12 +8,12 @@ import { Clients } from "../pages/clients/Clients/Clients";
 import ClientDetail from "../pages/clients/ClientDetailPage";
 import ClientForm from "../pages/clients/ClientForm";
 import Services from "../pages/services/Services/Services";
-import ServiceDetail from "../pages/services/ServiceDetailPage";
+import { ServiceDetail } from "../pages/services/Services/ServiceDetail/ServiceDetail";
 import ServiceForm from "../pages/services/ServiceForm";
 import NotAccess from "../pages/NotAccess";
 import Profile from "../pages/Profile";
 import ProfileEdit from "../components/profile/ProfileEdit";
-import UserManage from "../pages/Users/Users";
+import { Users } from "../pages/Users/Users";
 import PageNotFound from "../pages/PageNotFound";
 import AuthRoute from "../components/AuthRoute";
 import { ClientServices } from "../components/client/ClientServices";
@@ -166,7 +166,7 @@ const RoutesConfig = () => {
         path="/usuarios"
         element={
           <AuthRoute>
-            <UserManage />
+            <Users />
           </AuthRoute>
         }
       />

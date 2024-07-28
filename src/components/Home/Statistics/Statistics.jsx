@@ -21,7 +21,6 @@ const Statistics = ({className}) => {
         <h2 className="h4">Estadísticas generales</h2>
       </div>
 
-
         <CardStatistic
           title="Recepcionados"
           count={state.statistics.recepcionado}
@@ -44,6 +43,12 @@ const Statistics = ({className}) => {
           title="Sin Reparación"
           count={state.statistics.sin_reparacion}
           type='withoutRepair'
+        />
+
+        <CardStatistic
+          title="Devueltos"
+          count={state.statistics.Devuelto}
+          type='Returned'
         />
       </div>
       :

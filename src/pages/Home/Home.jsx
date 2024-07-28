@@ -16,7 +16,7 @@ function Home() {
       <main className={styles.main}>
         <Statistics />
 
-        <hr className="hr mx-4" />
+        <hr className="hr" />
 
         <LatestServices />
       </main>

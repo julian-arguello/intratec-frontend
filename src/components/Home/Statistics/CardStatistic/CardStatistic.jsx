@@ -7,6 +7,8 @@ import { FaListCheck } from "react-icons/fa6";
 import { MdDownloadDone } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { MdInsertEmoticon } from "react-icons/md";
+import { MdCallMade } from "react-icons/md";
+
 
 const CardStatistic = ({ type, title, count, className = "" }) => {
   let icon;
@@ -38,6 +40,12 @@ const CardStatistic = ({ type, title, count, className = "" }) => {
       state = "sin-reparacion";
       break;
 
+    case "Returned":
+      icon = <MdCallMade className="material-icons-outlined me-2" />;
+      cardStyles = styles.Returned;
+      state = "devuelto";
+      break;
+
     default:
       icon = <MdInsertEmoticon className="material-icons-outlined me-2" />;
       cardStyles = styles.default;
@@ -45,7 +53,7 @@ const CardStatistic = ({ type, title, count, className = "" }) => {
   }
 
   return (
-    <Link className={styles.card} to={`/servicios/${state}`}>
+    <Link className={styles.card} to={`/servicios/${state} `}>
       <div className={`p-3 rounded-2 ${cardStyles} ${className}`}>
         <div className="d-flex justify-content-between align-items-center mb-3">
           <p className="h3 mb-0">

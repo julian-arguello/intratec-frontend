@@ -1,17 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { IoChevronBackOutline } from "react-icons/io5";
 
-export const BackButton = (props) => {
-   const navigate = useNavigate();
-
-   return (
-      <button
-         className="btn-back position-edit-back d-flex justify-content-center align-items-center"
-         onClick={() =>
-            props.refer !== undefined ? navigate(props.refer) : navigate(-1)
-         }
+const BackButton = ({ to, className }) => {
+  return (
+      <Link
+        to={to}
+        className={`btn btn-secondary d-flex align-items-center align-items-center ${className}`}
       >
-         <span className="material-icons-outlined me-2">arrow_back_ios</span>
-         Atrás
-      </button>
-   );
+        <IoChevronBackOutline /> <span className="m-0 ms-2">Atrás</span>
+      </Link>
+  );
 };
+
+export { BackButton };

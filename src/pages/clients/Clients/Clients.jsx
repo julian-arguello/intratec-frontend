@@ -12,7 +12,7 @@ const Clients = () => {
   return (
     <section className="d-flex flex-column w-100">
       <Navbar>
-        <ClientNewButton className="d-sm-block d-sm-none" />
+        <ClientNewButton className="d-sm-flex d-sm-none" />
 
         <Search
           initialValues={{ search: "" }}
@@ -24,7 +24,7 @@ const Clients = () => {
           className="m-auto"
         />
 
-        <ClientNewButton className="d-none d-sm-block" />
+        <ClientNewButton className="d-none d-sm-flex" />
       </Navbar>
 
       <main className={styles.main}>

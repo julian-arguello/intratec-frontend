@@ -50,7 +50,7 @@ export function ServiceProvider({ children }) {
   const findService = async () => {
     try {
       const services = await API.viewAlls();
-      dispatch(ActionGet(services));
+       dispatch(ActionGet(services));
     } catch (err) {
       return { status: 'error', msg: err.message };
     }

@@ -16,12 +16,17 @@
   background-color: $red-brand-state;
 }
 
+.Returned {
+  background-color: $grey-brand-state;
+}
+
 .default {
   background-color: gray;
 }
 
 .card{
   color: white;
+    text-decoration: none;
 }
 
 @media (max-width: 576px) {

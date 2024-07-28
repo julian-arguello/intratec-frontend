@@ -1,0 +1,85 @@
+@import "../../../../scss/variables";
+.main {
+  height: 100%;
+  overflow: auto;
+}
+
+// .detailBox {
+//   height: calc(100vh - 4.5rem);
+//   display: grid;
+//   grid-template-columns: repeat(2, auto);
+// }
+
+.detailGeneralBox {
+  padding: 2rem;
+  & > h2{
+    padding-bottom: 2rem;
+    margin: 0;
+  }
+  .detailGeneral {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: left;
+    gap: 1rem;
+
+    @media (max-width: 1300px) { 
+      grid-template-columns: repeat(2, auto);
+    }
+    @media (max-width: 768px) { 
+      grid-template-columns: repeat(1, auto);
+    }
+
+    & > li {
+      background-color: #ecedee;
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      width: 20rem;
+
+      & > p {
+        margin: 0;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+
+
+    }
+  }
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+/*****************************************/
+
+.historyStatusBox {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  gap: 2rem;
+
+  .historyStatusTitleBox{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+    h3{
+      margin-right: 2rem;
+    }
+  }
+
+}
+
+
+
+
+// *{
+//     outline: 1px solid violet;
+// }

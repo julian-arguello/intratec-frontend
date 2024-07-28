@@ -11,7 +11,6 @@ import { TbUsersGroup } from "react-icons/tb";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 
 export function ServiceItem({ service, clientDetail }) {
-  console.log();
 
   return (
     <div
@@ -19,6 +18,8 @@ export function ServiceItem({ service, clientDetail }) {
         styles[stateClass(service.state)]
       }`}
     >
+      {console.log(service.state)}
+      {console.log(stateClass(service.state))}
       <span className={`h6 estado ${styles.state}`}>{service.state}</span>
 
       <div className={`rounded-2 py-3 ${styles.cardBody}`}>

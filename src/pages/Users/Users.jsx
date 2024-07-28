@@ -6,7 +6,7 @@ import styles from "./Users.module.scss";
 import { schemaSearch } from "../../utils/validate";
 import { useUser } from "../../context/User.Context";
 
-export function Users() {
+const Users = () => {
   const { userSearch } = useUser();
 
   return (
@@ -31,4 +31,4 @@ export function Users() {
     </section>
   );
 }
-export default Users;
+export { Users };

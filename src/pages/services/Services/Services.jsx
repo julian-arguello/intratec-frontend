@@ -25,7 +25,6 @@ function Services() {
 
   useEffect(() => {
     let url = location.pathname.replace("/servicios/", "");
-    console.log(url)
     setSelectedValue(url);
     setFilterState(stateRoute(url));
   }, []);
@@ -47,7 +46,7 @@ function Services() {
     <section className="d-flex flex-column w-100">
       <Navbar>
 
-      <ServiceNewButton className="d-sm-block d-md-none"/>
+      <ServiceNewButton className=" d-sm-flex d-md-none"/>
 
         <div className={styles.filterBox}>
           <form onSubmit={handleSubmit} className={styles.select}>
@@ -63,6 +62,7 @@ function Services() {
               <option value="revisado">Revisado</option>
               <option value="reparado">Reparado</option>
               <option value="sin-reparacion">Sin reparación</option>
+              <option value="devuelto">Devuelto</option>
             </select>
           </form>
 
@@ -77,7 +77,7 @@ function Services() {
           />
         </div>
 
-        <ServiceNewButton className="d-none d-md-block"/>
+        <ServiceNewButton className=" d-none d-md-flex"/>
       </Navbar>
       <main className={styles.main}>
         <ServiceList />
