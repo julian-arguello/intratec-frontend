@@ -188,5 +188,54 @@ export async function del(id){
         throw new Error(err.message)
     })
 }
+/*-----------------------------------------------------------------*/
+//Elimina el estado de un servicio
+export async function delState(id, state) {
+    try {
+        const response = await fetch(`${config.api.url}/servicios/estado/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('auth-token')
+            },
+            body: JSON.stringify({ state: state })
+        });
+
+        const data = await response.json();
+
+        if (response.status === 200) {
+            return data;
+        } else {
+            throw new Error(data.msg || 'Error al eliminar el estado');
+        }
+    } catch (err) {
+        return { status: 'error', msg: err.message || 'Error de red' };
+    }
+}
+/*-----------------------------------------------------------------*/    
+//Crea el estado de un servicio
+export async function addState(id, state, description) {
+    try {
+        const response = await fetch(`${config.api.url}/servicios/estado/${id}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('auth-token')
+            },
+            body: JSON.stringify({ state: state, description: description })
+        });
+
+        const data = await response.json();
+
+        if (response.status === 200) {
+            return data;
+        } else {
+            throw new Error(data.msg || 'Error al agregar el estado');
+        }
+    } catch (err) {
+        return { status: 'error', msg: err.message || 'Error de red' };
+    }
+}
+
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/

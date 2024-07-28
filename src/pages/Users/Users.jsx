@@ -1,5 +1,5 @@
 import UserList from "../../components/Users/UserList/UserList";
-import { UserNewButton } from "../../components/buttons/UserNewButton";
+import { UserNewButton } from "../../components/Buttons/UserNewButton";
 import { Navbar } from "../../components/Layout/Navbar/Navbar";
 import { Search } from "../../components/UI/Search/Search";
 import styles from "./Users.module.scss";

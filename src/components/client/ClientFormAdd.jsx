@@ -4,7 +4,7 @@ import { useClient } from '../../context/Client.Context';
 import { schemaClientRegister } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
-import { ConfirmButton } from '../buttons/ConfirmButton';
+import { ConfirmButton } from '../Buttons/ConfirmButton';
 
 export function ClientFormAdd() {
    const navigate = useNavigate();

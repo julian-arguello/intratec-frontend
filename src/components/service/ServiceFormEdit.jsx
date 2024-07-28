@@ -5,7 +5,7 @@ import { useNavigate  } from 'react-router-dom';
 import { schemaServicesUpdate } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
-import { ConfirmButton } from '../buttons/ConfirmButton';
+import { ConfirmButton } from '../Buttons/ConfirmButton';
 
 export function ServiceFormEdit() {
    let navigate = useNavigate();

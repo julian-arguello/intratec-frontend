@@ -6,7 +6,7 @@ import { useAuth } from '../../context/Auth.Context';
 import { schemaServicesCreate } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
-import { ConfirmButton } from '../buttons/ConfirmButton';
+import { ConfirmButton } from '../Buttons/ConfirmButton';
 
 export function ServiceFormAdd() {
   const navigate = useNavigate();

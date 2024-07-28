@@ -2,7 +2,7 @@ import ClientFormAdd from "../../components/client/ClientFormAdd";
 import ClientFormEdit from "../../components/client/ClientFormEdit";
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { BackButton } from '../../components/buttons/BackButton';
+import { BackButton } from '../../components/Buttons/BackButton';
 
 export function ServiceAdd(props) {
    const location = useLocation();

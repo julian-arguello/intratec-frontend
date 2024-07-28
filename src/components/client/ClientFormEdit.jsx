@@ -5,7 +5,7 @@ import { schemaClientRegister } from '../../utils/validate';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useNotify } from '../../context/Notify.Context';
 import Loading from '../Loading';
-import { ConfirmButton } from '../buttons/ConfirmButton';
+import { ConfirmButton } from '../Buttons/ConfirmButton';
 
 export function ClientFormEdit() {
    const navigate = useNavigate();

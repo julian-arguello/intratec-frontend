@@ -4,7 +4,7 @@ import { useClient } from '../../context/Client.Context';
 import ClientList from '../../components/client/ClientList/ClientList';
 import Loading from '../../components/Loading';
 import { RoleAdmin } from '../../components/authRole/RoleAdmin';
-import { ClientNewButton } from '../../components/buttons/ClientNewButton';
+import { ClientNewButton } from '../../components/Buttons/ClientNewButton';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaSearch } from '../../utils/validate';
 

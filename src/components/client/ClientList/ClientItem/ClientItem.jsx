@@ -1,9 +1,9 @@
 import styles from "./ClientItem.module.scss";
 import { MdOutlineInventory2 } from "react-icons/md";
 import { TbUserCog } from "react-icons/tb";
-import { ClientAssociatedServicesButton } from "../../../buttons/ClientAssociatedServicesButton";
-import { ClientEditButton } from "../../../buttons/ClientEditButton";
-import { ClientDeleteButton } from "../../../buttons/ClientDeleteButton";
+import { ClientAssociatedServicesButton } from "../../../Buttons/ClientAssociatedServicesButton";
+import { ClientEditButton } from "../../../Buttons/ClientEditButton";
+import { ClientDeleteButton } from "../../../Buttons/ClientDeleteButton";
 import { HiOutlineMail } from "react-icons/hi";
 import { LiaPhoneSolid } from "react-icons/lia";
 import { formatPhone, formatCuitCuil } from "../../../../utils/formatUtils";

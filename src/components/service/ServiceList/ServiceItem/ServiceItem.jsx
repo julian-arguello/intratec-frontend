@@ -1,7 +1,7 @@
 import { stateClass } from "../../../../utils/service.state";
 import { formatDistance } from "date-fns";
 import { es } from "date-fns/locale";
-import { ServiceDetailsButton } from "../../../buttons/ServiceDetailsButton";
+import { ServiceDetailsButton } from "../../../Buttons/ServiceDetailsButton";
 
 import styles from "./ServiceItem.module.scss";
 
@@ -18,8 +18,6 @@ export function ServiceItem({ service, clientDetail }) {
         styles[stateClass(service.state)]
       }`}
     >
-      {console.log(service.state)}
-      {console.log(stateClass(service.state))}
       <span className={`h6 estado ${styles.state}`}>{service.state}</span>
 
       <div className={`rounded-2 py-3 ${styles.cardBody}`}>

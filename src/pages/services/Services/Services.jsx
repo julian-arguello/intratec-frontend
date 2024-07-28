@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"; // Importa useParams
 import { useService } from "../../../context/Service.Context";
 import ServiceList from "../../../components/service/ServiceList/ServiceList";
 import { schemaSearch } from "../../../utils/validate";
-import { ServiceNewButton } from "../../../components/buttons/ServiceNewButton";
+import { ServiceNewButton } from "../../../components/Buttons/ServiceNewButton";
 import { Navbar } from "../../../components/Layout/Navbar/Navbar";
 import { Search } from "../../../components/UI/Search/Search";
 import styles from "./Services.module.scss";

@@ -3,6 +3,8 @@ import ServiceReducer from '../reducer/Service.Reducer';
 import {
   ActionAdd,
   ActionRemove,
+  ActionStateRemove,
+  ActionStateAdd,
   ActionGet,
   ActionGetId,
   ActionUpdate,
@@ -127,6 +129,33 @@ export function ServiceProvider({ children }) {
   };
   /*-----------------------------------------------------------------*/
 
+  //Elimina el estado de un servicio
+  const delServiceState = async (id, state) => {
+    try {
+        const res = await API.delState(id, state);
+        if (res.status === 'success') {
+          dispatch(ActionStateRemove(id, state));
+        }
+        return res;
+    } catch (err) {
+        return { status: 'error', msg: err.message || 'Error de red' };
+    }
+};
+  /*-----------------------------------------------------------------*/
+// Agrega un estado a un servicio
+const addServiceState = async (id, state, description) => {
+  try {
+    const res = await API.addState(id, state, description);
+    if (res.status === 'success') {
+      dispatch(ActionStateAdd(id, state, description));
+    }
+    return res;
+  } catch (err) {
+    return { status: 'error', msg: err.message || 'Error de red' };
+  }
+}
+  /*-----------------------------------------------------------------*/
+
   //return
   return (
     <ServiceContext.Provider
@@ -143,7 +172,9 @@ export function ServiceProvider({ children }) {
         findStatistics,
         serviceSearch,
         filterState, 
-        setFilterState
+        setFilterState,
+        delServiceState,
+        addServiceState
       }}
     >
       {children}

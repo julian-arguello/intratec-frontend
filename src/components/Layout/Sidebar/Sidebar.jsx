@@ -136,11 +136,12 @@ const Sidebar = () => {
               show={showModal}
               handleClose={handleClose}
               title="Confirmación"
-              body="¿Estás seguro de que deseas cerrar sesión?"
               onConfirm={handleConfirm}
               confirmText="Cerrar sesión"
               cancelText="Cancelar"
-            />
+            >
+            "¿Estás seguro de que deseas cerrar sesión?"
+            </CustomModal>
           </div>
         </CSidebarNav>
       </CSidebar>

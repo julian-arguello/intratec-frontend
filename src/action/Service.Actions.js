@@ -54,6 +54,26 @@ export function ActionRemove( id ){
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
+//REMOVESTATE
+export function ActionStateRemove(id, state) {
+    console.log("ActionStateRemove")
+    return {
+        type: 'REMOVE_STATE',
+        payload: { serviceId: id, state: state }
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//ADD_STATE
+export function ActionStateAdd(id, state, description) {
+    console.log("ActionStateAdd");
+    return {
+        type: 'ADD_STATE',
+        payload: { serviceId: id, state: state, description: description, date: new Date() }
+    };
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
 //UPDATE
 export function ActionUpdate( service ){
     return {

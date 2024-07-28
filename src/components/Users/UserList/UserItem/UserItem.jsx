@@ -1,7 +1,7 @@
 import authRole from "../../../../utils/auth.role";
 import styles from "./UserItem.module.scss";
 import { HiOutlineMail } from "react-icons/hi";
-import { UserEditButton } from "../../../buttons/UserEditButton";
+import { UserEditButton } from "../../../Buttons/UserEditButton";
 import { LiaIdCardSolid } from "react-icons/lia";
 
 import { LuShieldCheck } from "react-icons/lu";

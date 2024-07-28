@@ -1,10 +1,11 @@
 import Button from "react-bootstrap/Button";
 import styles from "./StateCard.module.scss";
 import { stateClass } from "../../../../utils/service.state";
-
 import { RxCounterClockwiseClock } from "react-icons/rx";
 
-const StateCard = ({ state, description, date, active }) => {
+import { ServiceDeleteButton } from "../../../Buttons/StateDeleteButton";
+
+const StateCard = ({ state, description, date, active, serviceId }) => {
 
   return (
     <div className={`rounded-2  ${styles.card} ${styles[stateClass(state)]}`}>
@@ -25,7 +26,7 @@ const StateCard = ({ state, description, date, active }) => {
           </div>
 
           <div className={styles.buttonBox}>
-            <Button variant="outline-danger">Eliminar</Button>
+            <ServiceDeleteButton serviceId={serviceId} stateDelete={state}/>
             <Button variant="primary">Editar</Button>
           </div>
         </div>

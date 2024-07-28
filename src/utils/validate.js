@@ -223,6 +223,17 @@ export const schemaServicesUpdate = yup
 
 /*
 |--------------------------------------------------------------------------
+| States
+|--------------------------------------------------------------------------
+*/
+
+export const validationSchemaAdd = yup.object().shape({
+  state: yup.string().required("Seleccione un estado"),
+  description: yup.string().required("Ingrese una descripción"),
+});
+
+/*
+|--------------------------------------------------------------------------
 | Login
 |--------------------------------------------------------------------------
 */

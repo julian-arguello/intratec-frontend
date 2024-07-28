@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import Loading from '../Loading.jsx';
 import authRole from '../../utils/auth.role.js';
-import { BackButton } from '../buttons/BackButton.jsx';
-import { ConfirmButton } from '../buttons/ConfirmButton.jsx';
+import { BackButton } from '../Buttons/BackButton.jsx';
+import { ConfirmButton } from '../Buttons/ConfirmButton.jsx';
 
 export function UserCreateForm() {
    const navigate = useNavigate();

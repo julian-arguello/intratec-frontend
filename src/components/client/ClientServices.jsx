@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useClient } from '../../context/Client.Context';
-import { BackButton } from '../buttons/BackButton';
+import { BackButton } from '../Buttons/BackButton';
 import { useParams } from 'react-router-dom';
 import Loading from '../Loading';
 import ServiceItem from '../service/ServiceList/ServiceItem/ServiceItem';

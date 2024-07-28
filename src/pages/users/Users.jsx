@@ -1,5 +1,5 @@
 import UserList from '../../components/Users/UserList/UserList';
-import { UserNewButton } from '../../components/buttons/UserNewButton';
+import { UserNewButton } from '../../components/Buttons/UserNewButton';
 import { RoleAdmin } from '../../components/authRole/RoleAdmin';
 
 import { Navbar } from '../../components/Layout/Navbar/Navbar';

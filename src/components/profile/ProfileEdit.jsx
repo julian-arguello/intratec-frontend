@@ -3,8 +3,8 @@ import { useUser } from '../../context/User.Context';
 import { useNotify } from '../../context/Notify.Context';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaUserUpdate } from '../../utils/validate';
-import { BackButton } from '../buttons/BackButton';
-import { ConfirmButton } from '../buttons/ConfirmButton';
+import { BackButton } from '../Buttons/BackButton';
+import { ConfirmButton } from '../Buttons/ConfirmButton';
 import { useNavigate } from 'react-router-dom';
 
 function ProfileEdit(props) {

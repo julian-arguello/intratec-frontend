@@ -1,19 +1,25 @@
 import { useState } from "react";
 import { RoleSuperAdmin } from "../authRole/RoleSuperAdmin";
 import { MdOutlineDelete } from "react-icons/md";
-import { useClient } from "../../context/Client.Context";
 import { CustomModal } from "../UI/CustomModal/CustomModal";
+import { useService } from "../../context/Service.Context";
+import { useNotify } from "../../context/Notify.Context";
+import { useNavigate  } from 'react-router-dom';
 
-const ClientDeleteButton = ({ client, className }) => {
-  const { delClient, setReload } = useClient();
+
+const ServiceDeleteButton = ({ service, className }) => {
+  let navigate = useNavigate();
+  const { delService } = useService();
   const [showModal, setShowModal] = useState(false);
+  const{ notify } = useNotify();
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   const remove = () => {
-    delClient(client._id).then((data) => {
-      setReload((prev) => !prev);
+    delService(service._id).then((data) => {
+      notify(data.msg);
+      navigate('/servicios');
       handleClose();
     });
   };
@@ -32,14 +38,17 @@ const ClientDeleteButton = ({ client, className }) => {
         show={showModal}
         handleClose={handleClose}
         title="Confirmación"
-        body={`¿Estás seguro que deseas eliminar el cliente ${client.name_busines}? Ten en cuenta que todos los servicios asociados a este cliente también serán eliminados.`}
         onConfirm={remove}
         confirmText="Eliminar"
         cancelText="Cancelar"
-      />
+      >
+      {`¿Estás seguro de que deseas eliminar el servicio Nº ${service.service_id} de ${service.client.name_busines}?`}
+      </CustomModal>
+
+
 
     </RoleSuperAdmin>
   );
 };
 
-export { ClientDeleteButton };
+export { ServiceDeleteButton };

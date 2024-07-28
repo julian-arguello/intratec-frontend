@@ -1,4 +1,4 @@
-import { BackButton } from '../../components/buttons/BackButton';
+import { BackButton } from '../../components/Buttons/BackButton';
 import ServiceFormAdd from '../../components/service/ServiceFormAdd';
 import ServiceFormEdit from '../../components/service/ServiceFormEdit';
 

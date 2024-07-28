@@ -1,7 +1,7 @@
 import { Statistics } from "../../components/Home/Statistics/Statistics";
 import { LatestServices } from "../../components/Home/LatestServices/LatestServices";
 import styles from "./Home.module.scss";
-import { ServiceNewButton } from "../../components/buttons/ServiceNewButton";
+import { ServiceNewButton } from "../../components/Buttons/ServiceNewButton";
 import { Navbar } from "../../components/Layout/Navbar/Navbar";
 
 function Home() {

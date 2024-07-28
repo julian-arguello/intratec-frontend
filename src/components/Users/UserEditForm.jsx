@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../Loading.jsx';
 import authRole from '../../utils/auth.role.js';
-import { ConfirmButton } from '../buttons/ConfirmButton.jsx';
-import { BackButton } from '../buttons/BackButton.jsx';
+import { ConfirmButton } from '../Buttons/ConfirmButton.jsx';
+import { BackButton } from '../Buttons/BackButton.jsx';
 
 export function UserEditForm() {
    const navigate = useNavigate();

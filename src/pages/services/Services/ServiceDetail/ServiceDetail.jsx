@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { BackButton } from "../../../../components/buttons/BackButton";
+import { BackButton } from "../../../../components/Buttons/BackButton";
 import { useService } from "../../../../context/Service.Context";
 import { Loader } from "../../../../components/UI/Loader/Loader";
 import { useParams } from "react-router-dom";
 import styles from "./ServiceDetail.module.scss";
 import { StateCard } from "../../../../components/service/ServiceDetail/StateCard/StateCard";
 import { Navbar } from "../../../../components/Layout/Navbar/Navbar";
-import { ServiceEditButton } from "../../../../components/buttons/ServiceEditButton";
-import { ServiceDeleteButton } from "../../../../components/buttons/ServiceDeleteButton";
+import { ServiceEditButton } from "../../../../components/Buttons/ServiceEditButton";
+import { ServiceDeleteButton } from "../../../../components/Buttons/ServiceDeleteButton";
 import { TbUserCog } from "react-icons/tb";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import { TbUsersGroup } from "react-icons/tb";
@@ -17,7 +17,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { MdOutlineInventory2 } from "react-icons/md";
 import { CiBarcode } from "react-icons/ci";
 
-import Button from "react-bootstrap/Button";
+import { StateNewButton } from "../../../../components/Buttons/StateNewButton";
 
 const ServiceDetail = () => {
   const { id } = useParams();
@@ -105,7 +105,7 @@ const ServiceDetail = () => {
 
             <div className={styles.historyStatusTitleBox}>
             <h3 className="h2">Historial</h3>
-            <Button variant="primary">+ Nuevo estado</Button>
+            <StateNewButton service={state.service}/>
             </div>
 
             {Object.entries(state.service.states).reverse().map(([key, stateInfo]) => {
@@ -113,6 +113,7 @@ const ServiceDetail = () => {
               const formattedDate = format(date, "dd/MM/yyyy, hh:mm a", {
                 locale: es,
               });
+              let active = key === state.service.state
 
               return (
                 <StateCard
@@ -120,7 +121,8 @@ const ServiceDetail = () => {
                   state={key}
                   description={stateInfo.description}
                   date={formattedDate}
-                  active = {key === state.service.state}
+                  active = {active}
+                  serviceId = {state.service._id}
                 />
               );
             })}

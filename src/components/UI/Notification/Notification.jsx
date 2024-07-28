@@ -4,7 +4,9 @@ import styles from "./Notification.module.scss";
 
 const Notification = ({ message, onClose }) => {
   return (
-    <ToastContainer position="top-end" className="p-3">
+    
+    <ToastContainer className={` p-3`}>
+
       {message && (
         <Toast
           onClose={onClose}
