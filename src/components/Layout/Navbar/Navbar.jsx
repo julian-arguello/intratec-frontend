@@ -13,7 +13,7 @@ const Navbar = ({children}) => {
     <CNavbar className={`sticky-top ${styles.navbar}`}>
       <CContainer fluid className={styles.container}>
         <button
-          className={`btn btn-outline-primary  d-lg-none rounded-2 ${styles.togglerBtn}`}
+          className={`btn btn-primary d-lg-none rounded-2 ${styles.togglerBtn}`}
           onClick={() => setVisible(!visible)}
           role="button" 
           tabIndex="0"
@@ -22,7 +22,7 @@ const Navbar = ({children}) => {
         </button>
 
         <button
-          className={`btn btn-outline-primary d-none d-lg-block rounded-2 ${styles.togglerBtn}`}
+          className={`btn btn-primary d-none d-lg-block rounded-2 ${styles.togglerBtn}`}
           onClick={() => setNarrow(!narrow)}
           role="button"
           tabIndex="0"
