@@ -205,14 +205,14 @@ export const schemaServicesUpdate = yup
       .string()
       .min(6, "Este campo debe contener como mínimo 6 caracteres.")
       .required("El número de serie es obligatorio."),
-    description: yup
-      .string()
-      .min(10, "Este campo debe contener como mínimo 10 caracteres.")
-      .required("La descripción es obligatoria."),
-    state: yup
-      .string()
-      .min(3, "Este campo debe contener como mínimo 3 caracteres.")
-      .required("El estado de reparación es obligatorio."),
+    // description: yup
+    //   .string()
+    //   .min(10, "Este campo debe contener como mínimo 10 caracteres.")
+    //   .required("La descripción es obligatoria."),
+    // state: yup
+    //   .string()
+    //   .min(3, "Este campo debe contener como mínimo 3 caracteres.")
+    //   .required("El estado de reparación es obligatorio."),
     client_id: yup
       .string()
       .min(24, "Selecciona el cliente por favor.")
@@ -235,6 +235,32 @@ export const validationSchemaAdd = yup.object().shape({
     .max(140, 'La descripción no puede exceder los 140 caracteres'),
 });
 
+export const validationSchemaEdit = yup.object().shape({
+  date: yup.date()
+    .required('Seleccione una fecha y hora')
+    .test('check-date-time', 'La fecha y hora no pueden ser mayores a la fecha y hora actual', function (value) {
+      // Obtener la fecha y hora actual para la comparación
+      const currentDate = new Date();
+
+      // Normalizar las fechas para eliminar los milisegundos (evitar problemas de comparación)
+      const normalizedValue = new Date(value).setSeconds(0, 0); // Eliminar segundos y milisegundos
+      const normalizedCurrentDate = new Date(currentDate).setSeconds(0, 0);
+
+      // Comparar el valor recibido con la fecha y hora actual
+      if (normalizedValue > normalizedCurrentDate) {
+        return this.createError({
+          message: 'La fecha y hora no pueden ser mayores a la fecha y hora actual',
+        });
+      }
+
+      // Devuelve true si la validación pasa
+      return true;
+    }),
+  description: yup.string()
+    .required('Ingrese una descripción')
+    .min(10, 'La descripción debe tener al menos 10 caracteres')
+    .max(140, 'La descripción no puede exceder los 140 caracteres'),
+});
 /*
 |--------------------------------------------------------------------------
 | Login

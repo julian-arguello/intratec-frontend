@@ -20,7 +20,6 @@ const RecoverPassword = () => {
 
   return (
     <section className={styles.background}>
-
       <Formik
         initialValues={{ email: "" }}
         validationSchema={schemaRecovery}
@@ -28,19 +27,19 @@ const RecoverPassword = () => {
           setLoading(true);
           try {
             await recovery(data.email);
-            console.log("recovery", data);
-
             setLoading(false);
-
-            
 
             if (data.status != "error") {
               navigate("/");
-              notify("El correo de recuperación de contraseña se envió correctamente.");
+              notify(
+                "El correo de recuperación de contraseña se envió correctamente."
+              );
             }
           } catch (error) {
             setLoading(false);
-            notify("Hubo un error al enviar el correo de recuperación de contraseña. Por favor, intenta nuevamente.");
+            notify(
+              "Hubo un error al enviar el correo de recuperación de contraseña. Por favor, intenta nuevamente."
+            );
           }
         }}
       >
@@ -59,7 +58,7 @@ const RecoverPassword = () => {
 
             <div className={styles.boxform}>
               <h2 className="mb-4">
-                Recuperar <br className="d-none d-md-inline"/> contraseña
+                Recuperar <br className="d-none d-md-inline" /> contraseña
               </h2>
 
               <CustomField
@@ -69,6 +68,7 @@ const RecoverPassword = () => {
                 name="email"
                 placeholder="Correo@mail.com"
                 classNamem="mb-4"
+                classNamemField={`form-control "mb-4 ${touched.email && errors.email ? "is-invalid " : " "}`}
                 error={errors.email}
                 touched={touched.email}
               />

@@ -5,7 +5,7 @@ export const ServiceDetailsButton = (props) => {
   return (
     <Link
       to={`/servicios/detalle/${props.id}`}
-      className={`btn btn-outline-primary btn-details d-flex align-items-center align-items-center `}
+      className={`btn btn-secondary d-flex align-items-center align-items-center `}
     >
       <GrStatusInfo /> <span className="m-0 ms-2">Detalle</span>
     </Link>

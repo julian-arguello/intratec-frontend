@@ -140,7 +140,7 @@ const Sidebar = () => {
               confirmText="Cerrar sesión"
               cancelText="Cancelar"
             >
-            "¿Estás seguro de que deseas cerrar sesión?"
+            ¿Estás seguro de que deseas cerrar sesión?
             </CustomModal>
           </div>
         </CSidebarNav>

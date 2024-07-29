@@ -11,6 +11,8 @@ const CustomModal = ({
   cancelText,
   children,
   confirmVariant = "danger",
+  classNameBtnOk = "",
+  disabledBtnOk = false
 }) => {
   return (
     <Modal show={show} onHide={handleClose} className={styles.customModal}>
@@ -22,7 +24,7 @@ const CustomModal = ({
         <Button variant="secondary" onClick={handleClose}>
           {cancelText}
         </Button>
-        <Button variant={confirmVariant} onClick={onConfirm}>
+        <Button variant={confirmVariant} disabled={disabledBtnOk} className={classNameBtnOk} onClick={onConfirm}>
           {confirmText}
         </Button>
       </Modal.Footer>

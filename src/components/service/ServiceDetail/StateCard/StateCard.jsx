@@ -3,9 +3,10 @@ import styles from "./StateCard.module.scss";
 import { stateClass } from "../../../../utils/service.state";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 
-import { ServiceDeleteButton } from "../../../Buttons/StateDeleteButton";
+import { StateDeleteButton } from "../../../Buttons/StateDeleteButton";
+import { StateEditButton } from "../../../Buttons/StateEditButton"
 
-const StateCard = ({ state, description, date, active, serviceId }) => {
+const StateCard = ({ state, description, date, active, service, stateInfo }) => {
 
   return (
     <div className={`rounded-2  ${styles.card} ${styles[stateClass(state)]}`}>
@@ -26,8 +27,9 @@ const StateCard = ({ state, description, date, active, serviceId }) => {
           </div>
 
           <div className={styles.buttonBox}>
-            <ServiceDeleteButton serviceId={serviceId} stateDelete={state}/>
-            <Button variant="primary">Editar</Button>
+            
+            {state != "Recepcionado" && <StateDeleteButton serviceId={service._id} stateDelete={state} active={!active}/>}
+            <StateEditButton service={service} stateInfo={stateInfo} state={state}/>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ const Statistics = ({className}) => {
 
         <CardStatistic
           title="Devueltos"
-          count={state.statistics.Devuelto}
+          count={state.statistics.devuelto}
           type='Returned'
         />
       </div>

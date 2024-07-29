@@ -37,10 +37,10 @@ export function ActionGetStatistics( statistics ){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //ADD
-export function ActionAdd( service ){
+export function ActionAdd( services ){
     return {
         type: 'ADD',
-        payload: service
+        payload: services
     };
 }
 /*-----------------------------------------------------------------*/    
@@ -72,6 +72,13 @@ export function ActionStateAdd(id, state, description) {
         payload: { serviceId: id, state: state, description: description, date: new Date() }
     };
 }
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/
+//ADD_STATE
+export const ActionStateUpdate = (id, state, date, description) => ({
+    type: 'STATE_UPDATE',
+    payload: { id, state, date, description }
+  });
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //UPDATE

@@ -11,7 +11,7 @@ const ClientNewButton = ( {className} ) => {
     <RoleAdmin>
       <Link
         to="/clientes/nuevo"
-        className={`btn btn-primary d-flex align-items-center align-items-center ${className}`}
+        className={`btn btn-success d-flex align-items-center align-items-center ${className}`}
       >
         <TbUsersGroup /> <span className="m-0 ms-2">Nuevo Cliente</span>
       </Link>

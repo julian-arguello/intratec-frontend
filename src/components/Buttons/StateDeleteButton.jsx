@@ -4,11 +4,14 @@ import { MdOutlineDelete } from "react-icons/md";
 import { CustomModal } from "../UI/CustomModal/CustomModal";
 import { useService } from "../../context/Service.Context";
 import { useNotify } from "../../context/Notify.Context";
+import { Loader } from "../UI/Loader/Loader";
 
-const ServiceDeleteButton = ({ serviceId, stateDelete, className }) => {
+const StateDeleteButton = ({ serviceId, stateDelete, active, className }) => {
   const { delServiceState } = useService();
   const [showModal, setShowModal] = useState(false);
   const { notify } = useNotify();
+  const [loading, setLoading] = useState(false);
+
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -24,7 +27,8 @@ const ServiceDeleteButton = ({ serviceId, stateDelete, className }) => {
     <RoleAdmin>
       <button
         onClick={handleShow}
-        className={`btn btn-outline-danger d-flex align-items-center align-items-center ${className}`}
+        className={`btn btn-danger d-flex align-items-center align-items-center ${className}`}
+        disabled={active}
       >
         <MdOutlineDelete /> <span className="m-0 ms-2">Eliminar</span>
       </button>
@@ -43,4 +47,4 @@ const ServiceDeleteButton = ({ serviceId, stateDelete, className }) => {
   );
 };
 
-export { ServiceDeleteButton };
+export { StateDeleteButton };

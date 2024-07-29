@@ -26,8 +26,8 @@ export function ServiceFormEdit() {
             model: state.service.model,
             brand: state.service.brand,
             serial_number: state.service.serial_number,
-            description: state.service.description,
-            state: state.service.state,
+            // description: state.service.description,
+            // state: state.service.state,
          }}
          /*--------------------*/
          validationSchema={schemaServicesUpdate}
@@ -43,34 +43,7 @@ export function ServiceFormEdit() {
          {({ errors, touched }) => (
             <Form>
                <div className="row mb-4">
-                  <div className="col-sm-4 mb-4 mb-sm-0">
-                     <label className="form-label w-100">
-                        Estado *
-                        <Field className="form-select" name="state" as="select">
-                           {state.stateService.map((stateS) => (
-                              <option
-                                 key={stateS._id}
-                                 value={stateS.state_name}
-                              >
-                                 {stateS.state_name}
-                              </option>
-                           ))}
-                        </Field>
-                        <ErrorMessage
-                           name="state"
-                           component={() => (
-                              <span className="validateErrors">
-                                 *{errors.state}
-                              </span>
-                           )}
-                        />
-                        {!(errors.client_id && touched.client_id) && (
-                           <div className="form-text m-0">
-                              Seleccione el estado actual del servicio
-                           </div>
-                        )}
-                     </label>
-                  </div>
+
                   <div className="col-sm-4">
                      <label className="form-label w-100">
                         Modelo *
@@ -144,29 +117,7 @@ export function ServiceFormEdit() {
                   </div>
                </div>
 
-               <div className="row mb-4">
-                  <div className="col-sm-8">
-                     <label className="w-100">Descripción *</label>
-                     <Field
-                        className="form-select"
-                        name="description"
-                        as="textarea"
-                     ></Field>
-                     <ErrorMessage
-                        name="description"
-                        component={() => (
-                           <span className="validateErrors">
-                              *{errors.description}
-                           </span>
-                        )}
-                     />
-                     {!(errors.description && touched.description) && (
-                        <div className="form-text m-0">
-                           Ingrese la descripción (mínimo diez caracteres)
-                        </div>
-                     )}
-                  </div>
-               </div>
+   
                <ConfirmButton />
             </Form>
          )}

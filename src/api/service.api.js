@@ -116,28 +116,28 @@ export async function viewStatistics(){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //Crea un servicio
-export async function add(service){
-    return fetch(`${config.api.url}/servicios`,{
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json',
-            'auth-token': localStorage.getItem('auth-token')
-        },
-        body: JSON.stringify(service)
+export async function add(service) {
+    return fetch(`${config.api.url}/servicios`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('auth-token'),
+      },
+      body: JSON.stringify(service),
     })
     .then(async (res) => {
-        const data = await res.json()
-        if(res.status === 200) {
-            return data;
-        }
-        else{
-            throw new Error(data.msg)
-        }
+      const data = await res.json();
+      if (res.status === 200) {
+        return data; 
+      } else {
+        throw new Error(data.msg);
+      }
     })
     .catch(err => {
-        throw new Error(err.message)
-    })
-}
+      throw new Error(err.message);
+    });
+  }
+  
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //Edita un servicio
@@ -236,6 +236,31 @@ export async function addState(id, state, description) {
         return { status: 'error', msg: err.message || 'Error de red' };
     }
 }
+/*-----------------------------------------------------------------*/ 
+// Actualiza el estado de un servicio
+export async function updateState(id, state, date, description) {
+    try {
+        const response = await fetch(`${config.api.url}/servicios/estado/${id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('auth-token')
+            },
+            body: JSON.stringify({ state, description, date })
+        });
 
+        console.log(response.body);
+
+        const data = await response.json();
+
+        if (response.status === 200) {
+            return data;
+        } else {
+            throw new Error(data.msg || 'Error al actualizar el estado');
+        }
+    } catch (err) {
+        return { status: 'error', msg: err.message || 'Error de red' };
+    }
+}
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/

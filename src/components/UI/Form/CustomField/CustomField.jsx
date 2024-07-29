@@ -9,6 +9,7 @@ const CustomField = ({
   placeholder,
   ariaDescribedby,
   classNamem = "",
+  classNamemField = "",
   error,
   touched,
 }) => {
@@ -24,7 +25,7 @@ const CustomField = ({
         name={name}
         aria-describedby={id + "-aria-describedby"}
         placeholder={placeholder}
-        className={`form-control ${styles.input}`}
+        className={`form-control ${styles.input} ${classNamemField}`}
       />
 
       <ErrorMessage

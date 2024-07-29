@@ -12,6 +12,7 @@ import {
   ActionGetRecent,
   ActionGetStatistics,
   ActionFilterService,
+  ActionStateUpdate
 } from '../action/Service.Actions';
 import * as API from '../api/service.api';
 
@@ -92,27 +93,41 @@ export function ServiceProvider({ children }) {
     }
   };
   /*-----------------------------------------------------------------*/
+// Nuevo servicio
+const addService = async (service) => {
+  try {
+    // Agrega el servicio
+    const addResponse = await API.add(service);
 
-  //Nuevo servicio
-  const addService = async (service) => {
-    try {
-      const res = await API.add(service);
-      dispatch(ActionAdd(service));
-      return res;
-    } catch (err) {
-      return { status: 'error', msg: err.message };
+    if (addResponse.status === 'success') {
+      // Obtén la lista actualizada de servicios
+      const services = await API.viewAlls();
+
+      // Despacha la lista actualizada
+      dispatch(ActionAdd(services));
     }
-  };
+
+    return addResponse; // Devuelve la respuesta del API
+  } catch (err) {
+    console.error("Error adding service:", err.message);
+    return { status: 'error', msg: err.message };
+  }
+};
+
+  
+  
   /*-----------------------------------------------------------------*/
 
   //Editar servicio
   const editService = async (service) => {
     try {
       const res = await API.edit(service);
-      dispatch(ActionUpdate(service));
+      if (res.status === 'success') {
+        dispatch(ActionUpdate(service));
+      }
       return res;
     } catch (err) {
-      return { status: 'error', msg: err.message };
+      return { status: 'error', msg: err.message || 'Error de red' };
     }
   };
   /*-----------------------------------------------------------------*/
@@ -155,6 +170,23 @@ const addServiceState = async (id, state, description) => {
   }
 }
   /*-----------------------------------------------------------------*/
+// Actualiza un estado en un servicio
+const updateServiceState = async (id, state, date, description) => {
+  try {
+    const res = await API.updateState(id, state, date, description);
+
+    if (res.status === 'success') {
+      dispatch(ActionStateUpdate(id, state, date, description));
+    }
+    return res;
+
+
+  } catch (err) {
+    return { status: 'error', msg: err.message || 'Error de red' };
+  }
+};
+
+  /*-----------------------------------------------------------------*/
 
   //return
   return (
@@ -174,7 +206,8 @@ const addServiceState = async (id, state, description) => {
         filterState, 
         setFilterState,
         delServiceState,
-        addServiceState
+        addServiceState,
+        updateServiceState
       }}
     >
       {children}

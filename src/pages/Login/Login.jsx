@@ -52,6 +52,7 @@ function Login() {
                 name="email"
                 placeholder="Correo@mail.com"
                 classNamem="mb-4"
+                classNamemField={`form-control "mb-4 ${touched.email && errors.email ? "is-invalid " : " "}`}
                 error={errors.email}
                 touched={touched.email}
               />
@@ -61,6 +62,7 @@ function Login() {
                 label="Contraseña"
                 name="password"
                 classNamem="mb-4"
+                classNamemField={`form-control "mb-4 ${touched.password && errors.password ? "is-invalid " : " "}`}
                 error={errors.password}
                 touched={touched.password}
               />

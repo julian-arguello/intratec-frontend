@@ -20,19 +20,30 @@
   }
 }
 
-.btn-details {
-  color: white;
-  border-color: white;
-}
 
-.btn-outline-danger:hover {
+.btn-danger {
   color: white;
-}
-
-.btn-danger{
-  color: white;
-  &:hover{
+  &:hover {
     color: white;
+  }
+}
+
+.btn-danger,
+.btn-success {
+  color: $white-brand;
+
+  &:hover {
+    color: $white-brand;
+
+    &.btn-danger {
+      background-color: darken($red-brand-state, 5%);
+      border-color: darken($red-brand-state, 5%);
+    }
+
+    &.btn-success {
+      background-color: darken($green-brand-state, 10%);
+      border-color: darken($green-brand-state, 10%);
+    }
   }
 }
 
@@ -40,12 +51,16 @@
   color: #0373ab;
   opacity: 1;
   border-top: $border-size solid;
-  margin: 0 2rem ;
-
+  margin: 0 2rem;
 }
 
-
-
+.btnActionModal{
+  min-width: 5rem;
+  height: 2.35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 // #main {
 //   max-height: 100vh;
 //   background-color: #fff;
@@ -283,8 +298,6 @@
 //   font-weight: 300;
 // }
 
-
-
 // .main-margin-close {
 //   margin-left: 66px;
 // }
@@ -292,8 +305,6 @@
 // .sidebar .hr {
 //   color: white;
 // }
-
-
 
 // // SERVICES :::::::::::::::::::::::::::::::::::::::::::::::::
 

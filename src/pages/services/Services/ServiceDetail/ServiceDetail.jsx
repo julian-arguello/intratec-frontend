@@ -41,7 +41,8 @@ const ServiceDetail = () => {
         <div className="d-flex flex-wrap gap-2">
           <BackButton to={"/servicios"} />
           <ServiceDeleteButton service={state.service} />
-          <ServiceEditButton serviceId={state.service._id} />
+          {console.log("state.service ",state.service)}
+          <ServiceEditButton service={state.service} />
         </div>
       </Navbar>
       <main className={styles.main}>
@@ -59,11 +60,11 @@ const ServiceDetail = () => {
               <span className="h6 mb-1">Fecha de ingreso</span>
               <p>
                 <RxCounterClockwiseClock className={styles.icon} />
-                {format(
+                {`${format(
                   new Date(state.service.create_at),
-                  "dd/MM/yyyy, hh:mm a",
+                  "dd/MM/yyyy, HH:mm",
                   { locale: es }
-                )}
+                )} hs`}
               </p>
             </li>
             <li>
@@ -109,9 +110,9 @@ const ServiceDetail = () => {
             .reverse()
             .map(([key, stateInfo]) => {
               const date = new Date(stateInfo.date.$date || stateInfo.date);
-              const formattedDate = format(date, "dd/MM/yyyy, hh:mm a", {
+              const formattedDate = `${format(date, "dd/MM/yyyy, HH:mm", {
                 locale: es,
-              });
+              })} hs`;
               let active = key === state.service.state;
 
               return (
@@ -121,7 +122,8 @@ const ServiceDetail = () => {
                   description={stateInfo.description}
                   date={formattedDate}
                   active={active}
-                  serviceId={state.service._id}
+                  stateInfo={stateInfo}
+                  service={state.service}
                 />
               );
             })}

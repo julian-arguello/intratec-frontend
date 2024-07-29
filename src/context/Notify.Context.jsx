@@ -6,9 +6,11 @@ const NotifyContext = createContext();
 
 export function NotifyProvider({ children }) {
     const [notification, setNotification] = useState(null);
+    const [type, setType] = useState(''); 
 
-    const notify = (message) => {
+    const notify = (message, type = 'success') => {
         setNotification(message);
+        setType(type);
     };
 
     return (
@@ -17,6 +19,7 @@ export function NotifyProvider({ children }) {
             {ReactDOM.createPortal(
                 <Notification 
                     message={notification} 
+                    type={type}
                     onClose={() => setNotification(null)} 
                 />,
                 document.getElementById('notification')

@@ -7,7 +7,7 @@ const UserNewButton = ({ className }) => {
     <RoleSuperAdmin>
       <Link
         to={"/usuarios/nuevo"}
-        className={`btn btn-primary d-flex align-items-center align-items-center ${className}`}
+        className={`btn btn-success d-flex align-items-center align-items-center ${className}`}
       >
         <TbUsers /> <span className="m-0 ms-2">Nuevo usuario</span>
       </Link>

@@ -17,6 +17,8 @@ const StateNewButton = ({ service, className }) => {
   const { addServiceState } = useService();
   const [showModal, setShowModal] = useState(false);
   const { notify } = useNotify();
+  const isDisabled = service.state === 'Devuelto';
+
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -42,11 +44,13 @@ const StateNewButton = ({ service, className }) => {
     <RoleAdmin>
       <button
         onClick={handleShow}
-        className={`btn btn-primary d-flex align-items-center align-items-center ${className}`}
-        disabled={service.state === 'Devuelto'}
+        className={`btn btn-success d-flex align-items-center align-items-center ${className}`}
+        disabled={isDisabled}
       >
         <FaRegSquarePlus /> <span className="m-0 ms-2">Nuevo Estado</span>
       </button>
+
+
 
       <CustomModal
         show={showModal}

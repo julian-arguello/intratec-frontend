@@ -3,12 +3,12 @@ import { RoleAdmin } from "../authRole/RoleAdmin";
 import { PiCardsBold } from "react-icons/pi";
 
 
-const ClientAssociatedServicesButton = ( {clientId, className} ) => {
+const ClientAssociatedServicesButton = ( {clientId, acative,  className} ) => {
   return (
     <RoleAdmin>
       <Link
         to={`/clientes/servicios/${clientId}`}
-        className={`btn btn-outline-primary btn-details d-flex align-items-center align-items-center ${className}`}
+        className={`btn btn-secondary d-flex align-items-center align-items-center ${className}`}
       >
         <PiCardsBold /> <span className="m-0 ms-2">Servicios</span>
       </Link>

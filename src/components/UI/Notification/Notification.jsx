@@ -1,21 +1,23 @@
 import React from "react";
 import { Toast, ToastContainer } from "react-bootstrap";
+import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // Ajusta según el ícono que prefieras
 import styles from "./Notification.module.scss";
 
-const Notification = ({ message, onClose }) => {
+const Notification = ({ message, type, onClose }) => {
   return (
-    
-    <ToastContainer className={` p-3`}>
-
+    <ToastContainer className={styles.toastContainer}>
       {message && (
         <Toast
           onClose={onClose}
           show={message !== null}
           delay={8000}
           autohide
-          className={styles.toast}
+          className={`${styles.toast} `}
         >
-          <Toast.Header className={styles.toastHeader}>
+          <Toast.Header className={`${styles.toastHeader} ${type === 'success' ? styles.success : styles.error}`}>
+            <div className={styles.icon}>
+              {type === 'success' ? <FaCheckCircle /> : <FaExclamationCircle />}
+            </div>
             <strong className="me-auto">Notificación</strong>
           </Toast.Header>
           <Toast.Body className={styles.toastBody}>

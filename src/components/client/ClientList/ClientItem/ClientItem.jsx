@@ -7,6 +7,8 @@ import { ClientDeleteButton } from "../../../Buttons/ClientDeleteButton";
 import { HiOutlineMail } from "react-icons/hi";
 import { LiaPhoneSolid } from "react-icons/lia";
 import { formatPhone, formatCuitCuil } from "../../../../utils/formatUtils";
+import { PiCardsBold } from "react-icons/pi";
+
 
 
 export function ClientItems({ client }) {
@@ -18,8 +20,8 @@ export function ClientItems({ client }) {
         </span>
 
         {!Object.keys(client.services).length ? (
-          <button className="btn btn-outline-secondary" disabled>
-            Sin servicios
+          <button className="btn btn-secondary d-flex align-items-center align-items-center" disabled>
+             <PiCardsBold /> <span className="m-0 ms-2">Sin servicios</span>
           </button>
         ) : (
           <ClientAssociatedServicesButton clientId={client._id} />

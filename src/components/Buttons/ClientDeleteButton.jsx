@@ -22,7 +22,7 @@ const ClientDeleteButton = ({ client, className }) => {
     <RoleSuperAdmin>
       <button
         onClick={handleShow}
-        className={`btn btn-outline-danger d-flex align-items-center align-items-center ${className}`}
+        className={`btn btn-danger d-flex align-items-center align-items-center ${className}`}
       >
         <MdOutlineDelete /> <span className="m-0 ms-2">Eliminar</span>
       </button>

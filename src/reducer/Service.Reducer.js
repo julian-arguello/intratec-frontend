@@ -34,14 +34,18 @@ export default function ServiceReducer(state, action) {
     case "ADD":
       return {
         ...state,
-        services: [],
+        services: action.payload,
+        servicesFilter: action.payload,
       };
     /*-----------------------------------------------------------------*/
     /*-----------------------------------------------------------------*/
-    case "UPDATE":
+    case 'UPDATE':
       return {
         ...state,
-        services: [],
+        service: {
+          ...state.service,
+          ...(action.payload._id === state.service._id ? action.payload : state.service)
+        }
       };
     /*-----------------------------------------------------------------*/
     /*-----------------------------------------------------------------*/
@@ -87,6 +91,43 @@ export default function ServiceReducer(state, action) {
         ...state,
         service: updatedServiceAdd,
       };
+    /*-----------------------------------------------------------------*/
+    /*-----------------------------------------------------------------*/
+    case "STATE_UPDATE":
+      // Copia el estado del servicio actual
+      const serviceAfterUpdate = { ...state.service };
+    
+      // Copia el objeto de estados del servicio
+      const statesAfterUpdate = { ...serviceAfterUpdate.states };
+    
+      console.log("action.payload", action.payload);
+      // Extrae la información del payload
+      const { state: stateToUpdate, description, date } = action.payload;
+
+      console.log("stateToUpdate ", stateToUpdate)
+      console.log("description ", description)
+      console.log("date ", date)
+    
+      // Actualiza o agrega el estado en el objeto de estados
+      statesAfterUpdate[stateToUpdate] = {
+        description,
+        date,
+      };
+    
+      // Actualiza el objeto de servicio con los estados modificados
+      serviceAfterUpdate.states = statesAfterUpdate;
+    
+      // Si el estado actual es el que se está actualizando, asegúrate de que se mantenga como el estado actual
+      if (serviceAfterUpdate.state === stateToUpdate) {
+        serviceAfterUpdate.state = stateToUpdate;
+      }
+    
+      return {
+        ...state,
+        service: serviceAfterUpdate,
+      };
+    
+
     /*-----------------------------------------------------------------*/
     /*-----------------------------------------------------------------*/
     case "STATE":

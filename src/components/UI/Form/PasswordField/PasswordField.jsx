@@ -13,6 +13,7 @@ const PasswordField = ({
   placeholder = "",
   ariaDescribedby,
   classNamem = "",
+  classNamemField = "",
   error,
   touched,
 }) => {
@@ -30,7 +31,7 @@ const PasswordField = ({
           name={name}
           aria-describedby={id + "-aria-describedby"}
           placeholder={placeholder}
-          className={`form-control ${styles.inputPass}`}
+          className={`form-control ${styles.inputPass} ${classNamemField}`}
         />
         <span
           className={`btn btn-outline-secondary ${styles.inputPassShow}`}
