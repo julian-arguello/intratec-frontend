@@ -9,6 +9,7 @@ import { useService } from '../../context/Service.Context';
 import { useAuth } from '../../context/Auth.Context';
 import { useNotify } from '../../context/Notify.Context';
 import { Loader } from '../UI/Loader/Loader';
+import { MdClear } from "react-icons/md";
 
 export const ServiceNewButton = ({ className }) => {
   const [showModal, setShowModal] = useState(false);
@@ -61,10 +62,10 @@ export const ServiceNewButton = ({ className }) => {
         handleClose={handleClose}
         title="Nuevo Servicio"
         onConfirm={() => document.getElementById('new-service-form').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))}
-        confirmText={loading ? <Loader/> : "Agregar"}
+        confirmText={loading ? <Loader /> : (<><FaRegSquarePlus /> <span className="m-0 ms-2">Agregar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText="Cancelar"
+        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
         confirmVariant="primary"
         className={"m-0 p-0"}
       >

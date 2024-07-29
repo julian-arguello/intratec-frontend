@@ -5,6 +5,7 @@ import { CustomModal } from "../UI/CustomModal/CustomModal";
 import { useService } from "../../context/Service.Context";
 import { useNotify } from "../../context/Notify.Context";
 import { Loader } from "../UI/Loader/Loader";
+import { MdClear } from "react-icons/md";
 
 const StateDeleteButton = ({ serviceId, stateDelete, active, className }) => {
   const { delServiceState } = useService();
@@ -17,12 +18,22 @@ const StateDeleteButton = ({ serviceId, stateDelete, active, className }) => {
   const handleShow = () => setShowModal(true);
 
   const remove = () => {
-    delServiceState(serviceId, stateDelete).then((data) => {
-      notify(data.msg);
+    setLoading(true);
+    delServiceState(serviceId, stateDelete).then((res) => {
+      setLoading(false);
+      if (res.status === 'success') {
+        notify(res.msg, 'success');
+      } else {
+        notify(res.msg, 'error');
+      }
+      handleClose();
+    }).catch((error) => {
+      setLoading(false);
+      notify("Ocurrió un error inesperado. Inténtalo de nuevo.", 'error');
       handleClose();
     });
   };
-
+  
   return (
     <RoleAdmin>
       <button
@@ -38,8 +49,10 @@ const StateDeleteButton = ({ serviceId, stateDelete, active, className }) => {
         handleClose={handleClose}
         title="Confirmación"
         onConfirm={remove}
-        confirmText="Eliminar"
-        cancelText="Cancelar"
+        confirmText={loading ? <Loader /> : (<><MdOutlineDelete /> <span className="m-0 ms-2">Eliminar</span></>)}
+        classNameBtnOk={"btnActionModal"}
+        disabledBtnOk={loading}
+        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
       >
         {`¿Estás seguro de que deseas eliminar el estado ${stateDelete}?`}
       </CustomModal>

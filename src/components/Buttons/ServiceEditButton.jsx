@@ -7,6 +7,7 @@ import { useNotify } from '../../context/Notify.Context';
 import { FaRegEdit } from 'react-icons/fa';
 import { ServiceFormEdit } from '../../components/service/ServiceDetail/ServiceEditForm/ServiceEditForm'; // Asegúrate de ajustar la ruta del archivo
 import { Loader } from '../UI/Loader/Loader';
+import { MdClear } from "react-icons/md";
 
 export const ServiceEditButton = ({ service, className }) => {
   const [showModal, setShowModal] = useState(false);
@@ -50,10 +51,10 @@ export const ServiceEditButton = ({ service, className }) => {
         handleClose={handleClose}
         title="Editar Servicio"
         onConfirm={() => document.getElementById('edit-service-form').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))}
-        confirmText={loading ? <Loader/> : "Actualizar"}
+        confirmText={loading ? <Loader /> : (<><FaRegEdit /> <span className="m-0 ms-2">Editar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText="Cancelar"
+        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
         confirmVariant="primary"
       >
         <ServiceFormEdit 

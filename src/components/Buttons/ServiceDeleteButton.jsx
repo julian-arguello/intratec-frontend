@@ -6,6 +6,7 @@ import { useService } from "../../context/Service.Context";
 import { useNotify } from "../../context/Notify.Context";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "../UI/Loader/Loader";
+import { MdClear } from "react-icons/md";
 
 const ServiceDeleteButton = ({ service, className }) => {
   let navigate = useNavigate();
@@ -51,10 +52,10 @@ const ServiceDeleteButton = ({ service, className }) => {
         handleClose={handleClose}
         title="Confirmación"
         onConfirm={remove}
-        confirmText={loading ? <Loader/> : "Eliminar"}
+        confirmText={loading ? <Loader /> : (<><MdOutlineDelete /> <span className="m-0 ms-2">Eliminar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText="Cancelar"
+        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
       >
         {`¿Estás seguro de que deseas eliminar el servicio Nº ${service.service_id} de ${service.client.name_busines}?`}
       </CustomModal>

@@ -4,7 +4,10 @@ import { CustomModal } from '../UI/CustomModal/CustomModal';
 import { useService } from '../../context/Service.Context';
 import { useNotify } from '../../context/Notify.Context';
 import { FaRegSquarePlus } from 'react-icons/fa6';
+import { MdClear } from "react-icons/md";
 import { StateAddForm } from "../service/ServiceDetail/StateAddForm/StateAddForm"
+import { Loader } from '../UI/Loader/Loader';
+
 
 const stateTransitions = {
   Recepcionado: ['Revisado', 'Sin reparación', 'Devuelto'],
@@ -18,14 +21,18 @@ const StateNewButton = ({ service, className }) => {
   const [showModal, setShowModal] = useState(false);
   const { notify } = useNotify();
   const isDisabled = service.state === 'Devuelto';
+  const [loading, setLoading] = useState(false);
+
 
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   const createState = async (values) => {
+    setLoading(true);
     try {
       const res = await addServiceState(service._id, values.state, values.description);
+      setLoading(false);
       if (res.status === 'success') {
         notify('Estado agregado correctamente');
       } else {
@@ -33,6 +40,7 @@ const StateNewButton = ({ service, className }) => {
       }
       handleClose();
     } catch (err) {
+      setLoading(false);
       notify('Error al agregar el estado');
       handleClose();
     }
@@ -57,8 +65,10 @@ const StateNewButton = ({ service, className }) => {
         handleClose={handleClose}
         title="Crear Nuevo Estado"
         onConfirm={() => document.getElementById('create-state-form').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))}
-        confirmText="Crear"
-        cancelText="Cancelar"
+        confirmText={loading ? <Loader /> : (<><FaRegSquarePlus /> <span className="m-0 ms-2">Crear</span></>)}
+        classNameBtnOk={"btnActionModal"}
+        disabledBtnOk={loading}
+        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
         confirmVariant="primary"
       >
         <StateAddForm availableStates={availableStates} onSubmit={createState} />

@@ -21,7 +21,7 @@ const CustomModal = ({
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose} className="d-flex align-items-center align-items-center">
           {cancelText}
         </Button>
         <Button variant={confirmVariant} disabled={disabledBtnOk} className={classNameBtnOk} onClick={onConfirm}>

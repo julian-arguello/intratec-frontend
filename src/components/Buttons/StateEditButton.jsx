@@ -7,7 +7,7 @@ import { StateEditForm } from "../service/ServiceDetail/StateEditForm/StateEditF
 import { parseISO, formatISO } from 'date-fns';
 import { FaRegEdit } from "react-icons/fa";
 import { Loader } from '../UI/Loader/Loader';
-
+import { MdClear } from "react-icons/md";
 
 const StateEditButton = ({ service, stateInfo, state, className }) => {
   const { updateServiceState } = useService();
@@ -54,9 +54,9 @@ const StateEditButton = ({ service, stateInfo, state, className }) => {
         title="Editar Estado"
         onConfirm={() => document.getElementById('edit-state-form').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))}
         classNameBtnOk={"btnActionModal"}
-        confirmText={loading ? <Loader/> : "Guardar"}
+        confirmText={loading ? <Loader /> : (<><FaRegEdit /> <span className="m-0 ms-2">Editar</span></>)}
         disabledBtnOk={loading}
-        cancelText="Cancelar"
+        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
         confirmVariant="primary"
       >
         <StateEditForm stateInfo={stateInfo} onSubmit={editState} service={service} state={state}/>
