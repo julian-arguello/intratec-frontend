@@ -1,19 +1,24 @@
-import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaClientRegister } from '../../utils/validate';
 
-
-export function ClientFormEdit({ initialValues, onSubmit }) {
-
+const ClientFormNew = ({ onSubmit, onClose }) => {
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={{
+        name_busines: '',
+        cuit_cuil: '',
+        phone: '',
+        email: '',
+      }}
       validationSchema={schemaClientRegister}
-      onSubmit={onSubmit}
+      onSubmit={(client) => {
+        onSubmit(client);
+        onClose();
+      }}
     >
       {({ errors, touched }) => (
-        <Form id="edit-client-form">
+        <Form id="new-client-form">
           <div className="row mb-4">
             <div className="col-12 col-md-6 mb-4">
               <label className="form-label w-100">
@@ -106,4 +111,4 @@ export function ClientFormEdit({ initialValues, onSubmit }) {
   );
 }
 
-export default ClientFormEdit;
+export { ClientFormNew }

@@ -63,9 +63,9 @@ export const ServiceNewButton = ({ className }) => {
         title="Nuevo Servicio"
         onConfirm={() => document.getElementById('new-service-form').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))}
         confirmText={loading ? <Loader /> : (<><FaRegSquarePlus /> <span className="m-0 ms-2">Crear</span></>)}
-        classNameBtnOk={"btnActionModal"}
+        classNameBtnOk={"btnActionModal btn-success"}
         disabledBtnOk={loading}
-        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
+        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
         className={"m-0 p-0"}
       >

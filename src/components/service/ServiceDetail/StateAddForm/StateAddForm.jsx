@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchemaAdd } from "../../../../utils/validate"
 
 const StateAddForm = ({ availableStates, onSubmit }) => {
@@ -11,7 +11,8 @@ const StateAddForm = ({ availableStates, onSubmit }) => {
       {({ errors, touched }) => (
         <Form id="create-state-form">
           <div className="mb-3">
-            <label htmlFor="state" className="form-label">Estado</label>
+            <label htmlFor="state" className="form-label">Estado *
+            </label>
             <Field
               as="select"
               id="state"
@@ -28,17 +29,26 @@ const StateAddForm = ({ availableStates, onSubmit }) => {
             ) : null}
           </div>
           <div className="mb-3">
-            <label htmlFor="description" className="form-label">Descripción</label>
-            <Field
-              as="textarea"
-              id="description"
-              name="description"
-              rows="3"
-              className={`form-control ${touched.description && errors.description ? "is-invalid" : ""}`}
-            ></Field>
-            {touched.description && errors.description ? (
-              <div className="invalid-feedback">{errors.description}</div>
-            ) : null}
+          <label className="form-label w-100">
+              Descripción *
+              <Field
+                as="textarea"
+                name="description"
+                rows="3"
+                className={`form-control ${touched.description && errors.description ? "is-invalid" : ""}`}
+                placeholder="Ingrese la descripción"
+              />
+              <ErrorMessage
+                name="description"
+                component="div"
+                className="invalid-feedback"
+              />
+              {!(errors.description && touched.description) && (
+                <div className="form-text">
+                  Mínimo 10 caracteres
+                </div>
+              )}
+            </label>
           </div>
         </Form>
       )}
@@ -47,3 +57,5 @@ const StateAddForm = ({ availableStates, onSubmit }) => {
 };
 
 export { StateAddForm };
+
+

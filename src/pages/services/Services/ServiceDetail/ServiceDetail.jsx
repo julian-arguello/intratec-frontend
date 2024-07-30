@@ -41,7 +41,6 @@ const ServiceDetail = () => {
         <div className="d-flex flex-wrap gap-2">
           <BackButton to={"/servicios"} />
           <ServiceDeleteButton service={state.service} />
-          {console.log("state.service ",state.service)}
           <ServiceEditButton service={state.service} />
         </div>
       </Navbar>

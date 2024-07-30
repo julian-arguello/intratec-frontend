@@ -28,19 +28,20 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/
         case "ADD":
-            console.log("UserReducer->ADD")
             return {
                 ...state,
-                users: []
-            }
+                users: action.payload,
+                UserFilter: action.payload,
+            };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
             console.log("UserReducer->UPDATE")
             return {
                 ...state,
-                users: []
-            }
+                users: action.payload,
+                UserFilter: action.payload,
+            };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "REMOVE":

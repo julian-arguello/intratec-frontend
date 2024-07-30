@@ -8,7 +8,6 @@ import { WithoutResults } from "../../UI/withoutResults/withoutResults";
 
 export function ClientList() {
   const { state, filterState, findClient, reload, setReload } = useClient();
-
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6);
@@ -16,7 +15,6 @@ export function ClientList() {
   const filteredClients = state.clientsFilter.filter(
     (client) => !filterState || client.state === filterState
   );
-
 
   useEffect(() => {
     findClient().then(() => setLoading(false));
@@ -36,7 +34,7 @@ export function ClientList() {
         <WithoutResults message="No se encontraron clientes para mostrar"/>
       ) : (
         
-          currentClients.map((client) => (
+          currentClients.reverse().map((client) => (
             <ClientItem key={client._id} client={client} />
           ))
         

@@ -21,7 +21,7 @@ const CustomModal = ({
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose} className="d-flex align-items-center align-items-center">
+        <Button variant="secondary" onClick={handleClose}>
           {cancelText}
         </Button>
         <Button variant={confirmVariant} disabled={disabledBtnOk} className={classNameBtnOk} onClick={onConfirm}>
@@ -30,17 +30,6 @@ const CustomModal = ({
       </Modal.Footer>
     </Modal>
   );
-};
-
-CustomModal.propTypes = {
-  show: PropTypes.bool.isRequired,
-  handleClose: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  onConfirm: PropTypes.func.isRequired,
-  confirmText: PropTypes.string.isRequired,
-  cancelText: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  confirmVariant: PropTypes.string,
 };
 
 export { CustomModal };

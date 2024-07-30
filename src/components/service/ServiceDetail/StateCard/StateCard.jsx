@@ -13,9 +13,8 @@ const StateCard = ({ state, description, date, active, service, stateInfo }) => 
 
   return (
     <div className={`rounded-2  ${styles.card} ${styles[stateClass(state)]}`}>
-      {/* <span className={`h6 estado ${styles.state}`}>{state} {active && " - estado actual"}</span> */}
-      <span className={`h6 estado d-flex justify-content-start align-items-center ${styles.state}`}>
-        {state} {active && <div className={styles.iconStateBox}><span className="m-0 ms-2">- Actual</span><MdRadioButtonChecked className={`m-0 ms-1 ${styles.iconState}`}/></div>}
+      <span className={`h6 estado d-flex justify-content-between align-items-center ${styles.state}`}>
+        {state} {active && <div className={styles.iconStateBox}><MdRadioButtonChecked className={`m-0 ms-1 ${styles.iconState}`}/><span className="m-0 ms-1">Actual</span></div>}
       </span>
 
       <div className={`rounded-2 py-3 ${styles.cardBody}`}>

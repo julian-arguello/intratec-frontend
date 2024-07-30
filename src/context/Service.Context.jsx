@@ -96,26 +96,19 @@ export function ServiceProvider({ children }) {
 // Nuevo servicio
 const addService = async (service) => {
   try {
-    // Agrega el servicio
-    const addResponse = await API.add(service);
+    const res = await API.add(service);
 
-    if (addResponse.status === 'success') {
-      // Obtén la lista actualizada de servicios
+    if (res.status === 'success') {
       const services = await API.viewAlls();
-
-      // Despacha la lista actualizada
       dispatch(ActionAdd(services));
     }
 
-    return addResponse; // Devuelve la respuesta del API
+    return res;
   } catch (err) {
     console.error("Error adding service:", err.message);
     return { status: 'error', msg: err.message };
   }
 };
-
-  
-  
   /*-----------------------------------------------------------------*/
 
   //Editar servicio

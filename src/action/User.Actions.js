@@ -28,10 +28,10 @@ export function ActionGetRole( roles ){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //ADD
-export function ActionAdd( user ){
+export function ActionAdd( users ){
     return {
         type: 'ADD',
-        payload: user
+        payload: users
     };
 }
 /*-----------------------------------------------------------------*/    
@@ -46,10 +46,10 @@ export function ActionRemove( id ){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //UPDATE
-export function ActionUpdate( user ){
+export function ActionUpdate( users ){
     return {
         type: 'UPDATE',
-        payload: user
+        payload: users
     };
 }
 /*-----------------------------------------------------------------*/    

@@ -1,46 +1,12 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useNotify } from '../../context/Notify.Context.jsx';
-import { useUser } from '../../context/User.Context.jsx';
 import { schemaUserUpdateSA } from '../../utils/validate.js';
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import Loading from '../Loading.jsx';
 import authRole from '../../utils/auth.role.js';
 import { ConfirmButton } from '../Buttons/ConfirmButton.jsx';
-import { BackButton } from '../Buttons/BackButton.jsx';
 
 export function UserEditForm() {
-   const navigate = useNavigate();
-   const { id } = useParams();
-   const { notify } = useNotify();
-   const { state, editUser, findRole, findUserId } = useUser();
-   const [loading, setloading] = useState(true);
-
-   useEffect(() => {
-      findUserId(id).then(() => {
-         findRole().then(() => {
-            setloading(false);
-            console.log(state.user);
-         });
-      });
-   }, []);
-
-   if (loading) {
-      return <Loading />;
-   }
 
    return (
-      <>
-         <div className="row align-items-center mb-5 mt-3">
-            <h2 className="col-6 col-md-4 text-end text-sm-start h3 order-1 order-md-0 mb-0">
-               Editar datos de {state.user.name}
-            </h2>
-            <div className="col-6 col-md-4">
-               <div className="float-md-end">
-                  <BackButton refer={'/usuarios'} />
-               </div>
-            </div>
-         </div>
+      
          <Formik
             /*--------------------*/
             initialValues={{
@@ -174,7 +140,6 @@ export function UserEditForm() {
                </Form>
             )}
          </Formik>
-      </>
    );
 }
 export default UserEditForm

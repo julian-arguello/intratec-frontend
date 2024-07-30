@@ -49,28 +49,38 @@ export function ClientProvider({ children }) {
     }
   };
   /*-----------------------------------------------------------------*/
+ // Nuevo Cliente
+const addClient = async (client) => {
+  try {
+    const res = await API.add(client);
 
-  //Nuevo Cliente.
-  const addClient = async (client) => {
-    try {
-      const res = await API.add(client);
-      dispatch(ActionAdd(client));
-      return res;
-    } catch (err) {
-      return { status: "error", msg: err.message };
+    if (res.status === 'success') {
+      const clients = await API.viewAlls();
+      dispatch(ActionAdd(clients));
     }
-  };
+    return res;
+  } catch (err) {
+    console.error("Error adding client:", err.message);
+    return { status: 'error', msg: err.message };
+  }
+};
   /*-----------------------------------------------------------------*/
 
   //Editar Cliente.
   const editClient = async (client) => {
     try {
       const res = await API.edit(client);
-      dispatch(ActionUpdate(client));
+  
+      if (res.status === 'success') {
+        const clients = await API.viewAlls();
+        dispatch(ActionUpdate(clients));
+      }
       return res;
     } catch (err) {
-      return { status: "error", msg: err.message };
+      console.error("Error adding client:", err.message);
+      return { status: 'error', msg: err.message };
     }
+
   };
   /*-----------------------------------------------------------------*/
 

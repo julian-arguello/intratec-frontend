@@ -50,29 +50,40 @@ export function UserProvider({ children }) {
     }
   };
   /*-----------------------------------------------------------------*/
-
   //Nuevo User.
   const addUser = async (user) => {
     try {
       const res = await API.add(user);
-      dispatch(ActionAdd(user));
+
+      if (res.status === 'success') {
+        const users = await API.viewAlls();
+        dispatch(ActionAdd(users));
+      }
+      
       return res;
-    } catch (err) {
-      return { status: "error", msg: err.message };
+    }  catch (err) {
+      console.error("Error adding client:", err.message);
+      return { status: 'error', msg: err.message };
     }
   };
   /*-----------------------------------------------------------------*/
-
-  //Editar User.
-  const editUser = async (user, SA) => {
-    try {
-      const res = await API.edit(user, SA);
-      dispatch(ActionUpdate(user));
-      return res;
-    } catch (err) {
-      return { status: "error", msg: err.message };
-    }
-  };
+ //Editar User.
+    const editUser = async (user, SA) => {
+      try {
+        const res = await API.edit(user, SA);
+  
+        if (res.status === 'success') {
+          const users = await API.viewAlls();
+          dispatch(ActionUpdate(users));
+        }
+        
+        return res;
+      }  catch (err) {
+        console.error("Error adding client:", err.message);
+        return { status: 'error', msg: err.message };
+      }
+    };
+  
   /*-----------------------------------------------------------------*/
 
   //Elimina un User

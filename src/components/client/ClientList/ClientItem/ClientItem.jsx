@@ -1,9 +1,7 @@
 import styles from "./ClientItem.module.scss";
-import { MdOutlineInventory2 } from "react-icons/md";
-import { TbUserCog } from "react-icons/tb";
-import { ClientAssociatedServicesButton } from "../../../Buttons/ClientAssociatedServicesButton";
-import { ClientEditButton } from "../../../Buttons/ClientEditButton";
-import { ClientDeleteButton } from "../../../Buttons/ClientDeleteButton";
+import { ClientAssociatedServicesButton } from "../../../Buttons/Client/ClientAssociatedServicesButton";
+import { ClientEditButton } from "../../../Buttons/Client/ClientEditButton";
+import { ClientDeleteButton } from "../../../Buttons/Client/ClientDeleteButton";
 import { HiOutlineMail } from "react-icons/hi";
 import { LiaPhoneSolid } from "react-icons/lia";
 import { formatPhone, formatCuitCuil } from "../../../../utils/formatUtils";
@@ -20,7 +18,7 @@ export function ClientItems({ client }) {
         </span>
 
         {!Object.keys(client.services).length ? (
-          <button className="btn btn-secondary d-flex align-items-center align-items-center" disabled>
+          <button className="btn btn-outline-secondary d-flex align-items-center align-items-center" disabled>
              <PiCardsBold /> <span className="m-0 ms-2">Sin servicios</span>
           </button>
         ) : (
@@ -43,7 +41,7 @@ export function ClientItems({ client }) {
           </div>
         </div>
 
-        <div className="d-flex align-items-center mb-4">
+        <div className="d-flex align-items-center mb-3">
           <LiaPhoneSolid className={`me-2 ${styles.icon}`} />
           <span className="text-box-card">{formatPhone(client.phone)}</span>
         </div>

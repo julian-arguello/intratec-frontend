@@ -19,10 +19,10 @@ export function ActionGetId( client ){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //ADD
-export function ActionAdd( client ){
+export function ActionAdd( clients ){
     return {
         type: 'ADD',
-        payload: client
+        payload: clients
     };
 }
 /*-----------------------------------------------------------------*/    

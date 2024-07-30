@@ -55,7 +55,7 @@ const ServiceDeleteButton = ({ service, className }) => {
         confirmText={loading ? <Loader /> : (<><MdOutlineDelete /> <span className="m-0 ms-2">Eliminar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText={<><MdClear /> <span className="m-0 ms-2">Cancelar</span></>}
+        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
       >
         {`¿Estás seguro de que deseas eliminar el servicio Nº ${service.service_id} de ${service.client.name_busines}?`}
       </CustomModal>

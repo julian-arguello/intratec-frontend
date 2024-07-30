@@ -20,15 +20,18 @@ export default function ClientReducer(state, action){
         case "ADD":
             return {
                 ...state,
-                clients: []
-            }
+                clients: action.payload,
+                clientsFilter: action.payload,
+            };
+        
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
             return {
                 ...state,
-                clients: []
-            }
+                clients: action.payload,
+                clientsFilter: action.payload,
+            };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "REMOVE":

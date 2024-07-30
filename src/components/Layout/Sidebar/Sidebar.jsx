@@ -84,7 +84,7 @@ const Sidebar = () => {
 
           <CNavItem
             className={`rounded-2 mb-2 ${
-              location.pathname == "/clientes" ? styles.active : ""
+              location.pathname.startsWith("/clientes") ? styles.active : ""
             } `}
           >
             <Link to="/clientes" className="nav-link">

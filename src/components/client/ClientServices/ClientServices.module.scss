@@ -1,0 +1,21 @@
+.main{
+    height: 100%;
+    overflow: auto;
+}
+
+.serviceBox{
+    padding: 2rem;
+   display: grid;
+   justify-content: start;
+   align-items: start;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+   position: relative;
+   height: 100%;
+   padding-bottom: 4rem;
+   align-content: start;
+}
+
+.loaderBox{
+    min-height: 20rem;
+}

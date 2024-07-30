@@ -1,4 +1,3 @@
-import ClientFormAdd from "../../components/client/ClientFormAdd";
 import ClientFormEdit from "../../components/client/ClientFormEdit";
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -38,7 +37,7 @@ export function ServiceAdd(props) {
                </div>
             </div>
          )}
-         {!props.edit ? <ClientFormAdd /> : <ClientFormEdit />}
+         { <ClientFormEdit />}
       </div>
    );
 }

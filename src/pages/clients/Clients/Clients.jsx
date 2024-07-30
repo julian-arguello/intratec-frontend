@@ -1,6 +1,6 @@
 import { useClient } from "../../../context/Client.Context";
 import ClientList from "../../../components/client/ClientList/ClientList";
-import { ClientNewButton } from "../../../components/Buttons/ClientNewButton";
+import { ClientNewButton } from "../../../components/Buttons/Client/ClientNewButton";
 import { schemaSearch } from "../../../utils/validate";
 import { Search } from "../../../components/UI/Search/Search";
 import { Navbar } from "../../../components/Layout/Navbar/Navbar";

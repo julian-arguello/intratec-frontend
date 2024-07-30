@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { RoleSuperAdmin } from "../authRole/RoleSuperAdmin";
+import { RoleSuperAdmin } from "../../authRole/RoleSuperAdmin";
 import { MdOutlineDelete } from "react-icons/md";
-import { useClient } from "../../context/Client.Context";
-import { CustomModal } from "../UI/CustomModal/CustomModal";
+import { useClient } from "../../../context/Client.Context";
+import { CustomModal } from "../../UI/CustomModal/CustomModal";
 
 const ClientDeleteButton = ({ client, className }) => {
   const { delClient, setReload } = useClient();

@@ -1,9 +1,8 @@
 import authRole from "../../../../utils/auth.role";
 import styles from "./UserItem.module.scss";
 import { HiOutlineMail } from "react-icons/hi";
-import { UserEditButton } from "../../../Buttons/UserEditButton";
+import { UserEditButton } from "../../../Buttons/User/UserEditButton";
 import { LiaIdCardSolid } from "react-icons/lia";
-
 import { LuShieldCheck } from "react-icons/lu";
 import { LuShieldClose } from "react-icons/lu";
 
@@ -37,7 +36,7 @@ const UserItem = ({ user }) => {
           <span className="text-box-card">{authRole(user.role.role_name)}</span>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between align-items-start">
           <div className="d-flex justify-content-start align-items-center">
             {status ? (
               <LuShieldCheck className={`me-2 ${styles.icon}`} />

@@ -7,7 +7,7 @@ import styles from "./UserList.module.scss";
 import { useUser } from "../../../context/User.Context";
 
 export function UserList() {
-  const { state, filterState, findUser, userSearch, reload } = useUser();
+  const { state, findUser, reload } = useUser();
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6);
@@ -16,7 +16,6 @@ export function UserList() {
     findUser().then(() => setLoading(false));
     setCurrentPage(1);
   }, [reload]);
-
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -30,7 +29,7 @@ export function UserList() {
       {currentUsers.length === 0 ? (
         <WithoutResults message="No se encontraron usuarios para mostrar" />
       ) : (
-        currentUsers.map((user) => (
+        currentUsers.reverse().map((user) => (
           <UserItem key={user._id} user={user} />
         ))
       )}

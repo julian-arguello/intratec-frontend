@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaServicesCreate } from '../../../utils/validate';
 
-export function ServiceFormNew({ onSubmit, state, onClose }) {
+const ServiceFormNew = ({ onSubmit, state, onClose }) => {
   return (
     <Formik
       initialValues={{
@@ -14,7 +14,7 @@ export function ServiceFormNew({ onSubmit, state, onClose }) {
       validationSchema={schemaServicesCreate}
       onSubmit={(service) => {
         onSubmit(service);
-        onClose(); 
+        onClose();
       }}
     >
       {({ errors, touched }) => (
@@ -49,13 +49,18 @@ export function ServiceFormNew({ onSubmit, state, onClose }) {
                   type="text"
                   name="model"
                   className={`form-control ${touched.model && errors.model ? "is-invalid" : ""}`}
-                  placeholder="Ingrese el modelo (mínimo tres caracteres)"
+                  placeholder="Ingrese el modelo "
                 />
                 <ErrorMessage
                   name="model"
                   component="div"
                   className="invalid-feedback"
                 />
+                {!(errors.model && touched.model) && (
+                  <div className="form-text">
+                    Mínimo 3 caracteres
+                  </div>
+                )}
               </label>
             </div>
             <div className="col-12 col-md-6 mb-4">
@@ -65,13 +70,17 @@ export function ServiceFormNew({ onSubmit, state, onClose }) {
                   type="text"
                   name="brand"
                   className={`form-control ${touched.brand && errors.brand ? "is-invalid" : ""}`}
-                  placeholder="Ingrese la marca (mínimo dos caracteres)"
+                  placeholder="Ingrese la marca"
                 />
                 <ErrorMessage
                   name="brand"
                   component="div"
                   className="invalid-feedback"
                 />
+                {!(errors.brand && touched.brand) && (
+                  <div className="form-text">
+                    Mínimo 2 caracteres                  </div>
+                )}
               </label>
             </div>
             <div className="col-12 col-md-6 mb-4">
@@ -81,13 +90,18 @@ export function ServiceFormNew({ onSubmit, state, onClose }) {
                   type="text"
                   name="serial_number"
                   className={`form-control ${touched.serial_number && errors.serial_number ? "is-invalid" : ""}`}
-                  placeholder="Ingrese el n° de serie (mínimo seis caracteres)"
+                  placeholder="Ingrese el n° de serie"
                 />
                 <ErrorMessage
                   name="serial_number"
                   component="div"
                   className="invalid-feedback"
                 />
+                {!(errors.serial_number && touched.serial_number) && (
+                  <div className="form-text">
+                    Mínimo 6 caracteres
+                  </div>
+                )}
               </label>
             </div>
           </div>
@@ -100,13 +114,18 @@ export function ServiceFormNew({ onSubmit, state, onClose }) {
                 name="description"
                 rows="3"
                 className={`form-control ${touched.description && errors.description ? "is-invalid" : ""}`}
-                placeholder="Ingrese la descripción (mínimo diez caracteres)"
+                placeholder="Ingrese la descripción"
               />
               <ErrorMessage
                 name="description"
                 component="div"
                 className="invalid-feedback"
               />
+              {!(errors.description && touched.description) && (
+                <div className="form-text">
+                  Mínimo 10 caracteres
+                </div>
+              )}
             </label>
           </div>
         </Form>
@@ -115,4 +134,4 @@ export function ServiceFormNew({ onSubmit, state, onClose }) {
   );
 }
 
-export default ServiceFormNew;
+export { ServiceFormNew };
