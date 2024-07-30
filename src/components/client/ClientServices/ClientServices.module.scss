@@ -19,3 +19,17 @@
 .loaderBox{
     min-height: 20rem;
 }
+
+.title {
+    grid-column: 1 / -1;
+}
+
+.pagination{
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+   }

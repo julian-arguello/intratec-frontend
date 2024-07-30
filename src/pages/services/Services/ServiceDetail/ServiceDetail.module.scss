@@ -4,12 +4,6 @@
   overflow: auto;
 }
 
-// .detailBox {
-//   height: calc(100vh - 4.5rem);
-//   display: grid;
-//   grid-template-columns: repeat(2, auto);
-// }
-
 .detailGeneralBox {
   padding: 2rem;
   & > h2{
@@ -44,8 +38,6 @@
         justify-content: start;
         align-items: center;
       }
-
-
     }
   }
 }
@@ -78,13 +70,6 @@
 
 }
 
-
 .loaderBox {
   min-height: 12.5rem;
 }
-
-
-
-// *{
-//     outline: 1px solid violet;
-// }

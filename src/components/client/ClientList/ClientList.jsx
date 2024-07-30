@@ -7,7 +7,7 @@ import { Pagination } from '../../UI/Pagination/Pagination';
 import { WithoutResults } from "../../UI/withoutResults/withoutResults";
 
 export function ClientList() {
-  const { state, filterState, findClient, reload, setReload } = useClient();
+  const { state, filterState, findClient, reload } = useClient();
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6);
