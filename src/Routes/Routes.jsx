@@ -17,8 +17,6 @@ import { Users } from "../pages/Users/Users";
 import PageNotFound from "../pages/PageNotFound";
 import AuthRoute from "../components/AuthRoute";
 import { ClientServices } from "../components/client/ClientServices/ClientServices";
-import UserCreateForm from "../components/Users/UserCreateForm";
-import UserEditForm from "../components/Users/UserEditForm";
 import { useAuth } from "../context/Auth.Context";
 
 const RoutesConfig = () => {
@@ -165,22 +163,6 @@ const RoutesConfig = () => {
         element={
           <AuthRoute>
             <Users />
-          </AuthRoute>
-        }
-      />
-      <Route
-        path="/usuarios/nuevo"
-        element={
-          <AuthRoute>
-            <UserCreateForm />
-          </AuthRoute>
-        }
-      />
-      <Route
-        path="/usuarios/editar/:id"
-        element={
-          <AuthRoute>
-            <UserEditForm />
           </AuthRoute>
         }
       />

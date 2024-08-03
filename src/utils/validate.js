@@ -315,3 +315,13 @@ export const schemaNewPassword = yup
   })
   .noUnknown();
 
+
+  export const schemaPasswordUpdate = yup.object().shape({
+    oldPassword: yup.string()
+    .required("La contraseña actual es obligatoria"),
+    newPassword: yup.string()
+    .min(6, "La nueva contraseña debe tener al menos 6 caracteres")
+    .required("La nueva contraseña es obligatoria")
+    .notOneOf([yup.ref('oldPassword'), null], "La nueva contraseña no puede ser igual a la actual")
+  });
+

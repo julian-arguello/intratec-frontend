@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../context/Auth.Context';
-import authRole from '../../utils/auth.role';
+import { useAuth } from '../../../context/Auth.Context';
+import authRole from '../../../utils/auth.role';
 
 function ProfileDetail() {
    const { state } = useAuth();

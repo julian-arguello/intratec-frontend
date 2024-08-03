@@ -81,10 +81,23 @@ export function AuthProvider({ children }){
         } 
     }
     /*-----------------------------------------------------------------*/
+    const updatePass = async (passwords) =>{
+
+        console.log("updatePass ",  passwords)
+
+        try{
+            const res = await API.editPass(passwords)
+            return res
+        }
+        catch(err){
+            return {status: "error", msg: err.message} 
+        } 
+    }
+    /*-----------------------------------------------------------------*/
 
     //return
     return(
-        <AuthContext.Provider value={{ state, dispatch, login, logout, updateUserAuth, recovery, newPass}}>
+        <AuthContext.Provider value={{ state, dispatch, login, logout, updateUserAuth, recovery, newPass, updatePass}}>
             {children}
         </AuthContext.Provider>
     );

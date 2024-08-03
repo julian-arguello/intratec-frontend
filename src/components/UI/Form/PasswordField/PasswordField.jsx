@@ -16,6 +16,7 @@ const PasswordField = ({
   classNamemField = "",
   error,
   touched,
+  ...props
 }) => {
   const [showPass, setShowPass] = useState(false);
   return (
@@ -32,6 +33,7 @@ const PasswordField = ({
           aria-describedby={id + "-aria-describedby"}
           placeholder={placeholder}
           className={`form-control ${styles.inputPass} ${classNamemField}`}
+          {...props}
         />
         <span
           className={`btn btn-outline-secondary ${styles.inputPassShow}`}

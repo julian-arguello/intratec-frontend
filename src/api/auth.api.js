@@ -89,3 +89,26 @@ export async function newPass(password, token){
 }
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
+//Recovery.
+export async function editPass(passwords){
+    return fetch(`${config.api.url}/auth/new-password`,{
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token')
+        },
+        body: JSON.stringify(passwords)
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        console.log(data)
+        if(res.status === 200) {
+            return data;
+        }
+        else{
+            throw new Error(data.msg)
+        }
+    })
+}
+/*-----------------------------------------------------------------*/    
+/*-----------------------------------------------------------------*/

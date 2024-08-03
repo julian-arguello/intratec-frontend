@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, useState } from "react";
 import UserReducer from "../reducer/User.Reducer";
+import { useAuth } from "./Auth.Context";
 
 import {
   ActionAdd,
@@ -27,6 +28,8 @@ export function UserProvider({ children }) {
     UserFilter: [],
   });
   const [filterState, setFilterState] = useState("");
+
+  const {updateUserAuth} = useAuth()
   /*-----------------------------------------------------------------*/
 
   //traemos todos los Users.
@@ -71,10 +74,28 @@ export function UserProvider({ children }) {
     const editUser = async (user, SA) => {
       try {
         const res = await API.edit(user, SA);
-  
+        
         if (res.status === 'success') {
           const users = await API.viewAlls();
           dispatch(ActionUpdate(users));
+        }
+        
+        return res;
+      }  catch (err) {
+        console.error("Error adding client:", err.message);
+        return { status: 'error', msg: err.message };
+      }
+    };
+  /*-----------------------------------------------------------------*/
+ //Editar User.
+    const profileEdit = async (user) => {
+      try {
+        const userId = user._id;
+        const res = await API.edit(user);
+        
+        if (res.status === 'success') {
+          const user = await API.viewId(userId);
+          updateUserAuth(user);
         }
         
         return res;
@@ -131,7 +152,8 @@ export function UserProvider({ children }) {
         findRole,
         userSearch,
         filterState,
-        setFilterState
+        setFilterState,
+        profileEdit,
       }}
     >
       {children}

@@ -3,7 +3,6 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/   
         case "GET":
-            console.log("UserReducer->GET");
             return {
                 ...state,
                 users: action.payload,
@@ -12,7 +11,6 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETID":
-            console.log("UserReducer->GETID")
             return {
                 ...state,
                 user:  action.payload   
@@ -20,7 +18,6 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETROLE":
-            console.log("UserReducer->GETROLE")
             return {
                 ...state,
                 roles: action.payload  
@@ -36,7 +33,6 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
-            console.log("UserReducer->UPDATE")
             return {
                 ...state,
                 users: action.payload,
@@ -45,7 +41,6 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "REMOVE":
-            console.log("UserReducer->REMOVE")
             return{
                 ...state,
                 users: []
@@ -53,7 +48,6 @@ export default function UserReducer(state, action){
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/                
         case "FILTER":
-            console.log("UserReducer->FILTER");
             return {
                 ...state,
                 UserFilter: action.payload === '' ? state.users : state.users.filter(user => {

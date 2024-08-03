@@ -1,5 +1,57 @@
+@import "../../../scss/variables";
+
 .main{
     height: 100%;
     overflow: auto;
 }
 
+.profileBox{
+    padding: 2rem;
+   display: grid;
+   justify-content: start;
+   align-items: start;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+   position: relative;
+   height: 100%;
+   padding-bottom: 4rem;
+   align-content: start;
+}
+
+.card {
+    color: white;
+    border: .5rem solid;
+    max-width: 35rem;
+    min-width: 20rem;
+    // max-height: 15.5rem;
+    border-color:$bg-card-service;
+    background-color: $bg-card-service;
+}
+
+.cardBody{
+    padding: 0 1rem;
+    color: $bg-card-service;
+    background-color: $bg-navigate;
+}
+
+
+.nameBox{
+    display: flex;
+     justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    padding-left: 0;
+    border-bottom: .5rem solid transparent;
+}
+
+.name{
+    display: block;
+    padding: .2rem;
+    padding-left: 1rem;
+    margin: 0;
+    
+}
+
+.icon{
+    font-size: 1.3rem;
+}
