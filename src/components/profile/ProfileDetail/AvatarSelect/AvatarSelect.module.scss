@@ -1,0 +1,46 @@
+.avatarSelect {
+    position: relative;
+    width: 100%;
+  }
+  
+  .selectedOption {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .selectedImage {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 1000;
+  }
+  
+  .option {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .optionImage {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .option:hover {
+    background: #f0f0f0;
+  }
+  

@@ -5,9 +5,21 @@ import { UserEditButton } from "../../../Buttons/User/UserEditButton";
 import { LiaIdCardSolid } from "react-icons/lia";
 import { LuShieldCheck } from "react-icons/lu";
 import { LuShieldClose } from "react-icons/lu";
+import { CAvatar } from '@coreui/react';
+
 
 const UserItem = ({ user }) => {
   const status = user.softDelete === "false";
+
+  const getAvatarSrc = (avatar) => {
+    try {
+      return require(`../../../../assets/avatars/${avatar}.jpeg`);
+    } catch (err) {
+      console.error("Error al cargar la imagen del avatar:", err);
+      return null;
+    }
+  };
+
 
   return (
     <div
@@ -19,6 +31,8 @@ const UserItem = ({ user }) => {
         }`}
       >
         <span className={`h6 estado ${styles.name}`}>
+        <CAvatar src={getAvatarSrc(user.avatar)} className={styles.avatar}/>
+        {console.log(user.avatar)}
           {user.name} {user.lastname}
         </span>
       </div>

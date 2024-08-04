@@ -7,10 +7,20 @@ import { ProfilePasswordEditButton } from "../../../components/Buttons/Profile/P
 import { ProfileEditButton } from "../../../components/Buttons/Profile/ProfileEditButton";
 import { useAuth } from "../../../context/Auth.Context";
 import { Loader } from "../../../components/UI/Loader/Loader"
+import { CAvatar } from '@coreui/react';
 
 function Profile() {
   const { state } = useAuth();
   const [loading, setLoading] = useState(true);
+
+  const getAvatarSrc = (avatar) => {
+    try {
+      return require(`../../../assets/avatars/${avatar}.jpeg`);
+    } catch (err) {
+      console.error("Error al cargar la imagen del avatar:", err);
+      return null;
+    }
+  };
 
   return (
     <section className="d-flex flex-column w-100">
@@ -28,6 +38,8 @@ function Profile() {
           <div className={`rounded-2  ${styles.card}`}>
             <div className={` ${styles.nameBox}`}>
               <span className={`h6 estado ${styles.name}`}>
+              <CAvatar src={getAvatarSrc(state.user.avatar)} className={styles.avatar}/>
+
                 {state.user.name + " " + state.user.lastname}
               </span>
 
@@ -55,7 +67,6 @@ function Profile() {
         </div>
 
       )}  
-
 
       </main>
     </section>

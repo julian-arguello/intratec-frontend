@@ -28,7 +28,8 @@ export default function AuthReducer(state, action){
                 {
                     ...state.user,
                     name: action.payload.name,
-                    lastname: action.payload.lastname
+                    lastname: action.payload.lastname,
+                    avatar: action.payload.avatar
                 }
             ))
             return{
@@ -36,7 +37,8 @@ export default function AuthReducer(state, action){
                 user: {
                     ...state.user,
                     name: action.payload.name,
-                    lastname: action.payload.lastname
+                    lastname: action.payload.lastname, 
+                    avatar: action.payload.avatar
                 }
             }
         /*-----------------------------------------------------------------*/    

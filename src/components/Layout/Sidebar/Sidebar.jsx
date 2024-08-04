@@ -6,15 +6,14 @@ import {
   CNavTitle,
   CImage,
   CSidebarHeader,
+  CAvatar,
 } from "@coreui/react";
 import styles from "./Sidebar.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../../context/Auth.Context";
 import { RoleSuperAdmin } from "../../../components/authRole/RoleSuperAdmin";
 import { FaRegChartBar } from "react-icons/fa";
-import { TbUser } from "react-icons/tb";
-import { TbUsers } from "react-icons/tb";
-import { TbUsersGroup } from "react-icons/tb";
+import { TbUser, TbUsers, TbUsersGroup } from "react-icons/tb";
 import { RxExit } from "react-icons/rx";
 import images from "../../../assets/images";
 import { AuthComponent } from "../../AuthComponent";
@@ -36,15 +35,22 @@ const Sidebar = () => {
     handleClose();
   };
 
+  const getAvatarSrc = (avatar) => {
+    try {
+      return require(`../../../assets/avatars/${avatar}.jpeg`);
+    } catch (err) {
+      console.error("Error al cargar la imagen del avatar:", err);
+      return null;
+    }
+  };
+
   return (
     <AuthComponent>
       <CSidebar
         className={`border-end ${styles.sidebar}`}
-        // colorScheme="dark"
         visible={visible}
         narrow={narrow}
         position="sticky"
-        // onHide={() => {setVisible(false)}}
       >
         <CSidebarHeader className={`border-bottom ${styles.logoBox}`}>
           {narrow ? (
@@ -57,7 +63,8 @@ const Sidebar = () => {
         <CSidebarNav className={styles.sidebarNav}>
           <CNavTitle className="m-0">
             <p className="">Bienvenido</p>
-            {state.isAuth && state.user.name + " " + state.user.lastname + " "}
+            {state.isAuth && <CAvatar src={getAvatarSrc(state.user.avatar)} className={styles.avatar}/>}
+            {state.isAuth && `${state.user.name} ${state.user.lastname}`}
           </CNavTitle>
 
           <CNavItem
@@ -140,7 +147,7 @@ const Sidebar = () => {
               confirmText="Cerrar sesión"
               cancelText="Cancelar"
             >
-            ¿Estás seguro de que deseas cerrar sesión?
+              ¿Estás seguro de que deseas cerrar sesión?
             </CustomModal>
           </div>
         </CSidebarNav>

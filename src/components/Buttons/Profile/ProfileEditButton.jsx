@@ -11,14 +11,12 @@ const ProfileEditButton = ({ className, user }) => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const { profileEdit } = useUser();
-
   const { notify } = useNotify();
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   const handleSubmit = (values) => {
-    console.log("handleSubmit ", values)
     setLoading(true);
     values._id = user._id;
 
@@ -41,6 +39,7 @@ const ProfileEditButton = ({ className, user }) => {
 
   return (
     <>
+      {console.log("user", user)}
       <button
         onClick={handleShow}
         className={`btn btn-primary d-flex align-items-center ${className}`}
@@ -59,12 +58,12 @@ const ProfileEditButton = ({ className, user }) => {
         cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
         className={"m-0 p-0"}
-        >
-
+      >
         <ProfileFormEdit
           initialValues={{
             name: user.name,
             lastname: user.lastname,
+            avatar: user.avatar
           }}
           onSubmit={handleSubmit}
         />
