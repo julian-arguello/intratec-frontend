@@ -27,7 +27,6 @@ export function RecoveryPage(){
                 onSubmit={(data) => {
                     recovery(data.email)
                     .then((data)=>{
-                        console.log("recovery", data)
                         notify(data)
                         if(data.status != 'error'){
                             navigate('/')

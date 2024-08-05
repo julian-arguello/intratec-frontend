@@ -33,7 +33,7 @@ export const ClientServices = () => {
   return (
    <section className="d-flex flex-column w-100">
      <Navbar>
-       <ServiceNewButton />
+       <ServiceNewButton clientId={state.client._id}/>
      </Navbar>
      <main className={styles.main}>
        {!loading ? (

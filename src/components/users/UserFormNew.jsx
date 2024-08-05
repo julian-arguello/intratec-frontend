@@ -42,7 +42,6 @@ const UserFormNew = ({ onSubmit, state }) => {
                 )}
               </label>
             </div>
-                {console.log("state ", state)}
             <div className="col-12 col-md-6 mb-4">
               <label className="form-label w-100">
                 Rol del usuario *

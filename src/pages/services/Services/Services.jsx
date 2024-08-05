@@ -31,7 +31,6 @@ function Services() {
 
   const handleChange = (event) => { 
     const value = event.target.value;
-    console.log('value',value)
     setSelectedValue(value);
     setFilterState(stateRoute(value));
 

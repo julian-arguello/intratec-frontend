@@ -11,7 +11,7 @@ import { useNotify } from '../../context/Notify.Context';
 import { Loader } from '../UI/Loader/Loader';
 import { MdClear } from "react-icons/md";
 
-export const ServiceNewButton = ({ className }) => {
+export const ServiceNewButton = ({ className, clientId = false }) => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const { state, findClient } = useClient();
@@ -71,6 +71,7 @@ export const ServiceNewButton = ({ className }) => {
       >
         <ServiceFormNew
           state={state}
+          clientId={clientId}
           onSubmit={handleSubmit}
           onClose={handleClose}
         />

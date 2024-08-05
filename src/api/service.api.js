@@ -152,7 +152,6 @@ export async function edit(service){
     })
     .then(async (res) => {
         const data = await res.json()
-        console.log("data", data);
         if(res.status === 200) {
             return data;
         }
@@ -248,8 +247,6 @@ export async function updateState(id, state, date, description) {
             },
             body: JSON.stringify({ state, description, date })
         });
-
-        console.log(response.body);
 
         const data = await response.json();
 

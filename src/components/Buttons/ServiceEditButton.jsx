@@ -5,7 +5,7 @@ import { CustomModal } from "../UI/CustomModal/CustomModal";
 import { useService } from "../../context/Service.Context";
 import { useNotify } from "../../context/Notify.Context";
 import { FaRegEdit } from "react-icons/fa";
-import { ServiceFormEdit } from "../../components/service/ServiceDetail/ServiceEditForm/ServiceEditForm"; // Asegúrate de ajustar la ruta del archivo
+import { ServiceFormEdit } from "../../components/service/ServiceDetail/ServiceEditForm/ServiceEditForm";
 import { Loader } from "../UI/Loader/Loader";
 import { MdClear } from "react-icons/md";
 

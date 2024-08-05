@@ -32,7 +32,6 @@ const UserItem = ({ user }) => {
       >
         <span className={`h6 estado ${styles.name}`}>
         <CAvatar src={getAvatarSrc(user.avatar)} className={styles.avatar}/>
-        {console.log(user.avatar)}
           {user.name} {user.lastname}
         </span>
       </div>

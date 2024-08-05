@@ -9,7 +9,6 @@ export function ModalDelete(props){
     const{ notify } = useNotify()
 
     function remove(){
-        console.log("elimino Cliente id *-> ", props.id);
         delClient(props.id)
         .then(()=>{
             notify({msj: 'El cliente se borró correctamente.'})

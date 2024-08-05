@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { schemaServicesUpdate } from '../../../../utils/validate'; // Asegúrate de que esta ruta sea correcta
+import { schemaServicesUpdate } from '../../../../utils/validate';
 
 export const ServiceFormEdit = ({ initialValues, onSubmit }) => {
   return (

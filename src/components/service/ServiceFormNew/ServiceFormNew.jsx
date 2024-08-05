@@ -1,11 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaServicesCreate } from '../../../utils/validate';
 
-const ServiceFormNew = ({ onSubmit, state, onClose }) => {
+const ServiceFormNew = ({ onSubmit, state, onClose, clientId }) => {
   return (
     <Formik
       initialValues={{
-        client_id: '',
+        client_id: clientId ? clientId : "",
         model: '',
         brand: '',
         serial_number: '',
@@ -27,6 +27,7 @@ const ServiceFormNew = ({ onSubmit, state, onClose }) => {
                   as="select"
                   name="client_id"
                   className={`form-select ${touched.client_id && errors.client_id ? "is-invalid" : ""}`}
+                  disabled={!!clientId}
                 >
                   <option value="" disabled>Seleccione un cliente</option>
                   {state.clients.map((client) => (

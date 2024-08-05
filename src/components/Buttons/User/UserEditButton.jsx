@@ -22,7 +22,6 @@ const UserEditButton = ({ user, className }) => {
     values._id = user._id;
     editUser(values)
       .then((res) => {
-        console.log("res", res)
         setLoading(false);
         if (res.status === "success") {
           notify(res.msg, "success");

@@ -12,10 +12,8 @@ import * as API from "../api/client.api";
 
 const ClientContext = createContext();
 /*-----------------------------------------------------------------*/
-
 export function ClientProvider({ children }) {
   //useReduce
-  //useReducer recibe dos parametros (funcion reduce, {states por defectos})
   const [state, dispatch] = useReducer(ClientReducer, {
     clients: [],
     clientsFilter: [],

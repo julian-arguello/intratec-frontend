@@ -125,7 +125,6 @@ export function UserProvider({ children }) {
     try {
       const roles = await API.viewRole();
       dispatch(ActionGetRole(roles));
-      console.log("state", roles);
       return roles;
     } catch (err) {
       return { status: "error", msg: err.message };

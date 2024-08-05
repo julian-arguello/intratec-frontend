@@ -65,9 +65,6 @@ export function AuthProvider({ children }){
     }
     /*-----------------------------------------------------------------*/
     const updatePass = async (passwords) =>{
-
-        console.log("updatePass ",  passwords)
-
         try{
             const res = await API.editPass(passwords)
             return res

@@ -94,30 +94,16 @@ export default function ServiceReducer(state, action) {
     /*-----------------------------------------------------------------*/
     /*-----------------------------------------------------------------*/
     case "STATE_UPDATE":
-      // Copia el estado del servicio actual
       const serviceAfterUpdate = { ...state.service };
-    
-      // Copia el objeto de estados del servicio
       const statesAfterUpdate = { ...serviceAfterUpdate.states };
-    
-      console.log("action.payload", action.payload);
-      // Extrae la información del payload
       const { state: stateToUpdate, description, date } = action.payload;
-
-      console.log("stateToUpdate ", stateToUpdate)
-      console.log("description ", description)
-      console.log("date ", date)
-    
-      // Actualiza o agrega el estado en el objeto de estados
       statesAfterUpdate[stateToUpdate] = {
         description,
         date,
       };
-    
-      // Actualiza el objeto de servicio con los estados modificados
+
       serviceAfterUpdate.states = statesAfterUpdate;
-    
-      // Si el estado actual es el que se está actualizando, asegúrate de que se mantenga como el estado actual
+      
       if (serviceAfterUpdate.state === stateToUpdate) {
         serviceAfterUpdate.state = stateToUpdate;
       }
@@ -126,8 +112,6 @@ export default function ServiceReducer(state, action) {
         ...state,
         service: serviceAfterUpdate,
       };
-    
-
     /*-----------------------------------------------------------------*/
     /*-----------------------------------------------------------------*/
     case "STATE":

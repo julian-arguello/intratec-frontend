@@ -39,7 +39,6 @@ const ProfileEditButton = ({ className, user }) => {
 
   return (
     <>
-      {console.log("user", user)}
       <button
         onClick={handleShow}
         className={`btn btn-primary d-flex align-items-center ${className}`}
