@@ -20,7 +20,7 @@ const UserEditButton = ({ user, className }) => {
   const handleSubmit = (values) => {
     setLoading(true);
     values._id = user._id;
-    editUser(values, true)
+    editUser(values)
       .then((res) => {
         console.log("res", res)
         setLoading(false);

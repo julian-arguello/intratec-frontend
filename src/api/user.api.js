@@ -99,13 +99,36 @@ export async function add(usuarios){
 /*-----------------------------------------------------------------*/    
 /*-----------------------------------------------------------------*/
 //Edita un cliente.
-export async function edit(usuario, editSA = false){
+export async function edit(usuario){
     return fetch(`${config.api.url}/usuarios/${usuario._id}`,{
         method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token'),
-            'SA': editSA,
+        },
+        body: JSON.stringify(usuario)
+    })
+    .then(async (res) => {
+        const data = await res.json()
+        if(res.status === 200) {
+            return data;
+        }
+        else{
+            throw new Error(data.msg)
+        }
+    })
+    .catch(err => {
+        throw new Error(err.message)
+    })
+}
+/*-----------------------------------------------------------------*/
+//Edita un cliente.
+export async function editProfile(usuario){
+    return fetch(`${config.api.url}/usuarios/perfil`,{
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token'),
         },
         body: JSON.stringify(usuario)
     })

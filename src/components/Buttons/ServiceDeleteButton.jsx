@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RoleSuperAdmin } from "../authRole/RoleSuperAdmin";
+import { RoleAdmin } from "../authRole/RoleAdmin";
 import { MdOutlineDelete } from "react-icons/md";
 import { CustomModal } from "../UI/CustomModal/CustomModal";
 import { useService } from "../../context/Service.Context";
@@ -39,7 +39,7 @@ const ServiceDeleteButton = ({ service, className }) => {
   
 
   return (
-    <RoleSuperAdmin>
+    <RoleAdmin>
       <button
         onClick={handleShow}
         className={`btn btn-danger d-flex align-items-center align-items-center ${className}`}
@@ -59,7 +59,7 @@ const ServiceDeleteButton = ({ service, className }) => {
       >
         {`¿Estás seguro de que deseas eliminar el servicio Nº ${service.service_id} de ${service.client.name_busines}?`}
       </CustomModal>
-    </RoleSuperAdmin>
+    </RoleAdmin>
   );
 };
 

@@ -71,9 +71,9 @@ export function UserProvider({ children }) {
   };
   /*-----------------------------------------------------------------*/
  //Editar User.
-    const editUser = async (user, SA) => {
+    const editUser = async (user) => {
       try {
-        const res = await API.edit(user, SA);
+        const res = await API.edit(user);
         
         if (res.status === 'success') {
           const users = await API.viewAlls();
@@ -91,7 +91,7 @@ export function UserProvider({ children }) {
     const profileEdit = async (user) => {
       try {
         const userId = user._id;
-        const res = await API.edit(user);
+        const res = await API.editProfile(user);
         
         if (res.status === 'success') {
           const user = await API.viewId(userId);
