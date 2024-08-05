@@ -3,12 +3,11 @@
     overflow: auto;
 }
 
-
 .filterBox{
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-   
+
 }
 
 .select{
@@ -19,12 +18,11 @@
     margin-right: 1rem;
 
     @media (max-width: 576px){
+        margin: auto;
         margin-top: .5rem;
-    }
-
-    @media (max-width: 531px){
-        margin: auto
         
     }
+
+
 
 }

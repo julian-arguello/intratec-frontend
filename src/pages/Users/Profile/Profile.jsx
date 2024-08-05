@@ -38,8 +38,7 @@ function Profile() {
           <div className={`rounded-2  ${styles.card}`}>
             <div className={` ${styles.nameBox}`}>
               <span className={`h6 estado ${styles.name}`}>
-              <CAvatar src={getAvatarSrc(state.user.avatar)} className={styles.avatar}/>
-
+                <CAvatar src={getAvatarSrc(state.user.avatar)} size="lg" className={styles.avatar}/>
                 {state.user.name + " " + state.user.lastname}
               </span>
 
@@ -51,14 +50,14 @@ function Profile() {
                 <span className="h5 m-0 d-flex align-items-center"></span>
               </div>
 
-              <div className="d-flex justify-content-between align-items-center mb-3">
+              <div className="d-flex justify-content-between align-items-center mb-4">
                 <div className="d-flex align-items-center">
                   <HiOutlineMail className={`me-2 ${styles.icon}`} />
                   <span className="text-box-card">{state.user.email}</span>
                 </div>
               </div>
 
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex flex-column justify-content-between align-items-start gap-2 flex-sm-row">
                 <ProfilePasswordEditButton />
                 <ProfileEditButton user={state.user}/>
               </div>

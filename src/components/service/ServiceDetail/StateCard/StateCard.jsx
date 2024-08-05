@@ -4,7 +4,6 @@ import { stateClass } from "../../../../utils/service.state";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import { StateDeleteButton } from "../../../Buttons/StateDeleteButton";
 import { StateEditButton } from "../../../Buttons/StateEditButton"
-import { BiCheckboxChecked } from "react-icons/bi";
 import { MdRadioButtonChecked } from "react-icons/md";
 
 

@@ -65,6 +65,10 @@
 .buttonBox {
   margin: 0 0 0 0.5rem;
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   justify-content: end;
+
+  @media (max-width: 570px) {
+    width: 100%;
+  }
 }

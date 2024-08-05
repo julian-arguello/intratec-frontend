@@ -12,6 +12,9 @@ const Users = () => {
   return (
     <section className="d-flex flex-column w-100">
       <Navbar>
+
+      <UserNewButton className=" d-sm-flex d-md-none"/>
+
         <Search
           initialValues={{ search: "" }}
           validationSchema={schemaSearch}
@@ -22,7 +25,7 @@ const Users = () => {
           className="m-auto"
         />
 
-        <UserNewButton />
+        <UserNewButton className=" d-none d-md-flex"/>
       </Navbar>
 
       <main className={styles.main}>

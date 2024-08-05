@@ -46,9 +46,9 @@ const ProfilePasswordEditButton = ({ className, user }) => {
     <>
       <button
         onClick={handleShow}
-        className={`btn btn-warning d-flex align-items-center ${className}`}
+        className={`btn btn-warning d-flex align-items-center  ${className}`}
       >
-        <RiLockPasswordLine /> <span className="m-0 ms-2">Modificar Contraseña</span>
+        <RiLockPasswordLine /> <span className="m-0 ms-2 ">Modificar Contraseña</span>
       </button>
 
       <CustomModal
@@ -59,7 +59,7 @@ const ProfilePasswordEditButton = ({ className, user }) => {
         confirmText={loading ? <Loader /> : (<><FaRegEdit /> <span className="m-0 ms-2">Editar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
+        cancelText={<div className="d-flex align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
         className={"m-0 p-0"}
       >
