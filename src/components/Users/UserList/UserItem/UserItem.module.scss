@@ -7,6 +7,9 @@
   border-color: $bg-card-service;
   background-color: $bg-card-service;
   min-width: 22rem;
+  @media (max-width: 576px) {
+      font-size: .9rem;
+  }
   @media (max-width: 360px) {
       min-width: 19rem;
   }
