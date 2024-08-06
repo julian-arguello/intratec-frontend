@@ -39,7 +39,7 @@ const UserItem = ({ user }) => {
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div className="d-flex align-items-center">
             <HiOutlineMail className={`me-2 ${styles.icon}`} />
-            <span className="text-box-card">{user.email}</span>
+            <span className={`text-box-card ${styles.email}`}>{user.email}</span>
           </div>
         </div>
 

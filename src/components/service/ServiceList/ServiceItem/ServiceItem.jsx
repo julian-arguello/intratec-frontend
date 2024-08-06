@@ -19,7 +19,7 @@ export function ServiceItem({ service, clientDetail }) {
     >
       <span className={`h6 estado ${styles.state}`}>{service.state}</span>
 
-      <div className={`rounded-2 py-3 ${styles.cardBody}`}>
+      <div className={`rounded-2 py-3  ${styles.cardBody}`}>
         <div className=" d-flex justify-content-between mb-3">
 
           <span className="h5 m-0 d-flex align-items-center">N° {service.service_id}</span>
@@ -35,7 +35,7 @@ export function ServiceItem({ service, clientDetail }) {
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div className="d-flex align-items-center">
             <TbUserCog className={`me-2 ${styles.icon}`} />
-            <span className="text-box-card">
+            <span className="text-box-card text-truncate">
               {service.user.name + " " + service.user.lastname}
             </span>
           </div>
@@ -43,7 +43,7 @@ export function ServiceItem({ service, clientDetail }) {
 
         <div className="d-flex align-items-center mb-4">
           <MdOutlineInventory2 className={`me-2 ${styles.icon}`} />
-          <span className="text-box-card">
+          <span className="text-box-card text-truncate">
             {service.model + " (" + service.brand + ")"}
           </span>
         </div>
