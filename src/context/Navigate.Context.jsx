@@ -6,7 +6,7 @@ const NavContext = createContext();
 export function NavProvider({ children }){
 
     const [visible, setVisible] = useState(true);
-    const [narrow, setNarrow] = useState(true);
+    const [narrow, setNarrow] = useState(false);
 
     //return
     return(
