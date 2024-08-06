@@ -10,8 +10,8 @@ const Notification = ({ message, type, onClose }) => {
         <Toast
           onClose={onClose}
           show={message !== null}
-          //delay={8000}
-          //autohide
+          delay={8000}
+          autohide
           className={`${styles.toast} `}
         >
           <Toast.Header className={`${styles.toastHeader} ${type === 'success' ? styles.success : styles.error}`}>

@@ -2,9 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaClientRegister } from '../../utils/validate';
 
-
 export function ClientFormEdit({ initialValues, onSubmit }) {
-
 
   return (
     <Formik

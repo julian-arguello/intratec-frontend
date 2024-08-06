@@ -20,7 +20,6 @@ const UserItem = ({ user }) => {
     }
   };
 
-
   return (
     <div
       className={`rounded-2  ${styles.card} ${!status && styles.disabledCard}`}
