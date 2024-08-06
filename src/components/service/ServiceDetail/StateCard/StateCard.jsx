@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import styles from "./StateCard.module.scss";
 import { stateClass } from "../../../../utils/service.state";
 import { RxCounterClockwiseClock } from "react-icons/rx";
@@ -24,8 +23,10 @@ const StateCard = ({ state, description, date, active, service, stateInfo }) => 
           </div>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="d-flex align-items-center">
+        <div className={styles.footerCard}>
+
+
+          <div className={styles.dateBox}>
             <RxCounterClockwiseClock className={styles.icon} />
             <small>{date}</small>
           </div>

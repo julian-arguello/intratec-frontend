@@ -2,15 +2,23 @@ import { stateClass } from "../../../../utils/service.state";
 import { formatDistance } from "date-fns";
 import { es } from "date-fns/locale";
 import { ServiceDetailsButton } from "../../../Buttons/ServiceDetailsButton";
-
+import { CAvatar } from '@coreui/react';
 import styles from "./ServiceItem.module.scss";
-
 import { MdOutlineInventory2 } from "react-icons/md";
 import { TbUserCog } from "react-icons/tb";
 import { TbUsersGroup } from "react-icons/tb";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 
 export function ServiceItem({ service, clientDetail }) {
+
+  const getAvatarSrc = (avatar) => {
+    try {
+      return require(`../../../../assets/avatars/${avatar}.jpeg`);
+    } catch (err) {
+      console.error("Error al cargar la imagen del avatar:", err);
+      return null;
+    }
+  };
 
   return (
     <div
@@ -36,6 +44,7 @@ export function ServiceItem({ service, clientDetail }) {
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div className="d-flex align-items-center">
             <TbUserCog className={`me-2 ${styles.icon}`} />
+            {/* <CAvatar src={getAvatarSrc(service.user.avatar)} size="sm" className="me-2"/> */}
             <span className="text-box-card">
               {service.user.name + " " + service.user.lastname}
             </span>
