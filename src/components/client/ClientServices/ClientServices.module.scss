@@ -4,7 +4,7 @@
 }
 
 .serviceBox{
-    padding: 2rem;
+   padding: 2rem;
    display: grid;
    justify-content: start;
    align-items: start;
@@ -14,6 +14,7 @@
    height: 100%;
    padding-bottom: 4rem;
    align-content: start;
+
 }
 
 .loaderBox{
@@ -24,7 +25,41 @@
     grid-column: 1 / -1;
 }
 
-.pagination{
+
+
+   @media (max-width: 1350px) {
+    .serviceBox {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .titleBox {
+      grid-column: span 2;
+    }
+    .pagination{
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .serviceBox {
+      justify-content: center;
+      grid-template-columns: auto;
+    
+    }
+    .titleBox {
+      text-align: center;
+      grid-column: span 1;
+
+    }
+    .pagination{
+      grid-column: span 1;
+    }
+    .title{
+        margin: 0;
+        padding: .5rem;
+    }
+  }
+
+  .pagination{
     grid-column: span 3;
     display: flex;
     justify-content: center;
@@ -32,4 +67,4 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-   }
+  }

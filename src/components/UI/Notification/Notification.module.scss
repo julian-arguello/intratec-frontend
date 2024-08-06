@@ -5,6 +5,12 @@
   top: 1rem;
   right: 1rem;
   z-index: 1050;
+  margin: auto;
+  @media (max-width: 380px) {
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+  }
 }
 
 .toast {

@@ -1,5 +1,5 @@
 .serviceBox{
-     padding: 2rem;
+    padding: 2rem;
     display: grid;
     justify-content: start;
     align-items: start;
@@ -41,6 +41,8 @@
     .serviceBox {
       justify-content: center;
       grid-template-columns: auto;
+      padding: .5rem;
+      padding-bottom: 4rem;
     }
     .titleBox {
       text-align: center;

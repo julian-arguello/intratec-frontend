@@ -11,9 +11,10 @@
     margin: 0;
   }
   @media (max-width: 420px) {
-    padding: 2rem;
+    padding: 1rem;
     & > h2 {
       text-align: center;
+      padding-bottom: 1rem;
     }
   }
   .detailGeneral {
@@ -83,6 +84,7 @@
   }
 
   @media (max-width: 420px) {
+    gap: 1rem;
     padding: 0.5rem;
   }
 }
@@ -95,9 +97,9 @@
   display: flex;
   justify-content: end;
   gap: 0 .5rem ;
-  @media (max-width: 420px) {
+  @media (max-width: 380px) {
     width: 100%;
-   padding: .5rem;
+   padding-top: .5rem;
    justify-content: center;
   }
 }
