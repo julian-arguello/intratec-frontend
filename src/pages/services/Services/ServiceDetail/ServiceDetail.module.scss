@@ -6,15 +6,15 @@
 
 .detailGeneralBox {
   padding: 2rem;
-  & > h2{
+  & > h2 {
     padding-bottom: 2rem;
     margin: 0;
   }
   @media (max-width: 420px) {
     padding: 2rem;
-    & > h2{
+    & > h2 {
       text-align: center;
-    } 
+    }
   }
   .detailGeneral {
     list-style: none;
@@ -25,10 +25,10 @@
     justify-content: left;
     gap: 1rem;
 
-    @media (max-width: 1300px) { 
+    @media (max-width: 1300px) {
       grid-template-columns: repeat(2, auto);
     }
-    @media (max-width: 768px) { 
+    @media (max-width: 768px) {
       grid-template-columns: repeat(1, auto);
     }
     @media (max-width: 420px) {
@@ -66,24 +66,38 @@
   align-items: baseline;
   gap: 2rem;
 
-  .historyStatusTitleBox{
+  .historyStatusTitleBox {
     width: 100%;
     display: flex;
     justify-content: start;
     align-content: center;
     align-items: center;
-    h3{
+    h3 {
       margin-right: 2rem;
+    }
+
+    @media (max-width: 420px) {
+      margin-top: 1rem;
+      justify-content: center;
     }
   }
 
   @media (max-width: 420px) {
-    padding: .5rem;
-
+    padding: 0.5rem;
   }
-
 }
 
 .loaderBox {
   min-height: 12.5rem;
+}
+
+.buttonsNav {
+  display: flex;
+  justify-content: end;
+  gap: 0 .5rem ;
+  @media (max-width: 420px) {
+    width: 100%;
+   padding: .5rem;
+   justify-content: center;
+  }
 }

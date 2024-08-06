@@ -38,7 +38,7 @@ const ServiceDetail = () => {
   ) : (
     <section className="d-flex flex-column w-100">
       <Navbar>
-        <div className="d-flex flex-wrap gap-2">
+        <div className={styles.buttonsNav}>
           <BackButton to={"/servicios"} />
           <ServiceDeleteButton service={state.service} />
           <ServiceEditButton service={state.service} />
