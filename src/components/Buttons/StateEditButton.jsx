@@ -28,7 +28,7 @@ const StateEditButton = ({ service, stateInfo, state, className }) => {
       if (res.status === 'success') {
         notify('Estado actualizado correctamente');
       } else {
-        notify('error');
+        notify(res.msg, "error");
       }
       handleClose();
     } catch (err) {

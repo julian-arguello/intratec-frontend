@@ -22,7 +22,7 @@ const getValidDateRange = (states, currentState) => {
   const nextState = stateKeys[currentIndex + 1];
 
   const minDate = previousState ? states[previousState]?.date : '';
-  const maxDate = nextState ? states[nextState]?.date : formatDateForInput(new Date());
+  const maxDate = nextState ? formatDateForInput(states[nextState]?.date) : formatDateForInput(new Date());
 
   return {
     minDate: formatDateForInput(minDate),
@@ -31,11 +31,8 @@ const getValidDateRange = (states, currentState) => {
 };
 
 const StateEditForm = ({ stateInfo, service, state, onSubmit}) => {
-  // Determinar si el estado actual es 'Recepcionado'
   const isRecepcionado = state === 'Recepcionado';
-  // Convertir la fecha ISO a un formato adecuado para el input datetime-local
   const initialDate =  formatDateForInput(stateInfo?.date);
-  // Obtener fechas válidas dinámicamente
   const { minDate, maxDate } = getValidDateRange(service.states, state);
 
   return (
