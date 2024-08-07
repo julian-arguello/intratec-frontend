@@ -51,7 +51,8 @@ const Sidebar = () => {
         visible={visible}
         narrow={narrow}
         position="sticky"
-        onHide={()=>{setVisible(!visible)}}
+        onHide={()=>{setVisible(false)}}
+        onShow={()=>{setVisible(true)}}
 
       >
         <CSidebarHeader className={`border-bottom ${styles.logoBox}`}>
