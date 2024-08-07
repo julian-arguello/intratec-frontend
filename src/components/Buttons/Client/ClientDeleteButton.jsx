@@ -33,7 +33,6 @@ const ClientDeleteButton = ({ client, className }) => {
         title="Confirmación"
         onConfirm={remove}
         confirmText="Eliminar"
-        cancelText="Cancelar"
       >
         {`¿Estás seguro que deseas eliminar el cliente ${client.name_busines}? Ten en cuenta que todos los servicios asociados a este cliente también serán eliminados.`}
       </CustomModal>

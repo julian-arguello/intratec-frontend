@@ -45,7 +45,7 @@ function Services() {
     <section className="d-flex flex-column w-100">
       <Navbar>
 
-      <ServiceNewButton className=" d-sm-flex d-md-none"/>
+      <ServiceNewButton className="d-sm-flex d-md-none"/>
 
         <div className={styles.filterBox}>
           <form onSubmit={handleSubmit} className={styles.select}>

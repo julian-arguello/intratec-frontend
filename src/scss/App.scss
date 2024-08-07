@@ -65,3 +65,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.btn-cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: .6rem;
+  height: 2.35rem;
+
+  & > span   {
+    text-decoration: none;
+    line-height: .8rem;
+    padding-bottom: .12rem;
+  }
+
+}
+

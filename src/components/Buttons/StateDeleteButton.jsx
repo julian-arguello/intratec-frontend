@@ -52,7 +52,6 @@ const StateDeleteButton = ({ serviceId, stateDelete, active, className }) => {
         confirmText={loading ? <Loader /> : (<><MdOutlineDelete /> <span className="m-0 ms-2">Eliminar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
       >
         {`¿Estás seguro de que deseas eliminar el estado ${stateDelete}?`}
       </CustomModal>

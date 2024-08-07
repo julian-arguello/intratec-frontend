@@ -74,7 +74,6 @@ const UserNewButton = ({ className }) => {
         }
         classNameBtnOk={"btnActionModal btn-success"}
         disabledBtnOk={loading}
-        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
         className={"m-0 p-0"}
       >

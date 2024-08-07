@@ -81,11 +81,6 @@ const StateNewButton = ({ service, className }) => {
         }
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText={
-          <>
-            <MdClear /> <span className="m-0 ms-2">Cancelar</span>
-          </>
-        }
         confirmVariant="primary"
       >
         <StateAddForm

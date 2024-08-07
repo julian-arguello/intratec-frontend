@@ -1,6 +1,7 @@
 import { Modal, Button } from "react-bootstrap";
-import PropTypes from "prop-types";
 import styles from "./CustomModal.module.scss";
+import { MdClear } from "react-icons/md";
+
 
 const CustomModal = ({
   show,
@@ -21,8 +22,8 @@ const CustomModal = ({
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          {cancelText}
+        <Button variant="secondary" onClick={handleClose} className="btn-cancel">
+          <MdClear /> <span className="m-0 ms-1">Cancelar</span>
         </Button>
         <Button variant={confirmVariant} disabled={disabledBtnOk} className={classNameBtnOk} onClick={onConfirm}>
           {confirmText}

@@ -68,11 +68,6 @@ const UserEditButton = ({ user, className }) => {
         }
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText={
-          <>
-            <MdClear /> <span className="m-0 ms-2">Cancelar</span>
-          </>
-        }
         confirmVariant="primary"
         className={"m-0 p-0"}
       >

@@ -9,7 +9,6 @@ import { useService } from '../../context/Service.Context';
 import { useAuth } from '../../context/Auth.Context';
 import { useNotify } from '../../context/Notify.Context';
 import { Loader } from '../UI/Loader/Loader';
-import { MdClear } from "react-icons/md";
 
 export const ServiceNewButton = ({ className, clientId = false }) => {
   const [showModal, setShowModal] = useState(false);
@@ -65,7 +64,6 @@ export const ServiceNewButton = ({ className, clientId = false }) => {
         confirmText={loading ? <Loader /> : (<><FaRegSquarePlus /> <span className="m-0 ms-2">Crear</span></>)}
         classNameBtnOk={"btnActionModal btn-success"}
         disabledBtnOk={loading}
-        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
         className={"m-0 p-0"}
       >

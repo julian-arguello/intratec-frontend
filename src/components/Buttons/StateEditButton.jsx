@@ -55,7 +55,6 @@ const StateEditButton = ({ service, stateInfo, state, className }) => {
         classNameBtnOk={"btnActionModal"}
         confirmText={loading ? <Loader /> : (<><FaRegEdit /> <span className="m-0 ms-2">Editar</span></>)}
         disabledBtnOk={loading}
-        cancelText={<div className="d-flex align-items-around align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
       >
         <StateEditForm stateInfo={stateInfo} onSubmit={editState} service={service} state={state}/>

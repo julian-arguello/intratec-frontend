@@ -59,7 +59,6 @@ const ProfilePasswordEditButton = ({ className, user }) => {
         confirmText={loading ? <Loader /> : (<><FaRegEdit /> <span className="m-0 ms-2">Editar</span></>)}
         classNameBtnOk={"btnActionModal"}
         disabledBtnOk={loading}
-        cancelText={<div className="d-flex align-items-center"><MdClear /> <span className="m-0 ms-1">Cancelar</span></div>}
         confirmVariant="primary"
         className={"m-0 p-0"}
       >
