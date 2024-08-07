@@ -64,10 +64,15 @@ const Sidebar = () => {
         </CSidebarHeader>
 
         <CSidebarNav className={styles.sidebarNav}>
+        
           <CNavTitle className="m-0">
+          
+            
             <p>Bienvenido</p>
+            <Link to="/perfil" className={styles.linkProfile}>
             {state.isAuth && <CAvatar src={getAvatarSrc(state.user.avatar)} size="md" className={styles.avatar}/>}
             {state.isAuth && `${state.user.name} ${state.user.lastname}`}
+            </Link>
           </CNavTitle>
 
           <CNavItem

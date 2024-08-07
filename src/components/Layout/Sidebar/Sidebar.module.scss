@@ -38,7 +38,7 @@
 
   .sidebarNav {
     li {
-      a:hover {
+    & > a:hover {
         background-color: $blue-brand;
         color: white;
         & > svg {
@@ -66,4 +66,14 @@
 
 .avatar {
   margin-right: .5rem;
+}
+
+.linkProfile{
+  list-style: none;
+  text-decoration: none;
+  color:#A0A3A8 !important;
+  &:hover{
+    background-color: transparent !important;
+    color:#005782  !important;
+  }
 }
