@@ -43,7 +43,7 @@ function Login() {
             </div>
 
             <div className={styles.boxform}>
-              <h2 className="mb-4">Ingresar</h2>
+              <h2 className={`mb-4 ${styles.h2}`}>Ingresar</h2>
 
               <CustomField
                 id="emailLogin"

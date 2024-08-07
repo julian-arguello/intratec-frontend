@@ -59,7 +59,7 @@ const NewPassword = () => {
             </div>
 
             <div className={styles.boxform}>
-              <h2 className="mb-4">
+              <h2 className={`mb-4 ${styles.h2}`}>
                 Cambiar <br className="d-none d-md-inline"/> contraseña
               </h2>
 
