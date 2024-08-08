@@ -26,7 +26,7 @@ const UserNewButton = ({ className }) => {
     setLoading(true);
     user.created_at = new Date();
     user.active = true;
-
+  
     addUser(user)
       .then((res) => {
         setLoading(false);
@@ -35,13 +35,15 @@ const UserNewButton = ({ className }) => {
         } else {
           notify(res.msg, "error");
         }
+        handleClose();
       })
       .catch((error) => {
         setLoading(false);
         notify("Ocurrió un error inesperado. Inténtalo de nuevo.", "error");
+        handleClose();
       });
-    handleClose();
   };
+  
 
   return (
     <RoleSuperAdmin>
