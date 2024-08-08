@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaClientRegister } from '../../utils/validate';
 
-const ClientFormNew = ({ onSubmit, onClose }) => {
+const ClientFormNew = ({ onSubmit }) => {
 
   return (
     <Formik
@@ -14,7 +14,6 @@ const ClientFormNew = ({ onSubmit, onClose }) => {
       validationSchema={schemaClientRegister}
       onSubmit={(client) => {
         onSubmit(client);
-        onClose();
       }}
     >
       {({ errors, touched }) => (

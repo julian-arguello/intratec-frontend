@@ -17,24 +17,28 @@ export const ClientNewButton = ({ className }) => {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
-  const handleSubmit = (client) => {
+  const handleSubmit = async (client) => {
     setLoading(true);
-    client.create_at = new Date();
-    client.softDelete = false;
-
-    addClient(client).then((res) => {
+    try {
+      client.create_at = new Date();
+      client.softDelete = false;
+  
+      const res = await addClient(client);
       setLoading(false);
+  
       if (res.status === 'success') {
-        notify(res.msg, 'success'); 
+        notify(res.msg, 'success');
       } else {
         notify(res.msg, 'error');
       }
-    }).catch((error) => {
+    } catch (error) {
       setLoading(false);
       notify("Ocurrió un error inesperado. Inténtalo de nuevo.", 'error');
-    });
-    handleClose();
+    } finally {
+      handleClose();
+    }
   };
+  
 
   return (
     <RoleAdmin>
@@ -58,7 +62,6 @@ export const ClientNewButton = ({ className }) => {
       >
         <ClientFormNew
           onSubmit={handleSubmit}
-          onClose={handleClose}
         />
       </CustomModal>
     </RoleAdmin>

@@ -36,8 +36,8 @@ const StateNewButton = ({ service, className }) => {
       setLoading(false);
       if (res.status === "success") {
         notify("Estado agregado correctamente");
-      } else {
-        notify("error");
+      }  else {
+        notify(res.msg, 'error');
       }
       handleClose();
     } catch (err) {

@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { schemaServicesCreate } from '../../../utils/validate';
 
-const ServiceFormNew = ({ onSubmit, state, onClose, clientId }) => {
+const ServiceFormNew = ({ onSubmit, state, clientId }) => {
   return (
     <Formik
       initialValues={{
@@ -14,7 +14,6 @@ const ServiceFormNew = ({ onSubmit, state, onClose, clientId }) => {
       validationSchema={schemaServicesCreate}
       onSubmit={(service) => {
         onSubmit(service);
-        onClose();
       }}
     >
       {({ errors, touched }) => (

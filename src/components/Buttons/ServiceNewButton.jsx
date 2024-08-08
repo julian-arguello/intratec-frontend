@@ -25,28 +25,31 @@ export const ServiceNewButton = ({ className, clientId = false }) => {
     setShowModal(true);
   };
 
-  const handleSubmit = (service) => {
+  const handleSubmit = async (service) => {
     setLoading(true);
-    service.state = 'Recepcionado';
-    service.create_at = new Date();
-    service.user_id = auth.state.user._id;
-    service.softDelete = false;
+    try {
+      service.state = 'Recepcionado';
+      service.create_at = new Date();
+      service.user_id = auth.state.user._id;
+      service.softDelete = false;
   
-    addService(service).then((res) => {
+      const res = await addService(service);
       setLoading(false);
+  
       if (res.status === 'success') {
-        notify(res.msg, 'success'); 
+        notify(res.msg, 'success');
         navigate('/servicios');
       } else {
         notify(res.msg, 'error');
       }
-    }).catch((error) => {
+    } catch (error) {
       setLoading(false);
       notify("Ocurrió un error inesperado. Inténtalo de nuevo.", 'error');
-    });
-    handleClose();
+    } finally {
+      handleClose();
+    }
   };
-
+  
   return (
     <RoleAdmin>
       <button
@@ -71,7 +74,6 @@ export const ServiceNewButton = ({ className, clientId = false }) => {
           state={state}
           clientId={clientId}
           onSubmit={handleSubmit}
-          onClose={handleClose}
         />
       </CustomModal>
     </RoleAdmin>
