@@ -5,9 +5,17 @@ export default function UserReducer(state, action){
         case "GET":
             return {
                 ...state,
-                users: action.payload,
-                UserFilter: action.payload 
-            }
+                users: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
+                    ),
+                UserFilter: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
+                    ),
+            };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETID":
@@ -27,16 +35,32 @@ export default function UserReducer(state, action){
         case "ADD":
             return {
                 ...state,
-                users: action.payload,
-                UserFilter: action.payload,
+                users: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
+                    ),
+                UserFilter: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
+                    ),
             };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
             return {
                 ...state,
-                users: action.payload,
-                UserFilter: action.payload,
+                users: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
+                    ),
+                UserFilter: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
+                    ),
             };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 

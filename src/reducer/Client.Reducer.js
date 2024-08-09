@@ -5,9 +5,17 @@ export default function ClientReducer(state, action){
         case "GET":
             return {
                 ...state,
-                clients:  action.payload,
-                clientsFilter:  action.payload,  
-            }
+                clients: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name_busines.trim().toLowerCase().localeCompare(b.name_busines.trim().toLowerCase())
+                    ),
+                clientsFilter: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name_busines.trim().toLowerCase().localeCompare(b.name_busines.trim().toLowerCase())
+                    ),
+            };        
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "GETID":
@@ -20,17 +28,32 @@ export default function ClientReducer(state, action){
         case "ADD":
             return {
                 ...state,
-                clients: action.payload,
-                clientsFilter: action.payload,
+                clients: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name_busines.trim().toLowerCase().localeCompare(b.name_busines.trim().toLowerCase())
+                    ),
+                clientsFilter: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name_busines.trim().toLowerCase().localeCompare(b.name_busines.trim().toLowerCase())
+                    ),
             };
-        
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 
         case "UPDATE":
             return {
                 ...state,
-                clients: action.payload,
-                clientsFilter: action.payload,
+                clients: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name_busines.trim().toLowerCase().localeCompare(b.name_busines.trim().toLowerCase())
+                    ),
+                clientsFilter: action.payload
+                    .slice()
+                    .sort((a, b) => 
+                        a.name_busines.trim().toLowerCase().localeCompare(b.name_busines.trim().toLowerCase())
+                    ),
             };
         /*-----------------------------------------------------------------*/    
         /*-----------------------------------------------------------------*/ 

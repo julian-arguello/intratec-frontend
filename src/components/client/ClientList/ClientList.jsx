@@ -34,7 +34,7 @@ export function ClientList() {
         <WithoutResults message="No se encontraron clientes para mostrar"/>
       ) : (
         
-          currentClients.reverse().map((client) => (
+          currentClients.map((client) => (
             <ClientItem key={client._id} client={client} />
           ))
         

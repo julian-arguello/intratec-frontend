@@ -29,7 +29,7 @@ export function UserList() {
       {currentUsers.length === 0 ? (
         <WithoutResults message="No se encontraron usuarios para mostrar" />
       ) : (
-        currentUsers.reverse().map((user) => (
+        currentUsers.map((user) => (
           <UserItem key={user._id} user={user} />
         ))
       )}
